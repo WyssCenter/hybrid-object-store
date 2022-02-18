@@ -1,0 +1,26 @@
+@import '~Styles/_imports.scss';
+
+.UserTable {
+  margin: 2em auto;
+  max-width: 50em;
+  border-top: 1px solid $romanSilver;
+
+
+  th {
+    white-space: nowrap;
+    border-bottom: 2px solid $romanSilver;
+  }
+
+  &__text {
+    padding: 1em;
+    border-right: 1px solid $romanSilver;
+  }
+
+  &__td {
+    &--empty {
+      text-align: center;
+    }
+  }
+
+
+}

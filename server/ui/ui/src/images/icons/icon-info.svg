@@ -1,0 +1,8 @@
+<svg width="17" height="17" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" fill-rule="evenodd">
+        <circle stroke="#CCC" cx="8.5" cy="8.5" r="7"/>
+        <text font-family="NunitoSans-ExtraBold, Nunito Sans" font-size="12" font-weight="700" fill="#CCC">
+                    <tspan x="7" y="13">i</tspan>
+                </text>
+    </g>
+</svg>

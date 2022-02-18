@@ -1,0 +1,17 @@
+@import '~Styles/_imports.scss';
+
+.GroupSection {
+  justify-content: space-around;
+}
+
+@media screen and (max-width: 1307px) and (min-width: 0) {
+  .GroupSection {
+    display: flex;
+    flex-direction: column;
+  }
+  .UserTable__text {
+    width: auto !important;
+    border-right: none !important;
+    border-bottom: 1px solid $romanSilver;
+  }
+}

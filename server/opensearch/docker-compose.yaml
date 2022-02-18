@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  opensearch:
+    image: opensearchproject/opensearch:1.2.1
+    environment:
+      - discovery.type=single-node
+    volumes:
+      - ${HOSS_DIR}/opensearch/opensearch.yaml:/usr/share/opensearch/config/opensearch.yml
+      - ${HOSS_DIR}/data/opensearch:/usr/share/opensearch/data
+      - ${BACKUP_ROOT}/.opensearch:/mnt/snapshots
+    ports:
+      - 9200:9200
+      - 9600:9600 # required for Performance Analyzer
+    expose:
+      - "9200"
+    networks:
+      - internal
+    restart: always

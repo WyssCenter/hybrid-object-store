@@ -1,0 +1,15 @@
+@import '~Styles/_imports.scss';
+
+.ListPat {
+
+  &__table {
+    margin: 1em auto !important;
+  }
+
+  &__td {
+    border-bottom: 1px solid $romanSilver;
+    &--empty {
+      text-align: center;
+    }
+  }
+}

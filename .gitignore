@@ -1,0 +1,56 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Swap files
+*.swp
+*.swo
+
+# Session files
+Session.vim
+
+# Test binary, built with `go test -c`
+*.test
+
+# Python working files
+__pycache__
+*.pyc
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Dependency directories (remove the comment below to include it)
+# vendor/
+
+server/nas
+server/db
+.env
+server/core/hos-core
+server/auth/hos-auth
+server/sync/hos-sync
+server/auth/config-dex.yaml
+server/auth/openid-config.json
+.DS_Store
+server/ui/ui/build
+server/core/.vscode
+client/.vscode
+test/.vscode/launch.json
+test/.vscode/settings.json
+client/examples/notebooks/.ipynb_checkpoints
+client/examples/.ipynb_checkpoints
+client/.idea
+test/.idea
+admin/.idea
+admin/venv
+client/examples/notebooks/venv
+resources/docs/admin/docs-venv
+resources/docs/admin/build
+server/auth/docs/docs.go
+server/auth/docs/swagger.json
+server/auth/docs/swagger.yaml
+server/core/docs/docs.go
+server/core/docs/swagger.json
+server/core/docs/swagger.yaml

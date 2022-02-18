@@ -1,0 +1,42 @@
+@import '~Styles/_imports.scss';
+
+.ExpandButton {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+  text-align: center;
+
+  &__button {
+    background: transparent;
+    border: 0;
+    color: var(--main-color);
+    font-size: $h5-fontsize;
+    margin: 0 0 0 1em;
+  }
+
+  &__icon {
+    height: 2em;
+    width: 1.5em;
+    margin: 0 1em 0 0;
+
+    &--collapsed {
+      background: url(~Images/icons/arrows/down-primary.svg) no-repeat center center;
+      background-size: 2em;
+    }
+
+    &--expanded {
+      background: url(~Images/icons/arrows/up-primary.svg) no-repeat center center;
+      background-size: 2em;
+    }
+  }
+
+
+  &__separator {
+    height: 1px;
+    width: 100px;
+    flex: 1;
+
+    border-bottom: 1px solid var(--main-color);
+  }
+}

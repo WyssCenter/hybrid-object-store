@@ -1,0 +1,31 @@
+@import '~Styles/_imports.scss';
+
+.Button {
+  width: 162px;
+  height: 2rem;
+
+  padding-top: 7px;
+  padding-bottom: 7px;
+  margin: 0 12.5px;
+  cursor: pointer;
+
+  color: $white;
+  border: 0;
+  border-radius: 4px;
+  background: var(--main-color);
+
+  font-weight: 400;
+  line-height: 1rem;
+
+  &:hover {
+    @include boxShadowDark();
+  }
+
+  &:disabled,
+  &:hover:disabled {
+    overflow: hidden;
+    border: 0;
+    background-color: $romanSilver;
+    box-shadow: none !important;
+  }
+}

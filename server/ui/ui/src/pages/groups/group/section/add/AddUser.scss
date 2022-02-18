@@ -1,0 +1,80 @@
+@import '~Styles/_imports.scss';
+
+
+.AddUser {
+  .InputText__label {
+    text-transform: none !important;
+  }
+  td {
+    border-bottom: none !important;
+    vertical-align: bottom;
+    .InputText__input {
+      margin-bottom: 0;
+    }
+  }
+
+  &__filler {
+    flex: 1;
+  }
+
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 auto;
+    position: relative;
+
+
+    .Button {
+      margin-top: 2.2em;
+    }
+
+  }
+
+
+  &__h5--warning {
+    color: $orange;
+    font-weight: bold;
+  }
+
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__warning {
+    border-radius: 50%;
+    padding: .25em .75em;
+    border: 1px solid $orange;
+
+    margin: 0 1em;
+  }
+  &__auto {
+    margin: -10px 10px 0 10px;
+    position: absolute;
+    background: $white;
+    border: 1px solid var(--main-color);
+    border-top: 0;
+    border-bottom: 0;
+    width: 456px !important;
+    display: flex;
+    flex-direction: column;
+    top: 75px;
+    button {
+      z-index: 1;
+      background: $white;
+      width: 100%;
+      padding: 5px;
+      border: 0;
+      border-bottom: 1px solid var(--main-color);
+      cursor: pointer;
+      &:hover {
+        background: var(--main-color);
+        color: $white;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@import '~Styles/_imports.scss';
+
+.AccountLabel {
+  border-bottom: 1px solid $background-color;
+  &__section {
+    display: inline-block;
+    font-size: $h4-fontsize;
+    width: 150px;
+  }
+  &__value {
+    font-size: $h5-fontsize
+  }
+}

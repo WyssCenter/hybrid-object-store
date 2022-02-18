@@ -1,0 +1,23 @@
+@import '~Styles/_imports';
+
+
+.Group {
+  margin: 0 auto;
+  &__header {
+    height: 6em;
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: baseline;
+
+    h2 {
+      margin-bottom: 0.25em;
+      padding-bottom: 0;
+    }
+
+    h5 {
+      margin-top: 0;
+      margin-left: 1em;
+    }
+  }
+}

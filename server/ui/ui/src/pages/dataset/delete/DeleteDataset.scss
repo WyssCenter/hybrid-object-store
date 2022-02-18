@@ -1,0 +1,10 @@
+.DeleteDataset {
+  padding: 0 2em;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+
+  &__buttons {
+    width: 10em;
+  }
+}

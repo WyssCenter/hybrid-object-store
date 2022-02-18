@@ -1,0 +1,38 @@
+@import '~Styles/_imports.scss';
+
+
+.SyncStatus {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  color: var(--main-color);
+
+  background: $white;
+  padding: 6px 12px;
+  height: 59px;
+  margin: 0 !important;
+  width: 240px !important;
+  border-left: 1px solid var(--main-color);
+  position: relative;
+
+  &__icon {
+    width: 40px;
+    height: 25px;
+    svg {
+      margin: 0 7px 0 12px;
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  &__text{
+    white-space: nowrap;
+    display: flex;
+    text-align: right;
+  }
+  &__value {
+    width: 60px;
+  }
+}

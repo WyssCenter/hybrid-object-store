@@ -1,0 +1,27 @@
+@import '~Styles/_imports.scss';
+
+.PermissionsItem {
+
+  display: flex;
+  align-items: baseline;
+  flex-wrap: nowrap !important;
+
+  max-width: 50em;
+
+  border-bottom: 1px solid $romanSilver;
+
+  &__name {
+    min-width: 20em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &--filler {
+    flex: 1;
+    padding: 0;
+  }
+
+  &--header {
+    border-bottom: 2px solid $romanSilver;
+  }
+}

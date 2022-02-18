@@ -1,0 +1,46 @@
+version: "3.7"
+services:
+  auth:
+    build:
+      context: ./
+      dockerfile: ./auth/Dockerfile
+    image: hoss-auth:$VERSION
+    ports:
+      - "8080"
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_AUTH_DB}
+      POSTGRES_HOST: db:5432
+      EXTERNAL_HOSTNAME: ${EXTERNAL_HOSTNAME}
+      SERVICE_AUTH_SECRET: ${SERVICE_AUTH_SECRET}
+      LDAP_DOMAIN: ${LDAP_DOMAIN}
+      SERVICES: ${SERVICES}
+    volumes:
+      - type: bind
+        source: ~/.hoss/auth/config.yaml
+        target: /opt/config.yaml
+        read_only: true
+      - type: bind
+        source: ~/.hoss/auth/openid-config.json
+        target: /opt/openid-config.json
+        read_only: true
+      - auth-secrets:/secrets
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.http.routers.auth.rule=Host(`${DOMAIN}`) && PathPrefix(`/auth`)"
+      - "traefik.http.middlewares.auth-prefix.stripprefix.prefixes=/auth"
+      - "traefik.http.middlewares.auth-prefix.stripprefix.forceSlash=false"
+      - "traefik.http.routers.auth.middlewares=auth-prefix@docker"
+    depends_on:
+      - reverse-proxy
+      - dex
+    restart: always
+    networks:
+      - web
+      - internal
+
+volumes:
+  auth-secrets:
+    driver: local

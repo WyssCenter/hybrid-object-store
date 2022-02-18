@@ -1,0 +1,125 @@
+@import '~Styles/_imports.scss';
+
+
+.TagsModal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $mineShaft;
+  &__primary {
+    color: $mineShaft;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  &__secondary {
+    margin-bottom: 10px;
+    color: $mineShaft;
+    font-size: 14px;
+    line-height: 16px;
+  }
+  &__inputs {
+    width: 100%;
+    margin: 5px 0;
+    input {
+      height: 24px;
+      margin: 10px;
+    }
+  }
+  &__add {
+    width: 28px;
+    height: 28px;
+    border: 0;
+    margin: 0 15px;
+    padding: 0;
+    background: none;
+    &:hover {
+      svg {
+        display: none;
+      }
+      background: var(--main-color) url('~Images/icons/add-button-inverted.svg') no-repeat center center;
+      background-size: 28px;
+      border-radius: 50%;
+    }
+  }
+  &__table {
+    height: 140px;
+    margin: 5px 5px 25px 5px;
+    width: 80%;
+    border: 1px solid #979797;
+    overflow: auto;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    height: 24px;
+    span {
+      color: #6c6c6c;
+      line-height: 24px;
+      padding-left: 10px;
+      width: 50%;
+    }
+    border-bottom: 2px solid #6c6c6c;
+  }
+  &__entry {
+      display: flex;
+      justify-content: space-between;
+      height: 24px;
+      border-bottom: 1px solid #979797;
+      span {
+        line-height: 24px;
+        padding-left: 10px;
+        width: 50%;
+      }
+  }
+  &__buttons {
+    width: 100%;
+    height: 130px;
+    border-top: 1px solid #6c6c6c;
+  }
+  &__placeholder {
+    height: 140px;
+    margin: 5px 5px 25px 5px;
+    width: 80%;
+    background: #f8f8f8;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $mineShaft;
+    &--primary {
+      font-size: 18px;
+      padding: 10px;
+    }
+    &--secondary {
+      font-size: 16px;
+    }
+  }
+  &__input {
+    position: relative;
+  }
+  &__auto {
+    margin: -10px 10px 0 10px;
+    position: absolute;
+    background: $white;
+    border: 1px solid var(--main-color);
+    border-top: 0;
+    border-bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    button {
+      background: $white;
+      width: 100%;
+      padding: 5px;
+      border: 0;
+      border-bottom: 1px solid var(--main-color);
+      cursor: pointer;
+      &:hover {
+        background: var(--main-color);
+        color: $white;
+      }
+    }
+  }
+}

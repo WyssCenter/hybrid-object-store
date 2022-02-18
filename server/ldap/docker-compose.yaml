@@ -1,0 +1,47 @@
+version: "3"
+
+services:
+  ldap:
+    image: osixia/openldap:1.4.0
+    command: ["--copy-service"]
+    environment:
+      LDAP_TLS_VERIFY_CLIENT: try
+      LDAP_ORGANISATION: ${LDAP_ORGANISATION}
+      LDAP_DOMAIN: ${LDAP_DOMAIN}
+      LDAP_ADMIN_PASSWORD: ${LDAP_ADMIN_PASSWORD}
+      LDAP_READONLY_USER: "true"
+      LDAP_READONLY_USER_PASSWORD: ${LDAP_READONLY_PASSWORD}
+    volumes:
+      - ldap-vol0:/var/lib/ldap
+      - ldap-vol1:/etc/ldap/slapd.d
+      - type: bind
+        source: ~/.hoss/auth/config-ldap.ldif
+        target: /container/service/slapd/assets/config/bootstrap/ldif/custom/config-ldap.ldif
+    restart: always
+    networks:
+      - internal
+
+  ldap-admin:
+    image: osixia/phpldapadmin:0.9.0
+    depends_on:
+      - ldap
+    volumes:
+      - type: bind
+        source: ~/.hoss/auth/env.yaml
+        target: /container/environment/01-custom/env.yaml
+    restart: always
+    ports: 
+      - 6443:443
+    networks:
+      - internal
+
+  # if ldap is included, make dex depend on it.
+  dex:  
+    depends_on:
+      - ldap
+
+volumes:
+  ldap-vol0:
+    driver: local
+  ldap-vol1:
+    driver: local

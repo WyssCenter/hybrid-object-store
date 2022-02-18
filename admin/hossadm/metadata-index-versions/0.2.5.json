@@ -1,0 +1,15 @@
+{
+    "mappings":{
+       "properties":{
+          "core_service_endpoint": {"type": "keyword"},
+          "dataset_extended": {"type": "keyword"},
+          "object_key": {"type": "keyword"},
+          "last_modified_date": {"type": "date"},
+          "size_bytes": {"type": "double"},
+          "metadata": {
+              "type": "keyword", 
+              "normalizer": "lowercase"
+         }
+       }
+    }
+  }

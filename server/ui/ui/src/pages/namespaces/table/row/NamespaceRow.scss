@@ -1,0 +1,26 @@
+@import '~Styles/_imports.scss';
+
+
+.NamespaceRow {
+  &__td {
+    &--actions {
+      width: 6em;
+      align-items: center;
+      margin: 0;
+      z-index: 0;
+    }
+
+    &--empty {
+      width: 2em;
+    }
+  }
+  &__sync {
+    padding-left: 35px;
+    position: relative;
+    svg {
+      position: absolute;
+      top: calc(50% - 12.5px);
+      left: 0;
+    }
+  }
+}

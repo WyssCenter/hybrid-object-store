@@ -1,0 +1,28 @@
+@import '~Styles/_imports.scss';
+
+.DivisionText {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+  text-align: center;
+  margin: 1em 0 2em 0;
+
+  &__h5 {
+    background: transparent;
+    border: 0;
+    color: var(--main-color);
+    font-weight: bold;
+    margin: 0 1em;
+    text-transform: capitalize;
+  }
+
+
+  &__separator {
+    height: 1px;
+    width: 100px;
+    flex: 1;
+
+    border-bottom: 1px solid var(--main-color);
+  }
+}

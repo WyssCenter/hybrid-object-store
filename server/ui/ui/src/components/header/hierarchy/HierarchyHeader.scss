@@ -1,0 +1,17 @@
+
+.HierarchyHeader {
+  margin: 0 auto;
+
+  &__spacer {
+    margin: 1em 0 !important;
+    align-content: center;
+  }
+  &__h2 {
+    margin: 1rem 0 .25em 0;
+
+  }
+
+  &__h5 {
+    margin: 0;
+  }
+}

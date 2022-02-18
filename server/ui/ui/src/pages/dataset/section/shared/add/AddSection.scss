@@ -1,0 +1,62 @@
+@import '~Styles/_imports.scss';
+
+.AddSection {
+  display:flex;
+  align-items: flex-end;
+  position: relative;
+  &__dropdown {
+    padding: 10px;
+  }
+
+  td {
+    border-bottom: 1px solid $romanSilver;
+    vertical-align: bottom;
+  }
+
+
+  &__row-filler {
+    flex: 1;
+  }
+
+  &__column--text-right {
+    text-align: right;
+  }
+  &__auto {
+    margin: -10px 10px 0 10px;
+    position: absolute;
+    background: $white;
+    border: 1px solid var(--main-color);
+    border-top: 0;
+    border-bottom: 0;
+    width: calc(100% - 20px) !important;
+    display: flex;
+    flex-direction: column;
+    button {
+      z-index: 1;
+      background: $white;
+      width: 100%;
+      padding: 5px;
+      border: 0;
+      border-bottom: 1px solid var(--main-color);
+      cursor: pointer;
+      &:hover {
+        background: var(--main-color);
+        color: $white;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) and (min-width: 0) {
+  .AddSection {
+    flex-wrap: wrap;
+    div {
+      width: 100%;
+    }
+  }
+  .AddSection__dropdown {
+    div {
+      align-items: center;
+    }
+  }
+}

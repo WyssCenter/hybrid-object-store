@@ -1,0 +1,45 @@
+@import '~Styles/_imports.scss';
+
+
+.ProgressBar {
+  display: flex;
+  justify-content: center;
+  height: 32px;
+  margin: 8px 0;
+  display: flex;
+  &__count {
+    align-self: flex-start;
+    margin-right: 200px;
+  }
+  &__pct {
+    align-self: center;
+  }
+
+  #progressBar{
+    margin: 0;
+    border: solid 1px rgba( 0, 0, 0, 0.9 );
+    width:  100%;
+    border-radius: 5px;
+    text-align: center;
+    background: rgba( 255, 255, 255, 0.9 );
+    background-image: linear-gradient(110deg, var(--main-color), var(--pct), rgba( 255, 255, 255, 0.9 ) var(--pct));
+    -webkit-transition: var(--pct) 2s;
+    transition: var(--pct) 2s;
+  }
+  #progressText{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 16px;
+    line-height: 30px;
+    height: 100%;
+    font-family: Arial;
+    font-weight: bold;
+    background: rgba( 0, 0, 0, 0.7 );
+    -webkit-background-clip: text;
+    background-image: linear-gradient(110deg, #E7E7E7, var(--pct), rgba( 0, 0, 0, 0.7 ) var(--pct));
+    color: transparent;
+    -webkit-transition: var(--pct) 2s;
+    transition: var(--pct) 2s;
+  }
+}

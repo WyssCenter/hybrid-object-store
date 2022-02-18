@@ -1,0 +1,62 @@
+version: "3.7"
+services:
+  core:
+    build:
+      context: ./
+      dockerfile: ./core/Dockerfile
+      args:
+        COMMIT_HASH: $COMMIT
+        VERSION: $VERSION
+    image: hoss-core:$VERSION
+    ports:
+      - "8080"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_CORE_DB}
+      POSTGRES_HOST: db:5432
+      EXTERNAL_HOSTNAME: ${EXTERNAL_HOSTNAME}
+      RABBITMQ_USER: ${RABBITMQ_USER}
+      RABBITMQ_PASS: ${RABBITMQ_PASS}
+      SERVICE_AUTH_SECRET: ${SERVICE_AUTH_SECRET}
+      AVAILABLE_SERVICES: ${SERVICES}
+    volumes:
+      - type: bind
+        source: ~/.hoss/core/config.yaml
+        target: /opt/config.yaml
+        read_only: true
+      - type: bind
+        source: ~/.hoss/core/aws_credentials
+        target: /home/gig/.aws/credentials
+        read_only: true
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.http.routers.core.rule=Host(`${DOMAIN}`) && PathPrefix(`/core`)"
+      - "traefik.http.middlewares.core-prefix.stripprefix.prefixes=/core"
+      - "traefik.http.middlewares.core-prefix.stripprefix.forceSlash=false"
+      - "traefik.http.routers.core.middlewares=core-prefix@docker"
+    depends_on:
+      - reverse-proxy
+      - db
+      - opensearch
+    networks:
+      - web
+      - internal
+    restart: always
+
+  db:
+    image: postgres:13.5-alpine
+    volumes:
+      - ${DB_ROOT}:/var/lib/postgresql/data
+      - ${DB_INIT_SCRIPTS}:/docker-entrypoint-initdb.d
+      - ${BACKUP_ROOT}/.db:/mnt/backup
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_MULTIPLE_DATABASES: ${POSTGRES_CORE_DB},${POSTGRES_AUTH_DB}
+    networks:
+      - internal
+    restart: always

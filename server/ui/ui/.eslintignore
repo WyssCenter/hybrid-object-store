@@ -1,0 +1,9 @@
+/config
+/scripts
+/public
+
+/build
+/storybook-static
+/node_modules
+
+/.storybook

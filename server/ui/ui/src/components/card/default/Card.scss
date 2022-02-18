@@ -1,0 +1,67 @@
+@import '~Styles/_imports.scss';
+
+.Card {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-start;
+
+
+  position: relative;
+
+  cursor: pointer;
+  transition: box-shadow 0.5s;
+  text-align: left;
+  text-decoration: none !important;
+
+  color: $primaryText;
+
+  background:$white;
+  padding: 1em !important;
+  box-shadow: 0 0px 12px 0 rgba(0,0,0,.10);
+
+  &__title {
+    font-size: $h4-fontsize;
+    font-weight: bold;
+    margin: 0.25em 0;
+    text-decoration: none !important;
+  }
+
+  &__p--small {
+    margin: 0.25em 0;
+    padding: 0;
+    font-size: $small-fontsize;
+  }
+
+
+  &:empty {
+    height: 0;
+
+    border: 0;
+  };
+
+  &--text-center{
+    text-align: center;
+  }
+
+  &:hover {
+    transition: box-shadow 0.5s;
+
+    box-shadow: 0 0px 12px 0 rgba(0,0,0,.50);
+  }
+
+  &:before,
+  &:after {
+    padding: 0 10px;
+  }
+  &--auto {
+    @extend .Card;
+    height: auto;
+  }
+  &--no-hover{
+    &:hover {
+      cursor: default;
+      box-shadow: 0 0px 12px 0 rgba(0,0,0,.10);
+    }
+  }
+}

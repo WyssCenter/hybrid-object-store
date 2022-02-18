@@ -1,0 +1,11 @@
+@import '~Styles/_imports.scss';
+
+
+.Authenticating {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 12em);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,61 @@
+@import '~Styles/_imports.scss';
+
+.CopyText {
+
+  display: flex;
+  align-items: center;
+
+  &--disabled {
+    opacity: 0.5;
+  }
+  &--export {
+    border-bottom: 1px solid $grey !important;
+  }
+
+  &:hover button {
+    background-color: var(--main-color) !important;
+  }
+
+  &:hover button:disabled {
+    background-color: $grey !important;
+  }
+
+  &__input {
+    height: 2.1em;
+    width: 20em;
+    padding: 0 .5em;
+
+    border: 1px solid $romanSilver;
+
+    border-radius: 0px;
+  }
+
+
+  &__btn {
+    &--copy {
+      border: 1px solid $romanSilver;
+      border-left: 0px solid $romanSilver;
+      background-color: var(--main-color);
+      margin: 0;
+      height: 32px;
+      width: 40px;
+      padding: 0px;
+      border-radius: 0px 3px 3px 0px !important;
+      text-align: center;
+
+      &:disabled, &:focus {
+        background-color: var(--main-color) !important;
+        border-color: var(--main-color) !important;
+      }
+
+      &:hover {
+        background-color: var(--main-color)-light !important;
+      }
+
+      &:disabled,
+       &:disabled button {
+        background-color: $grey !important;
+      }
+    }
+  }
+}

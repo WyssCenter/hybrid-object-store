@@ -1,0 +1,10 @@
+refresh_intervals:
+  core_service: 1m
+  auth_token: 3h
+  sts_creds: 3h
+core_services:
+  - http://localhost/core/v1
+auth_endpoint: http://auth:8080/v1
+sqs_profile: hoss-service
+worker_buffer_size: 10
+worker_instance_count: 1 # workers per core service

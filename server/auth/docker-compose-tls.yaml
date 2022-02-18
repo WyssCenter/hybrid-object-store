@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  auth:
+    labels:
+      - "traefik.http.routers.auth.entrypoints=websecure"
+      - "traefik.http.routers.auth.tls=true"
+      - "traefik.http.routers.auth.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.auth.tls.domains[0].main=${DOMAIN}"
+      - "traefik.http.routers.auth-redirect.entrypoints=web"
+      - "traefik.http.routers.auth-redirect.rule=Host(`${DOMAIN}`) && PathPrefix(`/auth`)"
+      - "traefik.http.routers.auth-redirect.middlewares=auth-redirectscheme@docker"
+      - "traefik.http.middlewares.auth-redirectscheme.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.auth-redirectscheme.redirectscheme.permanent=true"

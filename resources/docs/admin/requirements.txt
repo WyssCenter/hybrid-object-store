@@ -1,0 +1,5 @@
+sphinx==4.3.1
+myst-parser==0.15.2
+sphinx-autoapi[go]
+sphinx_rtd_theme==1.0.0
+

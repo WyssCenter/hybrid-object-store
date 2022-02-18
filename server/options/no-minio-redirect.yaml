@@ -1,0 +1,9 @@
+# This is added if minio is not enabled, providing a root redirect to the `/ui` route
+services:
+  ui:
+    labels:
+      - "traefik.http.routers.ui-root.rule=Host(`${DOMAIN}`) && PathPrefix(`/`)"
+      - "traefik.http.routers.ui-root.priority=1"
+      - "traefik.http.middlewares.ui-redirectregex.redirectregex.regex=^${UI_REDIRECT_REGEX}$$"
+      - "traefik.http.middlewares.ui-redirectregex.redirectregex.replacement=${EXTERNAL_HOSTNAME}/ui"
+      - "traefik.http.routers.ui-root.middlewares=ui-redirectregex@docker"

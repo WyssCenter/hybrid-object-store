@@ -1,0 +1,118 @@
+@import '~Styles/_imports.scss';
+
+
+.Details {
+  width: 360px;
+  height: 100%;
+  position: fixed;
+  right: 0;
+  top: 120px;
+  background: $white;
+  border-left: 1px solid #c4c7c9;
+
+  &__collapsed {
+    width: 24px;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 120px;
+    background: $white url('~Images/icons/icon-info.svg') no-repeat left 50% top 20px;
+    border-left: 1px solid #c4c7c9;
+    cursor: pointer;
+  }
+  &__expanded {
+    width: 360px;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 120px;
+    background: $white;
+    border-left: 1px solid #c4c7c9;
+
+  }
+  &__filler {
+    padding: 50px;
+    text-align: center;
+    font-size: 16px;
+    color: $mineShaft;
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    border-bottom: 1px solid #c4c7c9;
+  }
+  z-index: 1;
+  &__close {
+    cursor: pointer;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+  }
+  &__container {
+    padding: 24px;
+  }
+  &__title {
+    color: #6c6c6c;
+    margin-top: 10px;
+    margin-bottom: 2px;
+  }
+  &__data {
+    &--small {
+      line-height: 30px;
+      white-space: pre;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      svg {
+        height: 15px !important;
+        width: 15px !important;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+      font-size: 12px;
+    }
+  }
+  input {
+    height: 23px;
+    width: 160px;
+    border-radius: 7px;
+    font-size: 16px;
+    padding-right: 30px;
+    background: url('~Images/icons/icon-search.svg') no-repeat right 5px center;
+    background-size: 20px;
+  }
+  &__meta {
+    &__search {
+      justify-content: space-between;
+    }
+    &__table{
+      height: 240px;
+      border: 1px solid #979797;
+      overflow: scroll;
+    }
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      height: 24px;
+      span {
+        color: #6c6c6c;
+        line-height: 24px;
+        padding-left: 10px;
+        width: 50%;
+      }
+      border-bottom: 2px solid #6c6c6c;
+    }
+    &__entry {
+      display: flex;
+      justify-content: space-between;
+      height: 24px;
+      border-bottom: 1px solid #979797;
+      span {
+        line-height: 24px;
+        padding-left: 10px;
+        width: 50%;
+      }
+    }
+  }
+}

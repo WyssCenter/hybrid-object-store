@@ -1,0 +1,54 @@
+@import '~Styles/_imports.scss';
+
+
+.CreateGroupModal {
+  margin: 0em 0 1em;
+
+  td {
+    padding: 2em 1em;
+    .InputText__input {
+      margin-left: 0;
+    }
+  }
+
+  &__buttons {
+    margin-top: 1em;
+  }
+
+
+  &__filler {
+    flex: 1;
+  }
+
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+
+    margin: 0 auto;
+
+    max-width: 71em;
+    background-color: $background-color;
+
+    padding: 1em;
+
+
+    .Button {
+      margin-top: 2.2em;
+    }
+
+  }
+}
+
+@media screen and (max-width: 1235px) {
+  .CreateGroup {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    td {
+      width: 100%;
+    }
+
+  }
+}

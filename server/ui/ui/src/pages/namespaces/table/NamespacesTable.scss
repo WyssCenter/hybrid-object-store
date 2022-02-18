@@ -1,0 +1,18 @@
+.NamespacesTable {
+
+  &__th--empty {
+    max-width: 2em;
+  }
+
+  th {
+    padding: 1em;
+  }
+
+  &__actions {
+    padding: 0 0 1em;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+  }
+
+}

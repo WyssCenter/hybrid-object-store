@@ -1,0 +1,17 @@
+.Account {
+  margin: 0 auto;
+  &__header {
+    h2 {
+      margin-left: .5em;
+      margin-bottom: 1rem;
+    }
+  }
+  &__profile {
+    margin: 2em;
+  }
+  &__password {
+    display: flex;
+    align-items: center;
+    height: 5em;
+  }
+}

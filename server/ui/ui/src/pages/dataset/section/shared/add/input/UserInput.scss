@@ -1,0 +1,12 @@
+.UserInput {
+  display: flex;
+  align-items: flex-end;
+  align-content: flex-end;
+  padding: 10px;
+  .InputText__label {
+    text-transform: none !important;
+  }
+  .InputText__input {
+    margin-bottom: 0;
+  }
+}

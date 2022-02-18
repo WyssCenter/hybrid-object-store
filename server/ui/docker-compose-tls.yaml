@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  ui:
+      labels:
+      - "traefik.http.routers.ui.entrypoints=websecure"
+      - "traefik.http.routers.ui.tls=true"
+      - "traefik.http.routers.ui.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.ui.tls.domains[0].main=${DOMAIN}"
+      - "traefik.http.routers.ui-redirect.entrypoints=web"
+      - "traefik.http.routers.ui-redirect.rule=Host(`${DOMAIN}`) && PathPrefix(`/ui`)"
+      - "traefik.http.routers.ui-redirect.middlewares=ui-redirectscheme@docker"
+      - "traefik.http.middlewares.ui-redirectscheme.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.ui-redirectscheme.redirectscheme.permanent=true"

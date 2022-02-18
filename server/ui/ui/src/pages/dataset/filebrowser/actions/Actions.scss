@@ -1,0 +1,76 @@
+@import '~Styles/_imports.scss';
+
+
+.Actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 25px;
+  line-height: 0;
+  button {
+    margin: 0 5px !important;
+    max-width: 75px;
+  }
+  &__Button {
+    width: 28px;
+    height: 28px;
+    border: 0;
+    background: none;
+    padding: 0;
+    &:hover {
+      svg {
+        display: none;
+      }
+    }
+    &--add:hover {
+      background: var(--main-color) url('~Images/icons/file-new-folder-inverted.svg') no-repeat center center;
+      border-radius: 50%;
+    }
+    &--delete:hover {
+      background: var(--main-color) url('~Images/icons/file-delete-inverted.svg') no-repeat center center;
+      border-radius: 50%;
+    }
+    &--rename:hover {
+      background: var(--main-color) url('~Images/icons/file-edit-inverted.svg') no-repeat center center;
+      border-radius: 50%;
+    }
+    &--download:hover {
+      background: var(--main-color) url('~Images/icons/file-download-inverted.svg') no-repeat center center;
+      border-radius: 50%;
+    }
+    &--disabled {
+      background: var(--main-color) url('~Images/icons/file-download-inactive.svg') no-repeat center center !important;
+      border-radius: 50%;
+      svg {
+        display: none;
+      }
+    }
+  }
+  &--search {
+    .Actions__Button {
+      &--rename, &--rename:hover {
+        cursor: auto;
+        svg {
+          display: none;
+        }
+        background:  url('~Images/icons/file-edit-inactive.svg') no-repeat center center !important;
+      }
+      &--delete, &--delete:hover {
+        cursor: auto;
+        svg {
+          display: none;
+        }
+        background:  url('~Images/icons/file-delete-inactive.svg') no-repeat center center !important;
+
+      }
+      &--add, &--add:hover {
+        cursor: auto;
+        svg {
+          display: none;
+        }
+        background: #E7E7E7 url('~Images/icons/icon-browser-folder-add-inactive.svg') no-repeat center center !important;
+        border-radius: 50%;
+      }
+    }
+  }
+}

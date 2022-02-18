@@ -1,0 +1,99 @@
+version: '3.7'
+
+services:
+  minio:
+    build:
+      context: ./
+      dockerfile: ./datastore/Dockerfile
+      args:                                                                      
+        AUTH_ENDPOINT: ${AUTH_SERVICE_ENDPOINT}           
+    volumes:
+      - ${NAS_ROOT}:/container/vol
+      - ${HOSS_DIR}/data/events:/container/events
+    expose:
+      - "9000"
+    user: "${UID}:${GID}"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+      MINIO_ETCD_ENDPOINTS: http://etcd-0:2379
+      MINIO_IDENTITY_OPENID_CONFIG_URL: ${AUTH_SERVICE_ENDPOINT}/.well-known/openid-configuration
+      MINIO_IDENTITY_OPENID_CLIENT_ID: HossServer
+      MINIO_IDENTITY_OPENID_SCOPES: "openid,email,profile,hoss"
+      MINIO_IDENTITY_OPENID_CLAIM_NAME: "nickname"
+      MINIO_NOTIFY_AMQP_ENABLE: "on"
+      MINIO_NOTIFY_AMQP_URL: "amqp://${RABBITMQ_USER}:${RABBITMQ_PASS}@rabbitmq:5672"
+      MINIO_NOTIFY_AMQP_EXCHANGE: "hoss"
+      MINIO_NOTIFY_AMQP_EXCHANGE_TYPE: "direct"
+      MINIO_NOTIFY_AMQP_ROUTING_KEY: "bucket_notifications"
+      MINIO_NOTIFY_AMQP_MANDATORY: "on"
+      MINIO_NOTIFY_AMQP_DURABLE: "on"
+      MINIO_NOTIFY_AMQP_NO_WAIT: "off"
+      MINIO_NOTIFY_AMQP_AUTO_DELETED: "off"
+      MINIO_NOTIFY_AMQP_DELIVERY_MODE: 2
+      MINIO_NOTIFY_AMQP_QUEUE_DIR: '/container/events'
+      MINIO_NOTIFY_AMQP_QUEUE_LIMIT: '100000'
+      MINIO_NOTIFY_AMQP_COMMENT: Notification queue for bucket events requested for HOSS site sync
+      #MINIO_BROWSER_REDIRECT_URL: http://localhost/ui
+    # Note, we're not yet passing the console through, but it's running on 9001 for future use.
+    command: gateway nas /container/vol --console-address ":9001"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+    depends_on:
+      - reverse-proxy
+      - rabbitmq
+      - etcd-0
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.http.routers.minio.rule=Host(`${DOMAIN}`) && (PathPrefix(`/`) || PathPrefix(`/minio`))"
+      - "traefik.http.routers.minio.priority=1"
+      - "traefik.http.routers.minio.service=minio-store"
+      - "traefik.http.services.minio-store.loadbalancer.server.port=9000"
+      - "traefik.http.middlewares.ui-redirectregex.redirectregex.regex=^${UI_REDIRECT_REGEX}$$"
+      - "traefik.http.middlewares.ui-redirectregex.redirectregex.replacement=${EXTERNAL_HOSTNAME}/ui"
+      - "traefik.http.routers.minio.middlewares=ui-redirectregex@docker"
+    networks:
+      - internal
+      - web
+    restart: always
+    deploy:
+      mode: replicated
+      replicas: 1
+
+  etcd-0:
+    image: gcr.io/etcd-development/etcd:v3.3.9
+    hostname: etcd-0
+    command:
+      - etcd
+      - --name=etcd-0
+      - --data-dir=/etcd-data
+      - --advertise-client-urls=http://etcd-0:2379
+      - --listen-client-urls=http://0.0.0.0:2379
+      - --initial-advertise-peer-urls=http://etcd-0:2380
+      - --listen-peer-urls=http://0.0.0.0:2380
+      - --initial-cluster=etcd-0=http://etcd-0:2380
+      - --initial-cluster-state=new
+      - --initial-cluster-token=tkn
+    volumes:
+      - etcd-0vol:/etcd-data
+    ports:
+      - "2379:2379"
+      - "2380:2380"
+    deploy:
+      replicas: 1
+    restart: always
+    networks:
+      - internal
+
+  # If minio is enabled locally, make core dependent on it
+  core:    
+    depends_on:
+      - minio
+
+volumes:
+  etcd-0vol:
+    driver: local

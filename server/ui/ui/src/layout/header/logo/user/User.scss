@@ -1,0 +1,73 @@
+@import '~Styles/_imports.scss';
+
+.User {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+
+  a {
+    text-align: center;
+
+    &:hover {
+      color: white !important;
+    }
+  }
+
+  &__li {
+    border-bottom: 1px solid var(--main-color);
+    padding: 0.5em 1em;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    color: var(--main-color);
+
+
+    &:hover {
+      color: $white;
+      background: var(--main-color) !important;
+    }
+
+    &:last-child {
+      border-width: 0;
+    }
+  }
+
+  &__menu {
+    padding: 0;
+    position: absolute;
+    top: 2rem;
+    right: -12px;
+    background: $white;
+    border: 1px solid var(--main-color);
+    width: 360px;
+  }
+
+  &__button {
+    &--flat {
+      background: transparent;
+      height: 100%;
+      width: 100%;
+      border: 0;
+    }
+
+    &--user {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: $white;
+      background: transparent;
+      line-height: 2rem;
+      border: none;
+    }
+  }
+
+  &__arrow {
+    width: 1em;
+    height: 1em;
+    svg {
+      height: 1em;
+      width: 1em;
+    }
+  }
+}

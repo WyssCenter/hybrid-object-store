@@ -1,0 +1,64 @@
+@import '~Styles/_imports.scss';
+
+
+.File {
+  display: flex;
+  align-items: center;
+  height: 35px;
+  color: $mineShaft;
+  margin: 0 -30px;
+  padding: 0 30px;
+  text-align: center;
+  position: relative;
+  border-bottom: 1px solid #c4c7c9;
+
+
+  &--focused {
+    background-color: rgba(var(--main-rgb), 0.17);
+  }
+
+  &__checkbox {
+    width: 20px;
+    height: 20px;
+    border: solid 1.5px $romanSilver;
+    cursor: pointer;
+    margin-right: 50px;
+    &--selected {
+      background: var(--main-color) url('~Images/icons/checkbox-selected.svg') no-repeat center center;
+      background-size: 20px;
+    }
+    &:hover {
+      box-shadow: 0 0px 12px 0 rgba(0,0,0,.50);
+    }
+    &--placeholder {
+      width: 70px;
+    }
+  }
+
+  &__icon {
+    margin-right: 5px;
+    color: var(--main-color);
+    align-self: center;
+  }
+
+  &__file {
+    display: flex;
+    text-align: left;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre;
+    input {
+      height: 26px;
+    }
+  }
+  &__size {
+    width: 100px;
+  }
+  &__modified {
+    width: 150px;
+  }
+  &__action {
+    width: 200px;
+  }
+}

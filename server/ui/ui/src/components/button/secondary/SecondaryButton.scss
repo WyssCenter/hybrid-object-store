@@ -1,0 +1,32 @@
+@import '~Styles/_imports.scss';
+
+.SecondaryButton {
+  width: 162px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  margin: 0 12.5px;
+  cursor: pointer;
+
+  color: var(--main-color);
+  border: var(--main-color) 1px solid;
+  border-radius: 4px;
+  background: $white;
+
+  font-weight: 400;
+  line-height: 1rem;
+
+  &:hover {
+    @include boxShadowDark();
+  }
+
+  &:disabled,
+  &:hover:disabled {
+    overflow: hidden;
+    border: 0;
+    background-color: $romanSilver;
+    border: $romanSilver 1px solid;
+    box-shadow: none !important;
+
+    color: $white;
+  }
+}

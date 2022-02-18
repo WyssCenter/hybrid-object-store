@@ -1,0 +1,30 @@
+@import '~Styles/_imports.scss';
+
+.NamespaceList {
+  &__th--empty {
+    width: 2em;
+  }
+
+  &__td {
+    &--center {
+      text-align: center;
+      button {
+        width: 12em !important;
+      }
+    }
+  }
+
+  &__actions {
+    align-items: flex-end;
+  }
+
+  &__empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 5em;
+    border-bottom: 1px solid $romanSilver;
+  }
+
+}

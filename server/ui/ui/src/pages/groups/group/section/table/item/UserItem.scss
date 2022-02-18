@@ -1,0 +1,20 @@
+@import '~Styles/_imports.scss';
+
+.UserItem {
+  td {
+    border-bottom: 1px solid $romanSilver;
+  }
+
+  th {
+    border-bottom: 2px solid $romanSilver;
+  }
+
+  &__td--actions {
+    width: 4em;
+  }
+
+  &__actions {
+    text-align: center;
+    width: 4em;
+  }
+}

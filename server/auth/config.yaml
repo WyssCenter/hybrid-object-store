@@ -1,0 +1,17 @@
+dev_server: true
+client_id: HossServer
+client_secret: temp-app-secret
+open_id_config_file: "/opt/openid-config.json"
+issuer: "http://dex:5556/dex"
+admin_group: "admin"
+privileged_group: "developers"
+token_expiration_hours:
+  access: 6
+  id: 6
+  refresh: 24
+additional_allowed_servers: []
+password_policy:
+  min_length: 8
+  require_uppercase: false
+  require_special: false
+username_claim: nil

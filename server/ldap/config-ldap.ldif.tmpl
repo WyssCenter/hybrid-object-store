@@ -1,0 +1,65 @@
+# In this default bootstrap configuration some additional items are created.
+#
+# An admin LDAP account is created by default (password in the env file).
+# A `readonly` account is created by default and used by Dex as the bind account (password in the env file).
+#
+# This file then adds an organization unit for user accounts (People) and roles (Groups)
+# Some test users are added that should be deleted in a real install
+
+# Create People organizational unit to hold users
+dn: ou=People,{{ldap_base_dn}}
+objectClass: organizationalUnit
+ou: People
+
+# Create test users (so a user with each role exists)
+dn: cn=admin,ou=People,{{ldap_base_dn}}
+objectClass: person
+objectClass: inetOrgPerson
+sn: smith
+cn: admin
+mail: admin@example.com
+userpassword: foo
+
+dn: cn=privileged,ou=People,{{ldap_base_dn}}
+objectClass: person
+objectClass: inetOrgPerson
+sn: smith
+cn: privileged
+mail: privileged@example.org
+userpassword: bar
+
+dn: cn=user,ou=People,{{ldap_base_dn}}
+objectClass: person
+objectClass: inetOrgPerson
+sn: smith
+cn: user
+mail: user@example.org
+userpassword: password
+
+dn: cn=test,ou=People,{{ldap_base_dn}}
+objectClass: person
+objectClass: inetOrgPerson
+sn: User
+givenName: Test
+cn: test
+mail: test.user@example.com
+userpassword: foobar
+
+# Create Groups organizational unit to groups users with role
+dn: ou=Groups,{{ldap_base_dn}}
+objectClass: organizationalUnit
+ou: Groups
+
+# Users not in either of these groups will have the "default" role
+# Admin users
+dn: cn=admins,ou=Groups,{{ldap_base_dn}}
+objectClass: groupOfNames
+cn: admins
+member: cn=admin,ou=People,{{ldap_base_dn}}
+
+# "Priviledged" users
+dn: cn=developers,ou=Groups,{{ldap_base_dn}}
+objectClass: groupOfNames
+cn: developers
+member: cn=privileged,ou=People,{{ldap_base_dn}}
+

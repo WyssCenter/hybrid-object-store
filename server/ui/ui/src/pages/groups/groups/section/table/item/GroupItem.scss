@@ -1,0 +1,16 @@
+@import '~Styles/_imports.scss';
+
+.GroupItem {
+  td {
+    border-bottom: 1px solid $romanSilver;
+  }
+
+  &__td--actions {
+    width: 4em;
+  }
+
+  &__actions {
+    text-align: center;
+    width: 4em;
+  }
+}

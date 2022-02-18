@@ -1,0 +1,11 @@
+@import '~Styles/_imports.scss';
+
+.Checkbox {
+  label {
+    cursor: pointer;
+  }
+
+  span {
+    padding: 0 .5em;
+  }
+}

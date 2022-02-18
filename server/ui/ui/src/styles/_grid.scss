@@ -1,0 +1,135 @@
+.grid{
+  @include grid();
+  margin: 0 auto;
+  width: auto;
+}
+
+.column-1-span-1{
+  @include spanColumns(1, 1);
+}
+
+.column-1-span-2{
+  @include spanColumns(2, 1);
+}
+
+.column-1-span-3{
+  @include spanColumns(3, 1);
+}
+
+.column-1-span-4 {
+  @include spanColumns(4, 1);
+}
+
+.column-1-span-5{
+  @include spanColumns(5, 1);
+}
+
+.column-1-span-6 {
+  @include spanColumns(6, 1);
+}
+
+.column-1-span-7{
+  @include spanColumns(7, 1);
+}
+
+.column-1-span-8{
+  @include spanColumns(8, 1);
+}
+
+.column-1-span-9{
+  @include spanColumns(9, 1);
+}
+
+.column-1-span-10{
+  @include spanColumns(10, 1);
+}
+
+.column-1-span-11{
+  @include spanColumns(11, 1);
+}
+
+.column-1-span-12{
+  @include spanColumns(12, 1);
+}
+
+.column-2-span-6{
+  @include column(2);
+  &--shrink {
+    @include columnShrink(2, 2);
+  }
+}
+
+.column-3-span-4{
+  @include column(3);
+  &--shrink {
+    @include columnShrink(3, 2);
+  }
+}
+
+.column-4-span-3{
+  @include column(4);
+  &--shrink {
+    @include columnShrink(4, 2);
+  }
+}
+
+.column-6-span-2{
+  @include column(6);
+  &--shrink {
+    @include columnShrink(6, 2);
+  }
+}
+
+.column-12-span-1{
+  @include column(12);
+  &--shrink {
+    @include columnShrink(12, 2);
+  }
+}
+
+
+/*
+	--vertical Grid stuff--
+*/
+.grid-v-1 {
+  height: 5em;
+}
+.grid-v-2 {
+  height: 11em;
+}
+.grid-v-3 {
+  height: 17em;
+}
+.grid-v-4 {
+  height: 23em;
+}
+.grid-v-5 {
+  height: 29em;
+}
+.grid-v-6 {
+  height: 35em;
+}
+.grid-v-7 {
+  height: 41em;
+}
+.grid-v-8 {
+  height: 47em;
+}
+.grid-v-9 {
+  height: 53em;
+}
+.grid-v-10 {
+  height: 59em;
+}
+.grid-v-11 {
+  height: 65em;
+}
+.grid-v-12 {
+  height: 71em;
+}
+
+@media screen and (max-width: 1124px) and (min-width: 0) {
+  .column-3-span-4--shrink:nth-child(2){
+    margin: 12.5px 2px !important;
+  }
+}

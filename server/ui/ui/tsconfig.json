@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "jsx": "react",
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "outDir": "./build/",
+    "preserveConstEnums": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "target": "es5",
+    "baseUrl": "./",
+    "suppressImplicitAnyIndexErrors": true,
+    "paths": {
+      "Components/*": ["src/components/*"],
+      "Hooks/*": ["src/hooks/*"],
+      "Shared/*": ["src/shared/*"],
+      "Layout/*": ["src/layout/*"],
+      "Environment/*": ["src/environment/*"],
+      "Pages/*": ["src/pages/*"],
+      "Images/*": ["src/images/*"],
+      "Src/*": ["src/*"],
+    }
+  },
+  "include": [
+    "src/index.tsx",
+    "src/types/svg.d.ts"
+  ],
+  "exclude": [
+    "src/auth/**"
+  ],
+  "lib": ["es2015", "es2016", "dom", "es2018.promise"],
+}

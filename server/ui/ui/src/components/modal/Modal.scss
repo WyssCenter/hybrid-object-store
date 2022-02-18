@@ -1,0 +1,146 @@
+@import '~Styles/_imports.scss';
+
+.Modal {
+  &__content {
+    z-index: 100;
+
+    overflow: hidden;
+
+    padding: 0 40px;
+
+    transition: all 0.25s;
+
+    @include flex(flex-start, column);
+  }
+  &__wrapper {
+    z-index: 100;
+  }
+  &__container{
+    height: calc(100%);
+    padding: 20px;
+    hr {
+      width: calc(100% - 2px) !important;
+      margin-top: 10px;
+      margin-bottom: 10px;
+
+      opacity: 0.3 !important;
+      border-width: 1px;
+      border-color: var(--main-color) !important;
+      background-color: var(--main-color) !important;
+    }
+  }
+
+  &__button-container {
+     width: 100%;
+     @include flex(flex-end, row);
+  }
+
+  &__sub-container {
+    height: calc(100% - 60px);
+    padding: 0 20px;
+
+    @include flex(flex-start, column);
+    button{
+      align-self: center;
+    }
+    &--nopadding{
+      margin-top: -11px;
+      padding: 0;
+    }
+  }
+
+  &__content {
+    border-top: 7px solid var(--main-color) !important;
+    border-bottom: 7px solid var(--main-color) !important;
+    &--noPadding {
+      padding: 0 !important;
+    }
+    &--longer {
+      padding: 0 60px 20px 60px;
+      @include modal(600px, 735px);
+    }
+    &--large-full {
+      padding: 0;
+      @include modal(500px, 960px);
+      .Modal__header {
+        color: $primaryText;
+        font-size: 24px !important;
+      }
+    }
+
+    &--large-long {
+      padding: 0 60px 20px 60px;
+      position: fixed;
+      left: 50%;
+      top: 15px;
+      bottom: 15px;
+      width: 960px;
+      max-height: 1000px;
+      margin: 0 0 0 -480px;
+      border: 1px solid #fefefe;
+      border-radius: 8px;
+      background-color: #fefefe;
+      box-shadow: 0 0px 12px 0 rgba(0, 0, 0, 0.1);
+
+      @include animation('slide-up-fade-in forwards .25s');
+    }
+
+    &--medium {
+      @include modal(440px, 735px);
+    }
+
+    &--small {
+      padding: 0;
+
+      @include modal(200px, 300px);
+      p {
+        line-height: 20px;
+      }
+    }
+  }
+
+  &__cover{
+    position: fixed;
+    z-index: 99;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+
+    opacity: 0.5;
+    background-color: $slateBlueOpaque;
+
+    @include animation('fade-in-modal forwards .25s');
+  }
+
+  &__close{
+    border: none;
+    @include close();
+  }
+
+  &__pre-header{
+    margin: 0;
+
+    text-align: center;
+
+    color: var(--main-color);
+  }
+
+  // modal header
+
+  &__header{
+    margin: 0;
+    padding: 0px 0 5px 20px;
+
+    text-align: center;
+    white-space: nowrap;
+
+    color: var(--main-color);
+    background-size: 50px;
+
+    font-weight: 600;
+
+    @include flex(center, row);
+  }
+
+}

@@ -1,0 +1,19 @@
+@import '~Styles/_imports.scss';
+
+
+.NamespaceDetails {
+  padding: 1em;
+
+  background: $background-color;
+
+  &__permission {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+
+    .column-1-span-2 {
+      padding: 10px;
+    }
+  }
+}

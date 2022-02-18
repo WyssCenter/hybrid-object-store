@@ -1,0 +1,41 @@
+@import '~Styles/_imports.scss';
+
+.IconButton {
+  width: 2em;
+  height: 2em;
+  padding: .5em;
+  margin: 0 12.5px;
+  cursor: pointer;
+
+  border: 0;
+  border-radius: 50%;
+  background: var(--main-color);
+
+  font-weight: 400;
+  line-height: 1rem;
+
+
+  &--primary {
+    background: var(--main-color);
+  }
+
+  &--transparent {
+    background: transparent;
+  }
+
+  &---white {
+    background: $white;
+  }
+
+  &:hover {
+    @include boxShadowDark();
+  }
+
+  &:disabled,
+  &:hover:disabled {
+    overflow: hidden;
+    border: 0;
+    background-color: $romanSilver;
+    box-shadow: none !important;
+  }
+}

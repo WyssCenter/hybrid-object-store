@@ -1,0 +1,11 @@
+@import '~Styles/_imports.scss';
+
+
+.Loading {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+
+  height: calc(100vh - 12em);
+}

@@ -1,0 +1,47 @@
+global:
+  checkNewVersion: true
+  sendAnonymousUsage: false
+
+log:
+  level: WARNING
+
+entryPoints:
+  web:
+    address: ":80"
+  websecure:
+    address: ":443"
+
+providers:
+  docker:
+    endpoint: "unix:///var/run/docker.sock"
+    watch: true
+    network: "web"
+    exposedbydefault: false
+
+accessLog:
+  format: "json"
+
+api:
+  insecure: false
+
+certificatesResolvers:
+  letsencrypt:
+    acme:
+      # Email address used for registration.
+      email: {{email}}
+
+      # File or key used for certificates storage.
+      storage: "acme.json"
+
+      # CA server to use.
+      # Uncomment the line to use Let's Encrypt's staging server,
+      # leave commented to go to prod.
+      #
+      # Optional
+      # Default: "https://acme-v02.api.letsencrypt.org/directory"
+      #
+      # caServer: "https://acme-staging-v02.api.letsencrypt.org/directory"
+
+      # Use a HTTP-01 ACME challenge.
+      httpChallenge:
+        entryPoint: web

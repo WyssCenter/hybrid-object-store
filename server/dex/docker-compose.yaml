@@ -1,0 +1,30 @@
+version: "3.7"
+services:
+  dex:
+    image: ghcr.io/dexidp/dex:v2.30.2
+    ports:
+      - "5556"
+    volumes:
+      - type: bind
+        source: ~/.hoss/auth/config-dex.yaml
+        target: /opt/config.yaml
+        read_only: true
+      - type: bind
+        source: ~/.hoss/auth/web
+        target: /opt/web
+        read_only: true
+      - type: bind
+        source: ~/.hoss/auth/certificates
+        target: /opt/certificates
+        read_only: true
+    command: dex serve /opt/config.yaml
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.http.routers.dex.rule=Host(`${DOMAIN}`) && PathPrefix(`/dex`)"
+      - "traefik.http.middlewares.dex-prefix.stripprefix.forceSlash=false"
+      - "traefik.http.routers.dex.middlewares=dex-prefix@docker"
+    networks:
+      - web
+      - internal
+    restart: always

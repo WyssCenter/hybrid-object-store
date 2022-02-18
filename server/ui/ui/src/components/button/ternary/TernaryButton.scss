@@ -1,0 +1,33 @@
+@import '~Styles/_imports.scss';
+
+.TernaryButton {
+  width: 100px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  margin: 0 12.5px;
+  cursor: pointer;
+
+  color: var(--main-color);
+  border: 0;
+  border-radius: 4px;
+  background: $white;
+
+  text-decoration: underline;
+  text-align: center;
+
+  font-weight: 400;
+  line-height: 1rem;
+
+  &:hover {
+    font-weight: bold;
+  }
+
+  &:disabled,
+  &:hover:disabled {
+    overflow: hidden;
+    border: 0;
+    box-shadow: none !important;
+
+    color: var(--main-color);
+  }
+}

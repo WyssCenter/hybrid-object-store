@@ -1,0 +1,42 @@
+version: "3.9"
+services:
+  sync:
+    build:
+      context: ./
+      dockerfile: ./sync/Dockerfile
+    image: hoss-sync:${VERSION}
+    environment:
+      AMQP_URL: "amqp://${RABBITMQ_USER}:${RABBITMQ_PASS}@rabbitmq:5672"
+      SERVICE_AUTH_SECRET: ${SERVICE_AUTH_SECRET}
+      AWS_EXECUTION_ENV: hoss-sync-service
+    volumes:
+      - type: bind
+        source: ~/.hoss/sync/config.yaml
+        target: /opt/config.yaml
+        read_only: true
+      - type: bind
+        source: ~/.hoss/sync/aws_credentials
+        target: /home/gig/.aws/credentials
+        read_only: true
+    depends_on:
+      - rabbitmq
+      - opensearch
+    networks:
+      - internal
+    restart: always
+
+  rabbitmq:
+    image: rabbitmq:3.8.26-management-alpine
+    environment:
+      RABBITMQ_ERLANG_COOKIE: ${RABBITMQ_COOKIE}
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASS}
+    volumes:
+      - rabbitmq-data:/var/lib/rabbitmq
+    restart: always
+    networks:
+      - internal
+
+volumes:
+  rabbitmq-data:
+    driver: local

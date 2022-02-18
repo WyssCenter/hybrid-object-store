@@ -1,0 +1,42 @@
+@import 'Styles/_imports.scss';
+
+.Breadcrumbs {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  font-weight: bold;
+  &__divider {
+    margin: 0 12px;
+  }
+  &__name {
+    display: flex;
+    flex-direction: column;
+  }
+  &__title, &__link {
+    font-size: 24px;
+    margin-top: 5px;
+    line-height: 24px;
+  }
+  &__sub-title {
+    height: 1em;
+    font-size: 10px;
+    font-weight: 100;
+    line-height: 1em;
+  }
+  &__link {
+    color: $primaryText;
+    text-decoration: none;
+
+    &:hover {
+      color: var(--main-color);
+    }
+  }
+  &__description {
+    margin: 0 10px 0 20px;
+    line-height: 30px;
+    border-left: 2px solid var(--main-color);
+    flex: 1;
+    text-align: center;
+    font-weight: normal;
+  }
+}

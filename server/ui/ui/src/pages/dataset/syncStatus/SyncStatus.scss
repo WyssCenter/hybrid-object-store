@@ -1,0 +1,30 @@
+@import '~Styles/_imports.scss';
+
+
+.SyncStatus {
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: .5em;
+  border-radius: .5em;
+  background: $white;
+  border: 1px solid $romanSilver;
+
+  b {
+    white-space: nowrap;
+  }
+
+  * {
+    margin: 0 .5em;
+  }
+
+  &__text {
+    padding: 0 0.5em;
+  }
+
+  &--on {
+    border: 1px solid $green;
+  }
+}

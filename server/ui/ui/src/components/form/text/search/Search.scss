@@ -1,0 +1,16 @@
+@import '~Styles/_imports.scss';
+
+.Search {
+  width: 100%;
+  position: relative;
+
+  input[type="text"]:hover {
+    @include boxShadowDark();
+  }
+
+  &__icon {
+    position: absolute;
+    top: 2.7em;
+    right: 1.5em;
+  }
+}

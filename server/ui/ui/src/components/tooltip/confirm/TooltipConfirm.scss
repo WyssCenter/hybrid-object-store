@@ -1,0 +1,37 @@
+@import '~Styles/_imports.scss';
+
+.TooltipConfirm {
+
+  position: relative;
+  z-index: 10;
+
+  align-items: center;
+
+  display: flex;
+  flex-direction: column;
+
+
+  &__menu {
+    position: absolute;
+    top: 1em;
+    background: $white;
+    border: 1px solid var(--main-color);
+    text-align: center;
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include boxShadow();
+
+    border-radius: .5em;
+  }
+
+  &__pointer {
+    position: absolute;
+    z-index: 1;
+
+    @include triangle('up', 1em, var(--main-color));
+    @include animation('slide-down-fade-in forwards .25s');
+  }
+}

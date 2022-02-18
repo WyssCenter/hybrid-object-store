@@ -1,0 +1,28 @@
+@import '~Styles/_imports.scss';
+
+.Login {
+
+  height: calc(100vh - 12em);
+  width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  // TODO temp css remove when components are complete
+  button {
+    height: 2em;
+    background: var(--main-color);
+    color: $white;
+
+    line-height: 0em;
+
+    padding: 1em 4em;
+
+    border: 0;
+
+    font-size: 20px;
+  }
+
+}

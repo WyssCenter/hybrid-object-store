@@ -1,0 +1,14 @@
+@import '~Styles/_imports.scss';
+
+.CardList {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__link {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

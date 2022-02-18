@@ -1,0 +1,40 @@
+@import '~Styles/_imports.scss';
+
+.InputText {
+  display: flex;
+  flex-direction: column;
+
+
+  &__label {
+    text-transform: capitalize;
+  }
+
+  &__i {
+    &--orange {
+      color: $orange;
+    }
+  }
+
+
+  &__input {
+    height: 31px;
+    line-height: 20px;
+    margin: 5px 0;
+    border: 0;
+    width: 100%;
+    border: 1px solid grey;
+    padding: 0 20px;
+    width: 100%;
+    background: transparent;
+    font-size: 18px;
+    min-width: 0;
+    &:focus {
+      padding: 0 20px;
+      background: white;
+    }
+  }
+
+  :disabled {
+    background: $backgroundGrey;
+  }
+}

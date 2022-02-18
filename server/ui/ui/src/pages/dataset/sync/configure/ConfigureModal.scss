@@ -1,0 +1,48 @@
+@import '~Styles/_imports.scss';
+
+.ConfigureModal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-height: 15em;
+  color: $mineShaft;
+  line-height: 16px;
+  font-size: 14px;
+  button {
+    align-self: flex-end;
+  }
+  textarea {
+    resize: none;
+  }
+  &--centered {
+    text-align: center;
+    font-size: 16px;
+  }
+  &__section {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 0 30px;
+    height: 275px;
+  }
+  &__buttons {
+    width: 100%;
+    height: 70px;
+    margin-top: 80px;
+    border-top: 1px solid rgba(0, 0, 0, 0.25);
+  }
+  &__error {
+    color: $crimson;
+  }
+  &__note {
+    font-size: 14px;
+    color: $mineShaft;
+    padding: 10px;
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: -30px;
+  }
+}

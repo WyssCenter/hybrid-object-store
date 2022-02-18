@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  core:
+    labels:
+      - "traefik.http.routers.core.entrypoints=websecure"
+      - "traefik.http.routers.core.tls=true"
+      - "traefik.http.routers.core.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.core.tls.domains[0].main=${DOMAIN}"
+      - "traefik.http.routers.core-redirect.entrypoints=web"
+      - "traefik.http.routers.core-redirect.rule=Host(`${DOMAIN}`) && PathPrefix(`/core`)"
+      - "traefik.http.routers.core-redirect.middlewares=core-redirectscheme@docker"
+      - "traefik.http.middlewares.core-redirectscheme.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.core-redirectscheme.redirectscheme.permanent=true"

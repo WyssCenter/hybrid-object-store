@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  dex:
+    labels:
+      - "traefik.http.routers.dex.entrypoints=websecure"
+      - "traefik.http.routers.dex.tls=true"
+      - "traefik.http.routers.dex.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.dex.tls.domains[0].main=${DOMAIN}"
+      - "traefik.http.routers.dex-redirect.entrypoints=web"
+      - "traefik.http.routers.dex-redirect.rule=Host(`${DOMAIN}`) && PathPrefix(`/dex`)"
+      - "traefik.http.routers.dex-redirect.middlewares=dex-redirectscheme@docker"
+      - "traefik.http.middlewares.dex-redirectscheme.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.dex-redirectscheme.redirectscheme.permanent=true"
+

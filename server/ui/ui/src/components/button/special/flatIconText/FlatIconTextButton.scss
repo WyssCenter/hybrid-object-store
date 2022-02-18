@@ -1,0 +1,46 @@
+@import '~Styles/_imports.scss';
+
+.FlatIconTextButton {
+  width: calc(100% - 2em);
+  height: 3em;
+  margin: 1em;
+  cursor: pointer;
+  background: none;
+
+  border: 1px dashed var(--main-color);
+  border-radius: .5em;
+
+  font-size: 1.25rem;
+
+  font-weight: 400;
+  line-height: 1rem;
+
+
+  &--primary {
+    color: var(--main-color);
+
+    &:hover {
+      border: 2px dashed var(--main-color);
+    }
+  }
+
+  &--transparent {
+    color: transparent;
+  }
+
+  &---white {
+    color: $white;
+  }
+
+  // &:hover {
+  //   opacity: .75;
+  // }
+
+  &:disabled,
+  &:hover:disabled {
+    overflow: hidden;
+    border: 0;
+    background-color: $romanSilver;
+    box-shadow: none !important;
+  }
+}

@@ -1,0 +1,60 @@
+@import '~Styles/_imports.scss';
+
+
+.FileBrowser {
+  width: 100%;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  &--hovered {
+    background-color: rgba(var(--main-rgb), 0.5);
+  }
+  &--mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0,0,0,.30);
+    z-index: 10;
+    top: 0;
+    left: 0;
+  }
+  &__empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    height: 215px;
+    border: 1px dashed #c4c7c9;
+    padding-top: 50px;
+    background: url('~Images/icons/cloud.svg') no-repeat center top 35px;
+    &--divider {
+      color: #9b9c9e;
+      margin: 10px;
+    }
+    &--text {
+      font-size: 19px;
+    }
+    .Button {
+      text-align: center;
+    }
+  }
+  &__loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 215px;
+    border: 1px dashed #c4c7c9;
+    padding-top: 50px;
+    svg {
+      height: 75px;
+      width: 75px;
+    }
+  }
+  &__Error {
+    text-align: center;
+    font-weight: bold;
+    padding: 50px;
+  }
+}

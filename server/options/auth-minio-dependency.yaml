@@ -1,0 +1,5 @@
+# Included if auth is enabled locally and minio is enabled.
+services:
+  minio:   
+    depends_on:
+      - auth

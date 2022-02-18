@@ -1,0 +1,9 @@
+# This is added if the `HEALTH_CHECK_HOST` env var is set. Will let an internal route (e.g. private IP of an EC2 
+# instance behind a load balancer) resolve instead of just the external domain.
+services:
+  core:
+    labels:
+      - "traefik.http.routers.core-health.rule=Host(`${HEALTH_CHECK_HOST}`) && PathPrefix(`/core`)"
+      - "traefik.http.middlewares.core-health-prefix.stripprefix.prefixes=/core"
+      - "traefik.http.middlewares.core-health-prefix.stripprefix.forceSlash=false"
+      - "traefik.http.routers.core-health.middlewares=core-health-prefix@docker"

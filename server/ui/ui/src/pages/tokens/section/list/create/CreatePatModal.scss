@@ -1,0 +1,40 @@
+@import '~Styles/_imports.scss';
+
+
+.CreatePatModal {
+  margin: 0em 0 1em;
+  min-height: 100%;
+
+
+  &__filler {
+    flex: 1;
+  }
+
+  &__form {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+
+    padding: 1em 0;
+
+
+  }
+
+  &__flex {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 2.2em;
+    align-items: flex-end;
+
+  }
+
+  &__buttons {
+    align-content: flex-end;
+    align-self: flex-end;
+    margin-bottom: .4em;
+  }
+}

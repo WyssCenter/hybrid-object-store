@@ -1,0 +1,77 @@
+/*******************
+*
+*  color palette
+*
+*********************/
+/*********************
+*
+* primary colors
+*
+**********************/
+$primary: #957299;
+$secondary: #2f8da3;
+$slateBlue: #364454;
+$primaryText: #0b1425;
+$slateBlueOpaque: rgba(54,68,84, 0.6);
+$primary-light: rgba(39,70,134, 0.5);
+/*********************
+*
+* seconday colors
+*
+**********************/
+$crimson: #e71d37;
+$goldenLemon: #ECA400;
+$romanSilver: #9b9c9e;
+$grey: #b9babc;
+$lightGrey: #f3f5f7;
+$lightBlue: #97c0d5;
+$tintBlue: #274686;
+$backgroundGrey: rgb(196, 199, 201);
+$lightblue: #74a4bc;
+$selected-blue: #53667C;
+$mineShaft: #4A4A4A;
+$orange: rgb(236, 128, 11);
+$green: #39b983;
+$primaryLight: #95729950;
+
+
+$gradient: linear-gradient(230deg, #0b1425, #274686);
+// $landing-gradient: linear-gradient(263deg, $primaryText, #274686);
+
+
+/***********************
+*
+* temporary colors
+*
+***********************/
+
+$font-grey: #9c9b9b;
+$background-color: rgb(240, 241, 245);
+
+
+
+$white: #fefefe;
+
+/*********************
+*
+* font sizes
+*
+***********************/
+$h1-fontsize: 3.052em;
+$h2-fontsize: 2.441em;
+$h3-fontsize: 1.953em;
+$h4-fontsize: 1.563em;
+$h5-fontsize: 1.25em;
+$h6-fontsize: 1em;
+$body-fontsize: 15px !default;
+$tooltip: 0.8em;
+$small-fontsize: 0.8em;
+$annotation: 0.64em;
+$superscript: 0.512em;
+/*****************************
+*
+* width
+*
+********************************/
+
+$sideBarWidth: 140px;

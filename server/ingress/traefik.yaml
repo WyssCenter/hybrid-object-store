@@ -1,0 +1,23 @@
+global:
+  checkNewVersion: true
+  sendAnonymousUsage: false
+  
+log:
+  level: INFO
+
+entryPoints:
+  web:
+    address: ":80"
+
+providers:
+  docker:
+    endpoint: "unix:///var/run/docker.sock"
+    watch: true
+    network: "web"
+    exposedbydefault: false
+
+accessLog:
+  format: "json"
+
+api:
+  insecure: true

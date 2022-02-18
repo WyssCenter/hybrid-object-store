@@ -1,0 +1,91 @@
+@import '~Styles/_imports.scss';
+
+
+.StaticButtons {
+  display: flex;
+  justify-content: flex-end;
+
+  &__Button {
+    svg {
+      margin-right: 5px;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 24px;
+    margin: 1.3px 12px 12px 12px;
+    padding: 0 8px 0 8px;
+    border-radius: 13px;
+    border: solid 0 #f1f1f1;
+    background-color: #f1f1f1;
+    color: var(--main-color);
+    line-height: 24px;
+    cursor: pointer;
+    &:hover {
+      color: #f1f1f1;
+      background-color: var(--main-color);
+      svg {
+        visibility: hidden;
+      }
+    }
+    &--search:hover {
+      background: var(--main-color) url('~Images/icons/icon-search-inverted.svg') no-repeat left 8px center;
+    }
+    &--add:hover {
+      background: var(--main-color) url('~Images/icons/icon-browser-folder-add-inverted.svg') no-repeat left 8px center;
+    }
+    &--upload:hover {
+      background: var(--main-color) url('~Images/icons/icon-file-upload-inverted.svg') no-repeat left 8px center;
+    }
+  }
+
+  &--search {
+    .StaticButtons__Button {
+      color: #a7a7a7;
+      cursor: auto;
+      svg {
+        visibility: hidden
+      }
+      &--add, &--add:hover {
+        background: #E7E7E7 url('~Images/icons/icon-browser-folder-add-inactive.svg') no-repeat left 8px center;
+      }
+      &--upload, &--upload:hover {
+        background: #E7E7E7 url('~Images/icons/icon-file-upload-inactive.svg') no-repeat left 8px center;
+      }
+    }
+  }
+
+  @keyframes width-grow {
+    0% { min-width: 30% }
+    100% { min-width: 100% }
+  }
+
+  &__searchResults {
+    height: 24px;
+    line-height: 24px;
+    color: $white;
+    padding-left: 50px;
+    background: var(--main-color) url('~Images/icons/icon-search-inverted.svg') no-repeat left 8px center;
+    border-radius: 13px;
+    &--loading {
+      background: #f1f1f1;
+      &--text {
+        border-radius: 13px;
+        margin-left: -50px;
+        padding: 0 50px;
+        background: var(--main-color) url('~Images/icons/icon-search-inverted.svg') no-repeat left 8px center;
+        animation: width-grow forwards 5s;
+      }
+    }
+    button {
+      border: none;
+      border-radius: 13px;
+      padding-left: 25px;
+      background: var(--main-color) url('~Images/icons/icon-close-search.svg') no-repeat left 5px center;
+      margin-right: 10px;
+      &:hover {
+        font-weight: bold;
+      }
+    }
+  }
+}

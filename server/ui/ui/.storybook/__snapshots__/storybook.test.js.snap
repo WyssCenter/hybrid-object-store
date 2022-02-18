@@ -1,0 +1,4045 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Auth/Pages/Authenticating Authenticating Comp 1`] = `
+<div>
+  Authenticating
+</div>
+`;
+
+exports[`Storyshots Auth/Pages/Error Error Comp 1`] = `
+<div>
+  Error
+</div>
+`;
+
+exports[`Storyshots Auth/Pages/Loading Loading Comp 1`] = `
+<div>
+  Loading
+</div>
+`;
+
+exports[`Storyshots Auth/Pages/Login Login Comp 1`] = `
+<div
+  className="Login"
+>
+  <button
+    onClick={[Function]}
+  >
+    Login
+  </button>
+</div>
+`;
+
+exports[`Storyshots Components/AddCard Add Card Comp 1`] = `
+<div>
+  <div
+    id="AddCard"
+  />
+  <div
+    className="Card AddCard column-4-span-3 Card--undefined"
+  >
+    <h4
+      className="Card__title"
+    >
+      Add 
+    </h4>
+    <button
+      className="SecondaryButton"
+      disabled={false}
+      onClick={[Function]}
+    >
+      Create undefined
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Button Button Comp 1`] = `
+<div>
+  <div
+    id="Button"
+  />
+  <button
+    className="Button"
+    disabled={false}
+    onClick={[Function]}
+  >
+    submit
+  </button>
+</div>
+`;
+
+exports[`Storyshots Components/Card Card Comp 1`] = `
+<div>
+  <div
+    id="Card"
+  />
+  <div
+    className="Card column-4-span-3 grid-v-3"
+  >
+    <h4
+      className="Card__title"
+    />
+    <p
+      className="Card__p--small"
+    />
+    <p />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/CardList Card List Comp 1`] = `
+<div>
+  <div
+    id="CardList"
+  />
+  <div
+    className="CardList"
+  >
+    <div
+      className="Card AddCard column-4-span-3 Card--namespace"
+    >
+      <h4
+        className="Card__title"
+      >
+        Add 
+        namespace
+      </h4>
+      <button
+        className="SecondaryButton"
+        disabled={false}
+        onClick={[Function]}
+      >
+        Create namespace
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/CopyText Copy Text Comp 1`] = `
+<div>
+  <div
+    id="CopyText"
+  />
+  <div
+    className="CopyText"
+  >
+    <input
+      className="CopyText__input"
+      readOnly={true}
+    />
+    <button
+      className="CopyText__btn CopyText__btn--copy"
+      onClick={[Function]}
+    >
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-copy fa-w-14 "
+        color="white"
+        data-icon="copy"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        style={Object {}}
+        viewBox="0 0 448 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M320 448v40c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V120c0-13.255 10.745-24 24-24h72v296c0 30.879 25.121 56 56 56h168zm0-344V0H152c-13.255 0-24 10.745-24 24v368c0 13.255 10.745 24 24 24h272c13.255 0 24-10.745 24-24V128H344c-13.2 0-24-10.8-24-24zm120.971-31.029L375.029 7.029A24 24 0 0 0 358.059 0H352v96h96v-6.059a24 24 0 0 0-7.029-16.97z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/CreateModal Create Modal Comp 1`] = `
+<div>
+  <div
+    id="CreateModal"
+  />
+</div>
+`;
+
+exports[`Storyshots Components/CreatePat Create Pat Comp 1`] = `
+<div>
+  <div
+    id="CreatePat"
+  />
+  <section
+    className="CreatePat"
+  >
+    <div
+      className="DivisionText"
+    >
+      <div
+        className="DivisionText__separator"
+      />
+      <h5
+        className="DivisionText__h5"
+      >
+        Generate
+      </h5>
+      <div
+        className="DivisionText__separator"
+      />
+    </div>
+    <div
+      className="CreatePat__form"
+    >
+      <div
+        className="InputText"
+      >
+        <label
+          className="InputText__label"
+        >
+          What is this token for?
+        </label>
+        <input
+          className="InputText__input column-1-span-4"
+          onKeyUp={[Function]}
+          placeholder="A brief token description"
+          type="text"
+        />
+      </div>
+      <button
+        className="Button"
+        disabled={false}
+        onClick={[Function]}
+      >
+        Submit
+      </button>
+    </div>
+  </section>
+</div>
+`;
+
+exports[`Storyshots Components/DivisionText Division Text Comp 1`] = `
+<div>
+  <div
+    id="DivisionText"
+  />
+  <div
+    className="DivisionText"
+  >
+    <div
+      className="DivisionText__separator"
+    />
+    <h5
+      className="DivisionText__h5"
+    >
+      Header Section
+    </h5>
+    <div
+      className="DivisionText__separator"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Dropdown Dropdown Comp 1`] = `
+<div>
+  <div
+    id="Dropdown"
+  />
+  <div
+    className="Dropdown relative Dropdown--collapsed"
+    onClick={[Function]}
+    role="presentation"
+  />
+</div>
+`;
+
+exports[`Storyshots Components/Error Error Comp 1`] = `
+<div>
+  <div
+    id="Error"
+  />
+  <div
+    className="Error"
+  >
+    <h4>
+      Error Creating 
+      namespace-12
+    </h4>
+    <p>
+       add error icon here
+    </p>
+    <p
+      className="Error__p--error"
+    >
+      This is an error
+    </p>
+    <button
+      className="Button"
+      disabled={false}
+      onClick={[Function]}
+    >
+      Try Again
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/ExpandButton Expand Button Comp 1`] = `
+<div>
+  <div
+    id="ExpandButton"
+  />
+  <div
+    className="ExpandButton ExpandButton--collapsed"
+    onClick={[Function]}
+    role="presentation"
+  >
+    <div
+      className="ExpandButton__separator"
+    />
+    <button
+      className="ExpandButton__button"
+      disabled={false}
+    >
+      submit
+    </button>
+    <div
+      className="ExpandButton__icon ExpandButton__icon--collapsed"
+    />
+    <div
+      className="ExpandButton__separator"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/IconButton Icon Button Comp 1`] = `
+<div>
+  <div
+    id="IconButton"
+  />
+  <button
+    className="IconButton"
+    disabled={false}
+    onClick={[Function]}
+  >
+    <svg
+      aria-hidden="true"
+      className="svg-inline--fa fa-copy fa-w-14 "
+      color="white"
+      data-icon="copy"
+      data-prefix="fas"
+      focusable="false"
+      role="img"
+      style={Object {}}
+      viewBox="0 0 448 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M320 448v40c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V120c0-13.255 10.745-24 24-24h72v296c0 30.879 25.121 56 56 56h168zm0-344V0H152c-13.255 0-24 10.745-24 24v368c0 13.255 10.745 24 24 24h272c13.255 0 24-10.745 24-24V128H344c-13.2 0-24-10.8-24-24zm120.971-31.029L375.029 7.029A24 24 0 0 0 358.059 0H352v96h96v-6.059a24 24 0 0 0-7.029-16.97z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Components/ListPat List Pat Comp 1`] = `
+<div>
+  <div
+    id="ListPat"
+  />
+  <div>
+    <div
+      className="DivisionText"
+    >
+      <div
+        className="DivisionText__separator"
+      />
+      <h5
+        className="DivisionText__h5"
+      >
+        My Personal Access Tokens
+      </h5>
+      <div
+        className="DivisionText__separator"
+      />
+    </div>
+    <table
+      className="ListPat__table column-1-span-6"
+    >
+      <thead>
+        <tr>
+          <th
+            className="column-1-span-4"
+          >
+            Description
+          </th>
+          <th>
+            Revoke
+          </th>
+        </tr>
+      </thead>
+      <tbody />
+    </table>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/NewPat New Pat Comp 1`] = `
+<div>
+  <div
+    id="NewPat"
+  />
+  <div
+    className="NewPat"
+  >
+    <p>
+      Make sure to copy your personal access token now. This won't be viewable again!
+    </p>
+    <div
+      className="CopyText"
+    >
+      <input
+        className="CopyText__input"
+        readOnly={true}
+        value="r4nD0mStr1ngF0rTh3T0k3n"
+      />
+      <button
+        className="CopyText__btn CopyText__btn--copy"
+        onClick={[Function]}
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-copy fa-w-14 "
+          color="white"
+          data-icon="copy"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style={Object {}}
+          viewBox="0 0 448 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M320 448v40c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V120c0-13.255 10.745-24 24-24h72v296c0 30.879 25.121 56 56 56h168zm0-344V0H152c-13.255 0-24 10.745-24 24v368c0 13.255 10.745 24 24 24h272c13.255 0 24-10.745 24-24V128H344c-13.2 0-24-10.8-24-24zm120.971-31.029L375.029 7.029A24 24 0 0 0 358.059 0H352v96h96v-6.059a24 24 0 0 0-7.029-16.97z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+      </button>
+    </div>
+    <div>
+      <button
+        className="Button"
+        disabled={false}
+        onClick={[Function]}
+      >
+        Dismiss
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/PatItem Pat Item Comp 1`] = `
+<div>
+  <div
+    id="PatItem"
+  />
+  <tr
+    className="PatItem"
+  >
+    <td
+      className="column-1-span-5"
+    >
+      <p>
+        Gigantum Client
+      </p>
+    </td>
+    <td>
+      <button
+        className="IconButton"
+        disabled={false}
+        onClick={[Function]}
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-trash fa-w-14 "
+          color="white"
+          data-icon="trash"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style={Object {}}
+          viewBox="0 0 448 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+      </button>
+    </td>
+  </tr>
+</div>
+`;
+
+exports[`Storyshots Components/PatSection Pat Section Comp 1`] = `
+<div>
+  <div
+    id="PatSection"
+  />
+</div>
+`;
+
+exports[`Storyshots Components/PersonalAccessTokens Personal Access Tokens Comp 1`] = `
+<div>
+  <div
+    id="PersonalAccessTokens"
+  />
+  <div
+    className="grid"
+  >
+    <div
+      className="PersonalAccessTokens"
+    >
+      <h2>
+        Personal Access Tokens
+      </h2>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Processing Processing Comp 1`] = `
+<div>
+  <div
+    id="Processing"
+  />
+  <div
+    className="Processing"
+  >
+    <h4>
+      Creating new 
+      namespace
+       
+      namespace-12
+    </h4>
+    <div
+      className="Loader--nested"
+      data-testid="loader"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/SecondaryButton Secondary Button Comp 1`] = `
+<div>
+  <div
+    id="SecondaryButton"
+  />
+  <button
+    className="SecondaryButton"
+    disabled={false}
+    onClick={[Function]}
+  >
+    submit
+  </button>
+</div>
+`;
+
+exports[`Storyshots Components/Table Table Comp 1`] = `
+<div>
+  <div
+    id="Table"
+  />
+  <div
+    className="Table flex flex--column"
+  >
+    <div
+      className="Table__header flex justify--space-between"
+    >
+      <div
+        className="flex-1"
+      >
+        name
+      </div>
+      <div
+        className="flex-1"
+      >
+        description
+      </div>
+      <div
+        className="flex-1"
+      >
+        created
+      </div>
+      <div
+        className="flex-1"
+      >
+        directory
+      </div>
+    </div>
+    <div
+      className="Table__body"
+    >
+      <div>
+        <div
+          className="Table__row flex justify--space-between"
+        >
+          <div
+            className="flex-1"
+          >
+            <a
+              href="/default/test1"
+              onClick={[Function]}
+            >
+              test1
+            </a>
+          </div>
+          <div
+            className="flex-1"
+          >
+            <div>
+              Test Description 1
+            </div>
+          </div>
+          <div
+            className="flex-1"
+          >
+            <div>
+              Fri Jun 11 2021
+            </div>
+          </div>
+          <div
+            className="flex-1"
+          >
+            <div>
+              test1/
+            </div>
+          </div>
+          <div>
+            <button
+              className="TernaryButton"
+              disabled={false}
+              onClick={[Function]}
+            >
+              Expand
+            </button>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="Table__row flex justify--space-between"
+        >
+          <div
+            className="flex-1"
+          >
+            <a
+              href="/default/test2"
+              onClick={[Function]}
+            >
+              test2
+            </a>
+          </div>
+          <div
+            className="flex-1"
+          >
+            <div>
+              Test Description 2
+            </div>
+          </div>
+          <div
+            className="flex-1"
+          >
+            <div>
+              Fri Jun 11 2021
+            </div>
+          </div>
+          <div
+            className="flex-1"
+          >
+            <div>
+              test2/
+            </div>
+          </div>
+          <div>
+            <button
+              className="TernaryButton"
+              disabled={false}
+              onClick={[Function]}
+            >
+              Expand
+            </button>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="Table__row flex justify--space-between"
+        >
+          <div
+            className="flex-1"
+          >
+            <a
+              href="/default/test3"
+              onClick={[Function]}
+            >
+              test3
+            </a>
+          </div>
+          <div
+            className="flex-1"
+          >
+            <div>
+              Test Description 3
+            </div>
+          </div>
+          <div
+            className="flex-1"
+          >
+            <div>
+              Fri Jun 11 2021
+            </div>
+          </div>
+          <div
+            className="flex-1"
+          >
+            <div>
+              test3/
+            </div>
+          </div>
+          <div>
+            <button
+              className="TernaryButton"
+              disabled={false}
+              onClick={[Function]}
+            >
+              Expand
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/TernaryButton Ternary Button Comp 1`] = `
+<div>
+  <div
+    id="TernaryButton"
+  />
+  <button
+    className="TernaryButton"
+    disabled={false}
+    onClick={[Function]}
+  >
+    submit
+  </button>
+</div>
+`;
+
+exports[`Storyshots Components/Tooltip Tooltip Comp 1`] = `
+<div>
+  <div
+    id="Tooltip"
+  />
+  <div
+    className="Tooltip hidden undefined"
+  >
+    <div
+      className="Tooltip__toggle undefined"
+      data-event="click focus"
+      onClick={[Function]}
+      role="presentation"
+    />
+    <div
+      className="__react_component_tooltip t8a85fa3f-0fa5-41b8-bbb7-697425ea5c7c place-top type-dark"
+      data-id="tooltip"
+      id="t8a85fa3f-0fa5-41b8-bbb7-697425ea5c7c"
+    >
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "
+  	.t8a85fa3f-0fa5-41b8-bbb7-697425ea5c7c {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+  	}
+
+  	.t8a85fa3f-0fa5-41b8-bbb7-697425ea5c7c.place-top {
+        margin-top: -10px;
+    }
+    .t8a85fa3f-0fa5-41b8-bbb7-697425ea5c7c.place-top::before {
+        border-top: 8px solid transparent;
+    }
+    .t8a85fa3f-0fa5-41b8-bbb7-697425ea5c7c.place-top::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-top-color: #222;
+        border-top-style: solid;
+        border-top-width: 6px;
+    }
+
+    .t8a85fa3f-0fa5-41b8-bbb7-697425ea5c7c.place-bottom {
+        margin-top: 10px;
+    }
+    .t8a85fa3f-0fa5-41b8-bbb7-697425ea5c7c.place-bottom::before {
+        border-bottom: 8px solid transparent;
+    }
+    .t8a85fa3f-0fa5-41b8-bbb7-697425ea5c7c.place-bottom::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        top: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-bottom-color: #222;
+        border-bottom-style: solid;
+        border-bottom-width: 6px;
+    }
+
+    .t8a85fa3f-0fa5-41b8-bbb7-697425ea5c7c.place-left {
+        margin-left: -10px;
+    }
+    .t8a85fa3f-0fa5-41b8-bbb7-697425ea5c7c.place-left::before {
+        border-left: 8px solid transparent;
+    }
+    .t8a85fa3f-0fa5-41b8-bbb7-697425ea5c7c.place-left::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        right: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-left-color: #222;
+        border-left-style: solid;
+        border-left-width: 6px;
+    }
+
+    .t8a85fa3f-0fa5-41b8-bbb7-697425ea5c7c.place-right {
+        margin-left: 10px;
+    }
+    .t8a85fa3f-0fa5-41b8-bbb7-697425ea5c7c.place-right::before {
+        border-right: 8px solid transparent;
+    }
+    .t8a85fa3f-0fa5-41b8-bbb7-697425ea5c7c.place-right::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        left: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-right-color: #222;
+        border-right-style: solid;
+        border-right-width: 6px;
+    }
+  ",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/button/Button Button Comp 1`] = `
+<div>
+  <div
+    id="Button"
+  />
+  <button
+    className="Button"
+    disabled={false}
+    onClick={[Function]}
+  >
+    submit
+  </button>
+</div>
+`;
+
+exports[`Storyshots Components/button/ExpandButton Expand Button Comp 1`] = `
+<div>
+  <div
+    id="ExpandButton"
+  />
+  <div
+    className="ExpandButton ExpandButton--collapsed"
+    onClick={[Function]}
+    role="presentation"
+  >
+    <div
+      className="ExpandButton__separator"
+    />
+    <button
+      className="ExpandButton__button"
+      disabled={false}
+    >
+      submit
+    </button>
+    <div
+      className="ExpandButton__icon ExpandButton__icon--collapsed"
+    />
+    <div
+      className="ExpandButton__separator"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/button/IconButton Icon Button Comp 1`] = `
+<div>
+  <div
+    id="IconButton"
+  />
+  <button
+    className="IconButton IconButton--primary"
+    disabled={false}
+    onClick={[Function]}
+  >
+    <svg
+      aria-hidden="true"
+      className="svg-inline--fa fa-copy fa-w-14 "
+      color="#fefefe"
+      data-icon="copy"
+      data-prefix="fas"
+      focusable="false"
+      role="img"
+      style={Object {}}
+      viewBox="0 0 448 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M320 448v40c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V120c0-13.255 10.745-24 24-24h72v296c0 30.879 25.121 56 56 56h168zm0-344V0H152c-13.255 0-24 10.745-24 24v368c0 13.255 10.745 24 24 24h272c13.255 0 24-10.745 24-24V128H344c-13.2 0-24-10.8-24-24zm120.971-31.029L375.029 7.029A24 24 0 0 0 358.059 0H352v96h96v-6.059a24 24 0 0 0-7.029-16.97z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Components/button/SecondaryButton Secondary Button Comp 1`] = `
+<div>
+  <div
+    id="SecondaryButton"
+  />
+  <button
+    className="SecondaryButton"
+    disabled={false}
+    onClick={[Function]}
+  >
+    submit
+  </button>
+</div>
+`;
+
+exports[`Storyshots Components/button/TernaryButton Ternary Button Comp 1`] = `
+<div>
+  <div
+    id="TernaryButton"
+  />
+  <button
+    className="TernaryButton"
+    disabled={false}
+    onClick={[Function]}
+  >
+    submit
+  </button>
+</div>
+`;
+
+exports[`Storyshots Components/card/AddCard Add Card Comp 1`] = `
+<div>
+  <div
+    id="AddCard"
+  />
+  <div
+    className="Card AddCard column-4-span-3 Card--undefined"
+  >
+    <h4
+      className="Card__title"
+    >
+      Add 
+    </h4>
+    <button
+      className="SecondaryButton"
+      disabled={false}
+      onClick={[Function]}
+    >
+      Create undefined
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/card/Card Card Comp 1`] = `
+<div>
+  <div
+    id="Card"
+  />
+  <div
+    className="Card column-4-span-3 grid-v-3"
+  >
+    <h4
+      className="Card__title"
+    />
+    <p
+      className="Card__p--small"
+    />
+    <p />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/division/DivisionText Division Text Comp 1`] = `
+<div>
+  <div
+    id="DivisionText"
+  />
+  <div
+    className="DivisionText"
+  >
+    <div
+      className="DivisionText__separator"
+    />
+    <h5
+      className="DivisionText__h5"
+    >
+      Header Section
+    </h5>
+    <div
+      className="DivisionText__separator"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/dropdown/Dropdown Dropdown Comp 1`] = `
+<div>
+  <div
+    id="Dropdown"
+  />
+  <div
+    className="Dropdown relative Dropdown--collapsed"
+    onClick={[Function]}
+    role="presentation"
+  />
+</div>
+`;
+
+exports[`Storyshots Components/form/text/CopyText Copy Text Comp 1`] = `
+<div>
+  <div
+    id="CopyText"
+  />
+  <div
+    className="CopyText"
+  >
+    <input
+      className="CopyText__input"
+      readOnly={true}
+    />
+    <button
+      className="CopyText__btn CopyText__btn--copy"
+      onClick={[Function]}
+    >
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-copy fa-w-14 "
+        color="white"
+        data-icon="copy"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        style={Object {}}
+        viewBox="0 0 448 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M320 448v40c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V120c0-13.255 10.745-24 24-24h72v296c0 30.879 25.121 56 56 56h168zm0-344V0H152c-13.255 0-24 10.745-24 24v368c0 13.255 10.745 24 24 24h272c13.255 0 24-10.745 24-24V128H344c-13.2 0-24-10.8-24-24zm120.971-31.029L375.029 7.029A24 24 0 0 0 358.059 0H352v96h96v-6.059a24 24 0 0 0-7.029-16.97z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/form/text/InputText Input Text Comp 1`] = `
+<div
+  className="InputText"
+>
+  <label
+    className="InputText__label"
+  >
+    Add User
+  </label>
+  <input
+    className="InputText__input small"
+    onKeyUp={[Function]}
+    placeholder="Username"
+    type="text"
+  />
+</div>
+`;
+
+exports[`Storyshots Components/form/text/Search Search Comp 1`] = `null`;
+
+exports[`Storyshots Components/header/HierarchyHeader Hierarchy Header Comp 1`] = `
+<div>
+  <div
+    id="HierarchyHeader"
+  />
+  <div
+    className="HierarchyHeader"
+  >
+    <h2
+      className="HierarchyHeader__h2"
+    >
+      Header
+    </h2>
+    <h5
+      className="HierarchyHeader__h5"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/loader/Loader Loader Comp 1`] = `
+<div>
+  <div
+    id="Loader"
+    role="img"
+  />
+  <div
+    className="Loader"
+    data-testid="loader"
+  />
+</div>
+`;
+
+exports[`Storyshots Components/loader/default Loader Comp 1`] = `
+<div>
+  <div
+    id="Loader"
+    role="img"
+  />
+  <div
+    className="Loader"
+    data-testid="loader"
+  />
+</div>
+`;
+
+exports[`Storyshots Components/tooltip/Tooltip Tooltip Comp 1`] = `
+<div>
+  <div
+    id="Tooltip"
+  />
+  <div
+    className="Tooltip hidden"
+  >
+    <div
+      data-event="click focus"
+      role="presentation"
+    />
+    <div
+      className="__react_component_tooltip t12ef80a8-5433-4ba4-9ec8-80bd18fb59b1 place-top type-dark"
+      data-id="tooltip"
+      id="t12ef80a8-5433-4ba4-9ec8-80bd18fb59b1"
+    >
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "
+  	.t12ef80a8-5433-4ba4-9ec8-80bd18fb59b1 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+  	}
+
+  	.t12ef80a8-5433-4ba4-9ec8-80bd18fb59b1.place-top {
+        margin-top: -10px;
+    }
+    .t12ef80a8-5433-4ba4-9ec8-80bd18fb59b1.place-top::before {
+        border-top: 8px solid transparent;
+    }
+    .t12ef80a8-5433-4ba4-9ec8-80bd18fb59b1.place-top::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-top-color: #222;
+        border-top-style: solid;
+        border-top-width: 6px;
+    }
+
+    .t12ef80a8-5433-4ba4-9ec8-80bd18fb59b1.place-bottom {
+        margin-top: 10px;
+    }
+    .t12ef80a8-5433-4ba4-9ec8-80bd18fb59b1.place-bottom::before {
+        border-bottom: 8px solid transparent;
+    }
+    .t12ef80a8-5433-4ba4-9ec8-80bd18fb59b1.place-bottom::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        top: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-bottom-color: #222;
+        border-bottom-style: solid;
+        border-bottom-width: 6px;
+    }
+
+    .t12ef80a8-5433-4ba4-9ec8-80bd18fb59b1.place-left {
+        margin-left: -10px;
+    }
+    .t12ef80a8-5433-4ba4-9ec8-80bd18fb59b1.place-left::before {
+        border-left: 8px solid transparent;
+    }
+    .t12ef80a8-5433-4ba4-9ec8-80bd18fb59b1.place-left::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        right: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-left-color: #222;
+        border-left-style: solid;
+        border-left-width: 6px;
+    }
+
+    .t12ef80a8-5433-4ba4-9ec8-80bd18fb59b1.place-right {
+        margin-left: 10px;
+    }
+    .t12ef80a8-5433-4ba4-9ec8-80bd18fb59b1.place-right::before {
+        border-right: 8px solid transparent;
+    }
+    .t12ef80a8-5433-4ba4-9ec8-80bd18fb59b1.place-right::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        left: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-right-color: #222;
+        border-right-style: solid;
+        border-right-width: 6px;
+    }
+  ",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/tooltip/TooltipConfirm Tooltip Confirm Comp 1`] = `
+<div>
+  <div
+    id="TooltipConfirm"
+  />
+</div>
+`;
+
+exports[`Storyshots HOS Application 1`] = `
+<div
+  className="Layout"
+>
+  <header
+    className="Header"
+  >
+    <div
+      className="Logo"
+    >
+      <img
+        alt="Gigantum HOS Logo"
+        src="hos-logo.svg"
+        width="300em"
+      />
+    </div>
+  </header>
+  <main>
+    <div>
+      idle
+    </div>
+  </main>
+</div>
+`;
+
+exports[`Storyshots HOS Layout Comp 1`] = `
+<div
+  className="Layout"
+>
+  <header
+    className="Header"
+  >
+    <div
+      className="Logo"
+    >
+      <img
+        alt="Gigantum HOS Logo"
+        src="hos-logo.svg"
+        width="300em"
+      />
+    </div>
+  </header>
+  <main />
+</div>
+`;
+
+exports[`Storyshots Layout/Header Header Comp 1`] = `
+<header
+  className="Header"
+>
+  <div
+    className="Logo"
+  >
+    <img
+      alt="Gigantum HOS Logo"
+      src="hos-logo.svg"
+      width="300em"
+    />
+  </div>
+</header>
+`;
+
+exports[`Storyshots Layout/Header/Logo Logo Comp 1`] = `
+<div
+  className="Logo"
+>
+  <img
+    alt="Gigantum HOS Logo"
+    src="hos-logo.svg"
+    width="300em"
+  />
+</div>
+`;
+
+exports[`Storyshots Layout/Header/Toolbar Toolbar Comp 1`] = `
+<div
+  className="Toolbar"
+>
+  <div
+    className="Breadcrumbs"
+  >
+    <a
+      className="Breadcrumbs__link"
+      href="/"
+      onClick={[Function]}
+    >
+      localhost
+    </a>
+    <span>
+       / 
+    </span>
+    <a
+      className="Breadcrumbs__link"
+      href="/namespace"
+      onClick={[Function]}
+    >
+      namespace
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Layout/Header/Toolbar/Breadcrumbs Breadcrumbs Comp 1`] = `
+<div
+  className="Breadcrumbs"
+>
+  <a
+    className="Breadcrumbs__link"
+    href="/"
+    onClick={[Function]}
+  >
+    localhost
+  </a>
+  <span>
+     / 
+  </span>
+  <a
+    className="Breadcrumbs__link"
+    href="/namespace"
+    onClick={[Function]}
+  >
+    namespace
+  </a>
+</div>
+`;
+
+exports[`Storyshots Layout/Header/Toolbar/User User Comp 1`] = `null`;
+
+exports[`Storyshots Pages/dataset/AddSection Add Section Comp 1`] = `
+Array [
+  <div
+    className="AddSection DatasetSection__row grid"
+  >
+    <div
+      className="UserInput column-4-span-3"
+    >
+      <div
+        className="InputText"
+      >
+        <label
+          className="InputText__label"
+        >
+          Add user
+        </label>
+        <input
+          className="InputText__input"
+          onKeyUp={[Function]}
+          placeholder="username"
+          type="text"
+        />
+      </div>
+    </div>
+    <div
+      className="PermissionDropdown column-4-span-3"
+    >
+      <div
+        className="Dropdown relative Dropdown--collapsed Dropdown--small"
+        onClick={[Function]}
+        role="presentation"
+      >
+        r
+      </div>
+    </div>
+    <div
+      className="AddSection__row-filler column-4-span-3"
+    />
+    <div
+      className="AddSection__column--text-right column-4-span-3"
+    >
+      <button
+        className="Button"
+        disabled={true}
+        onClick={[Function]}
+      >
+        Add user
+      </button>
+    </div>
+  </div>,
+  "",
+]
+`;
+
+exports[`Storyshots Pages/dataset/Dataset Dataset Comp 1`] = `
+<div
+  className="grid"
+>
+  <div
+    className="Dataset column-1-span-12"
+  >
+    <h2>
+      datasetName
+    </h2>
+    <div />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pages/dataset/DatasetSection Dataset Section Comp 1`] = `
+<div
+  className="DatasetSection"
+>
+  <p
+    className="DatasetSection__p DatasetSection__p--margin-large"
+  >
+    testing this out
+  </p>
+  <h3>
+    Users
+  </h3>
+  <div
+    className="SectionCard Card column-1-span-12 grid-v-auto"
+  >
+    <div>
+      <div
+        className="PermissionsSection__row PermissionsSection__row--header grid"
+      >
+        <div
+          className="column-4-span-3"
+        >
+          <h5
+            className="PermissionsSection__h5"
+          >
+            user
+          </h5>
+        </div>
+        <div
+          className="column-4-span-3"
+        >
+          <h5
+            className="PermissionsSection__h5"
+          >
+            Permissions
+          </h5>
+        </div>
+      </div>
+      <div
+        className="PermissionsSection__body"
+      >
+        <div
+          className="PermissionsSection__row grid"
+        >
+          <div
+            className="column-4-span-3"
+          >
+            admin
+          </div>
+          <div
+            className="PermissionDropdown column-4-span-3"
+          >
+            <div
+              className="Dropdown relative Dropdown--collapsed Dropdown--small"
+              onClick={[Function]}
+              role="presentation"
+            >
+              rw
+            </div>
+          </div>
+          <div
+            className="PermissionsSection__row--filler column-4-span-3"
+          />
+          <div
+            className="Delete column-4-span-3"
+          >
+            <button
+              className="Button"
+              disabled={false}
+              onClick={[Function]}
+            >
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="AddSection DatasetSection__row grid"
+      >
+        <div
+          className="UserInput column-4-span-3"
+        >
+          <div
+            className="InputText"
+          >
+            <label
+              className="InputText__label"
+            >
+              Add user
+            </label>
+            <input
+              className="InputText__input"
+              onKeyUp={[Function]}
+              placeholder="username"
+              type="text"
+            />
+          </div>
+        </div>
+        <div
+          className="PermissionDropdown column-4-span-3"
+        >
+          <div
+            className="Dropdown relative Dropdown--collapsed Dropdown--small"
+            onClick={[Function]}
+            role="presentation"
+          >
+            r
+          </div>
+        </div>
+        <div
+          className="AddSection__row-filler column-4-span-3"
+        />
+        <div
+          className="AddSection__column--text-right column-4-span-3"
+        >
+          <button
+            className="Button"
+            disabled={true}
+            onClick={[Function]}
+          >
+            Add user
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <h3>
+    Groups
+  </h3>
+  <div
+    className="SectionCard Card column-1-span-12 grid-v-auto"
+  >
+    <div>
+      <div
+        className="PermissionsSection__row PermissionsSection__row--header grid"
+      >
+        <div
+          className="column-4-span-3"
+        >
+          <h5
+            className="PermissionsSection__h5"
+          >
+            group
+          </h5>
+        </div>
+        <div
+          className="column-4-span-3"
+        >
+          <h5
+            className="PermissionsSection__h5"
+          >
+            Permissions
+          </h5>
+        </div>
+      </div>
+      <div
+        className="PermissionsSection__body"
+      >
+        <div
+          className="PermissionsSection__row grid"
+        >
+          <div
+            className="column-4-span-3"
+          >
+            group
+          </div>
+          <div
+            className="PermissionDropdown column-4-span-3"
+          >
+            <div
+              className="Dropdown relative Dropdown--collapsed Dropdown--small"
+              onClick={[Function]}
+              role="presentation"
+            >
+              rw
+            </div>
+          </div>
+          <div
+            className="PermissionsSection__row--filler column-4-span-3"
+          />
+          <div
+            className="Delete column-4-span-3"
+          >
+            <button
+              className="Button"
+              disabled={false}
+              onClick={[Function]}
+            >
+              Delete
+            </button>
+          </div>
+        </div>
+        <div
+          className="PermissionsSection__row grid"
+        >
+          <div
+            className="column-4-span-3"
+          >
+            sdds
+          </div>
+          <div
+            className="PermissionDropdown column-4-span-3"
+          >
+            <div
+              className="Dropdown relative Dropdown--collapsed Dropdown--small"
+              onClick={[Function]}
+              role="presentation"
+            >
+              r
+            </div>
+          </div>
+          <div
+            className="PermissionsSection__row--filler column-4-span-3"
+          />
+          <div
+            className="Delete column-4-span-3"
+          >
+            <button
+              className="Button"
+              disabled={false}
+              onClick={[Function]}
+            >
+              Delete
+            </button>
+          </div>
+        </div>
+        <div
+          className="PermissionsSection__row grid"
+        >
+          <div
+            className="column-4-span-3"
+          >
+            my-group
+          </div>
+          <div
+            className="PermissionDropdown column-4-span-3"
+          >
+            <div
+              className="Dropdown relative Dropdown--collapsed Dropdown--small"
+              onClick={[Function]}
+              role="presentation"
+            >
+              r
+            </div>
+          </div>
+          <div
+            className="PermissionsSection__row--filler column-4-span-3"
+          />
+          <div
+            className="Delete column-4-span-3"
+          >
+            <button
+              className="Button"
+              disabled={false}
+              onClick={[Function]}
+            >
+              Delete
+            </button>
+          </div>
+        </div>
+        <div
+          className="PermissionsSection__row grid"
+        >
+          <div
+            className="column-4-span-3"
+          >
+            your-group
+          </div>
+          <div
+            className="PermissionDropdown column-4-span-3"
+          >
+            <div
+              className="Dropdown relative Dropdown--collapsed Dropdown--small"
+              onClick={[Function]}
+              role="presentation"
+            >
+              rw
+            </div>
+          </div>
+          <div
+            className="PermissionsSection__row--filler column-4-span-3"
+          />
+          <div
+            className="Delete column-4-span-3"
+          >
+            <button
+              className="Button"
+              disabled={false}
+              onClick={[Function]}
+            >
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="AddSection DatasetSection__row grid"
+      >
+        <div
+          className="UserInput column-4-span-3"
+        >
+          <div
+            className="InputText"
+          >
+            <label
+              className="InputText__label"
+            >
+              Add group
+            </label>
+            <input
+              className="InputText__input"
+              onKeyUp={[Function]}
+              placeholder="groupname"
+              type="text"
+            />
+          </div>
+        </div>
+        <div
+          className="PermissionDropdown column-4-span-3"
+        >
+          <div
+            className="Dropdown relative Dropdown--collapsed Dropdown--small"
+            onClick={[Function]}
+            role="presentation"
+          >
+            r
+          </div>
+        </div>
+        <div
+          className="AddSection__row-filler column-4-span-3"
+        />
+        <div
+          className="AddSection__column--text-right column-4-span-3"
+        >
+          <button
+            className="Button"
+            disabled={true}
+            onClick={[Function]}
+          >
+            Add group
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pages/dataset/PermissionDropdown Permission Dropdown Comp 1`] = `
+<div
+  className="PermissionDropdown column-4-span-3"
+>
+  <div
+    className="Dropdown relative Dropdown--collapsed Dropdown--small"
+    onClick={[Function]}
+    role="presentation"
+  />
+</div>
+`;
+
+exports[`Storyshots Pages/dataset/PermissionsItem Permissions Item Comp 1`] = `
+<tr>
+  <td>
+    user
+  </td>
+  <td>
+    <div
+      className="PermissionDropdown column-4-span-3"
+    >
+      <div
+        className="Dropdown relative Dropdown--collapsed Dropdown--small"
+        onClick={[Function]}
+        role="presentation"
+      >
+        r
+      </div>
+    </div>
+  </td>
+  <td />
+  <td>
+    <div
+      className="Delete relative"
+    >
+      <button
+        className="IconButton IconButton--primary"
+        disabled={false}
+        onClick={[Function]}
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-trash fa-w-14 "
+          color="#fefefe"
+          data-icon="trash"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style={Object {}}
+          viewBox="0 0 448 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+      </button>
+    </div>
+  </td>
+</tr>
+`;
+
+exports[`Storyshots Pages/dataset/UserInput User Input Comp 1`] = `
+<div
+  className="UserInput column-4-span-3"
+>
+  <div
+    className="InputText"
+  >
+    <label
+      className="InputText__label"
+    >
+      Add user
+    </label>
+    <input
+      className="InputText__input"
+      onKeyUp={[Function]}
+      placeholder="username"
+      type="text"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pages/group/AddUser Add User Comp 1`] = `
+<section
+  className="AddUser"
+>
+  <div
+    className="DivisionText"
+  >
+    <div
+      className="DivisionText__separator"
+    />
+    <h5
+      className="DivisionText__h5"
+    >
+      Add User
+    </h5>
+    <div
+      className="DivisionText__separator"
+    />
+  </div>
+  <div
+    className="AddUser__form"
+  >
+    <div
+      className="InputText"
+    >
+      <label
+        className="InputText__label"
+      >
+        Who do you want to add?
+      </label>
+      <input
+        className="InputText__input column-1-span-4"
+        onKeyUp={[Function]}
+        placeholder="user-1"
+        type="text"
+      />
+    </div>
+    <button
+      className="Button"
+      disabled={true}
+      onClick={[Function]}
+    >
+      Submit
+    </button>
+  </div>
+</section>
+`;
+
+exports[`Storyshots Pages/group/CreateGroup Create Group Comp 1`] = `
+<section
+  className="CreateGroup"
+>
+  <div
+    className="DivisionText"
+  >
+    <div
+      className="DivisionText__separator"
+    />
+    <h5
+      className="DivisionText__h5"
+    >
+      Create Group
+    </h5>
+    <div
+      className="DivisionText__separator"
+    />
+  </div>
+  <div
+    className="CreateGroup__form"
+  >
+    <div
+      className="InputText"
+    >
+      <label
+        className="InputText__label"
+      >
+        Group Name
+      </label>
+      <input
+        className="InputText__input column-1-span-4"
+        onKeyUp={[Function]}
+        placeholder="my-group"
+        type="text"
+      />
+    </div>
+    <div
+      className="InputText"
+    >
+      <label
+        className="InputText__label"
+      >
+        Description of group
+      </label>
+      <input
+        className="InputText__input column-1-span-4"
+        onKeyUp={[Function]}
+        placeholder="This is my group"
+        type="text"
+      />
+    </div>
+    <button
+      className="Button"
+      disabled={false}
+      onClick={[Function]}
+    >
+      Submit
+    </button>
+  </div>
+</section>
+`;
+
+exports[`Storyshots Pages/group/GroupItem Group Item Comp 1`] = `
+<tr
+  className="GroupItem"
+>
+  <td>
+    <a
+      href="/groups/group-1"
+      onClick={[Function]}
+    >
+      group-1
+    </a>
+  </td>
+  <td>
+    this is a description
+  </td>
+  <td
+    className="GroupItem__td--actions"
+  >
+    <div
+      className="GroupItem__actions"
+    >
+      <button
+        className="IconButton"
+        disabled={false}
+        onClick={[Function]}
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-trash fa-w-14 "
+          color="white"
+          data-icon="trash"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style={Object {}}
+          viewBox="0 0 448 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+      </button>
+    </div>
+  </td>
+</tr>
+`;
+
+exports[`Storyshots Pages/groups/Groups Groups Comp 1`] = `
+<div
+  className="grid"
+>
+  <h2>
+    Groups
+  </h2>
+  <div
+    className="SectionCard Card column-1-span-12 undefined"
+  >
+    <div />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pages/groups/GroupsRouter Groups Router Comp 1`] = `null`;
+
+exports[`Storyshots Pages/groups/GroupsSection Groups Section Comp 1`] = `
+<section>
+  <section
+    className="CreateGroup"
+  >
+    <div
+      className="DivisionText"
+    >
+      <div
+        className="DivisionText__separator"
+      />
+      <h5
+        className="DivisionText__h5"
+      >
+        Create Group
+      </h5>
+      <div
+        className="DivisionText__separator"
+      />
+    </div>
+    <div
+      className="CreateGroup__form"
+    >
+      <div
+        className="InputText"
+      >
+        <label
+          className="InputText__label"
+        >
+          Group Name
+        </label>
+        <input
+          className="InputText__input column-1-span-4"
+          onKeyUp={[Function]}
+          placeholder="my-group"
+          type="text"
+        />
+      </div>
+      <div
+        className="InputText"
+      >
+        <label
+          className="InputText__label"
+        >
+          Description of group
+        </label>
+        <input
+          className="InputText__input column-1-span-4"
+          onKeyUp={[Function]}
+          placeholder="This is my group"
+          type="text"
+        />
+      </div>
+      <button
+        className="Button"
+        disabled={false}
+        onClick={[Function]}
+      >
+        Submit
+      </button>
+    </div>
+  </section>
+  <div
+    className="DivisionText"
+  >
+    <div
+      className="DivisionText__separator"
+    />
+    <h5
+      className="DivisionText__h5"
+    >
+      Groups
+    </h5>
+    <div
+      className="DivisionText__separator"
+    />
+  </div>
+  <table
+    className="GroupsTable"
+  >
+    <thead>
+      <tr>
+        <th>
+          Group
+        </th>
+        <th>
+          Description
+        </th>
+        <th>
+          Actions
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        className="GroupItem"
+      >
+        <td>
+          <a
+            href="/groups/group-1"
+            onClick={[Function]}
+          >
+            group-1
+          </a>
+        </td>
+        <td>
+          this is a description
+        </td>
+        <td
+          className="GroupItem__td--actions"
+        >
+          <div
+            className="GroupItem__actions"
+          >
+            <button
+              className="IconButton"
+              disabled={false}
+              onClick={[Function]}
+            >
+              <svg
+                aria-hidden="true"
+                className="svg-inline--fa fa-trash fa-w-14 "
+                color="white"
+                data-icon="trash"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                style={Object {}}
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
+                  fill="currentColor"
+                  style={Object {}}
+                />
+              </svg>
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+`;
+
+exports[`Storyshots Pages/groups/group/Group Group Comp 1`] = `
+<div
+  className="grid"
+>
+  <div
+    className="HierarchyHeader"
+  >
+    <h2
+      className="HierarchyHeader__h2"
+    >
+      Group
+    </h2>
+    <h5
+      className="HierarchyHeader__h5"
+    >
+      groupname
+    </h5>
+  </div>
+  <div
+    className="SectionCard Card column-1-span-12 undefined"
+  >
+    <div />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pages/groups/group/section/add/AddUser Add User Comp 1`] = `
+<section
+  className="AddUser"
+>
+  <div
+    className="DivisionText"
+  >
+    <div
+      className="DivisionText__separator"
+    />
+    <h5
+      className="DivisionText__h5"
+    >
+      Add User
+    </h5>
+    <div
+      className="DivisionText__separator"
+    />
+  </div>
+  <div
+    className="AddUser__form"
+  >
+    <div
+      className="InputText"
+    >
+      <label
+        className="InputText__label"
+      >
+        Who do you want to add?
+      </label>
+      <input
+        className="InputText__input column-1-span-4"
+        onKeyUp={[Function]}
+        placeholder="user-1"
+        type="text"
+      />
+    </div>
+    <button
+      className="Button"
+      disabled={true}
+      onClick={[Function]}
+    >
+      Submit
+    </button>
+  </div>
+</section>
+`;
+
+exports[`Storyshots Pages/groups/groups/section/GroupsSection Groups Section Comp 1`] = `
+<section>
+  <section
+    className="CreateGroup"
+  >
+    <div
+      className="DivisionText"
+    >
+      <div
+        className="DivisionText__separator"
+      />
+      <h5
+        className="DivisionText__h5"
+      >
+        Create Group
+      </h5>
+      <div
+        className="DivisionText__separator"
+      />
+    </div>
+    <div
+      className="CreateGroup__form"
+    >
+      <div
+        className="InputText"
+      >
+        <label
+          className="InputText__label"
+        >
+          Group Name
+        </label>
+        <input
+          className="InputText__input column-1-span-4"
+          onKeyUp={[Function]}
+          placeholder="my-group"
+          type="text"
+        />
+      </div>
+      <div
+        className="InputText"
+      >
+        <label
+          className="InputText__label"
+        >
+          Description of group
+        </label>
+        <input
+          className="InputText__input column-1-span-4"
+          onKeyUp={[Function]}
+          placeholder="This is my group"
+          type="text"
+        />
+      </div>
+      <button
+        className="Button"
+        disabled={false}
+        onClick={[Function]}
+      >
+        Submit
+      </button>
+    </div>
+  </section>
+  <div
+    className="DivisionText"
+  >
+    <div
+      className="DivisionText__separator"
+    />
+    <h5
+      className="DivisionText__h5"
+    >
+      Groups
+    </h5>
+    <div
+      className="DivisionText__separator"
+    />
+  </div>
+  <table
+    className="GroupsTable"
+  >
+    <thead>
+      <tr>
+        <th>
+          Group
+        </th>
+        <th>
+          Description
+        </th>
+        <th>
+          Actions
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        className="GroupItem"
+      >
+        <td>
+          <a
+            href="/groups/group-1"
+            onClick={[Function]}
+          >
+            group-1
+          </a>
+        </td>
+        <td>
+          this is a description
+        </td>
+        <td
+          className="GroupItem__td--actions"
+        >
+          <div
+            className="GroupItem__actions"
+          >
+            <button
+              className="IconButton IconButton--primary"
+              disabled={false}
+              onClick={[Function]}
+            >
+              <svg
+                aria-hidden="true"
+                className="svg-inline--fa fa-trash fa-w-14 "
+                color="#fefefe"
+                data-icon="trash"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                style={Object {}}
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
+                  fill="currentColor"
+                  style={Object {}}
+                />
+              </svg>
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+`;
+
+exports[`Storyshots Pages/groups/groups/section/create/CreateGroup Create Group Comp 1`] = `
+<section
+  className="CreateGroup"
+>
+  <div
+    className="DivisionText"
+  >
+    <div
+      className="DivisionText__separator"
+    />
+    <h5
+      className="DivisionText__h5"
+    >
+      Create Group
+    </h5>
+    <div
+      className="DivisionText__separator"
+    />
+  </div>
+  <div
+    className="CreateGroup__form"
+  >
+    <div
+      className="InputText"
+    >
+      <label
+        className="InputText__label"
+      >
+        Group Name
+      </label>
+      <input
+        className="InputText__input column-1-span-4"
+        onKeyUp={[Function]}
+        placeholder="my-group"
+        type="text"
+      />
+    </div>
+    <div
+      className="InputText"
+    >
+      <label
+        className="InputText__label"
+      >
+        Description of group
+      </label>
+      <input
+        className="InputText__input column-1-span-4"
+        onKeyUp={[Function]}
+        placeholder="This is my group"
+        type="text"
+      />
+    </div>
+    <button
+      className="Button"
+      disabled={false}
+      onClick={[Function]}
+    >
+      Submit
+    </button>
+  </div>
+</section>
+`;
+
+exports[`Storyshots Pages/groups/groups/table/GroupsTable Groups Table Comp 1`] = `
+Array [
+  <div
+    className="DivisionText"
+  >
+    <div
+      className="DivisionText__separator"
+    />
+    <h5
+      className="DivisionText__h5"
+    >
+      Groups
+    </h5>
+    <div
+      className="DivisionText__separator"
+    />
+  </div>,
+  <table
+    className="GroupsTable"
+  >
+    <thead>
+      <tr>
+        <th>
+          Group
+        </th>
+        <th>
+          Description
+        </th>
+        <th>
+          Actions
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        className="GroupItem"
+      >
+        <td>
+          <a
+            href="/groups/group-1"
+            onClick={[Function]}
+          >
+            group-1
+          </a>
+        </td>
+        <td>
+          this is a description
+        </td>
+        <td
+          className="GroupItem__td--actions"
+        >
+          <div
+            className="GroupItem__actions"
+          >
+            <button
+              className="IconButton IconButton--primary"
+              disabled={false}
+              onClick={[Function]}
+            >
+              <svg
+                aria-hidden="true"
+                className="svg-inline--fa fa-trash fa-w-14 "
+                color="#fefefe"
+                data-icon="trash"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                style={Object {}}
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
+                  fill="currentColor"
+                  style={Object {}}
+                />
+              </svg>
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>,
+]
+`;
+
+exports[`Storyshots Pages/groups/groups/table/item/GroupItem Group Item Comp 1`] = `
+<tr
+  className="GroupItem"
+>
+  <td>
+    <a
+      href="/groups/group-1"
+      onClick={[Function]}
+    >
+      group-1
+    </a>
+  </td>
+  <td>
+    this is a description
+  </td>
+  <td
+    className="GroupItem__td--actions"
+  >
+    <div
+      className="GroupItem__actions"
+    >
+      <button
+        className="IconButton IconButton--primary"
+        disabled={false}
+        onClick={[Function]}
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-trash fa-w-14 "
+          color="#fefefe"
+          data-icon="trash"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style={Object {}}
+          viewBox="0 0 448 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+      </button>
+    </div>
+  </td>
+</tr>
+`;
+
+exports[`Storyshots Pages/namespace/DatasetDetails Dataset Details Comp 1`] = `
+<tr>
+  <td
+    className="DatasetDetails"
+    colSpan={6}
+  >
+    <p>
+      Loading
+    </p>
+  </td>
+</tr>
+`;
+
+exports[`Storyshots Pages/namespace/DatasetItem Dataset Item Comp 1`] = `
+<tr>
+  <td
+    className="DatasetItem__td--empty"
+  >
+    <button
+      className="IconButton IconButton--transparent"
+      disabled={false}
+      onClick={[Function]}
+    >
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-chevron-right fa-w-10 "
+        color="#957299"
+        data-icon="chevron-right"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        style={Object {}}
+        viewBox="0 0 320 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+    </button>
+  </td>
+  <td>
+    <a
+      href="/default/my-dataset-name"
+      onClick={[Function]}
+    >
+      my-dataset-name
+    </a>
+  </td>
+  <td>
+    This is my dataset
+  </td>
+  <td>
+    5 days ago
+  </td>
+  <td>
+    my-dataset-directory/
+  </td>
+  <td
+    className="DatasetItem__td DatasetItem__td--actions"
+  >
+    <div
+      className="Delete relative"
+    >
+      <button
+        className="IconButton IconButton--primary"
+        disabled={false}
+        onClick={[Function]}
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-trash fa-w-14 "
+          color="#fefefe"
+          data-icon="trash"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style={Object {}}
+          viewBox="0 0 448 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+      </button>
+      <div
+        className="Tooltip hidden"
+      >
+        <div
+          data-event="click focus"
+          data-tip={null}
+          role="presentation"
+        />
+        <div
+          className="__react_component_tooltip t04335d02-94a8-4f2d-b012-026b19365f7d place-top type-dark"
+          data-id="tooltip"
+          id="t04335d02-94a8-4f2d-b012-026b19365f7d"
+        >
+          <style
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "
+  	.t04335d02-94a8-4f2d-b012-026b19365f7d {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+  	}
+
+  	.t04335d02-94a8-4f2d-b012-026b19365f7d.place-top {
+        margin-top: -10px;
+    }
+    .t04335d02-94a8-4f2d-b012-026b19365f7d.place-top::before {
+        border-top: 8px solid transparent;
+    }
+    .t04335d02-94a8-4f2d-b012-026b19365f7d.place-top::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-top-color: #222;
+        border-top-style: solid;
+        border-top-width: 6px;
+    }
+
+    .t04335d02-94a8-4f2d-b012-026b19365f7d.place-bottom {
+        margin-top: 10px;
+    }
+    .t04335d02-94a8-4f2d-b012-026b19365f7d.place-bottom::before {
+        border-bottom: 8px solid transparent;
+    }
+    .t04335d02-94a8-4f2d-b012-026b19365f7d.place-bottom::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        top: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-bottom-color: #222;
+        border-bottom-style: solid;
+        border-bottom-width: 6px;
+    }
+
+    .t04335d02-94a8-4f2d-b012-026b19365f7d.place-left {
+        margin-left: -10px;
+    }
+    .t04335d02-94a8-4f2d-b012-026b19365f7d.place-left::before {
+        border-left: 8px solid transparent;
+    }
+    .t04335d02-94a8-4f2d-b012-026b19365f7d.place-left::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        right: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-left-color: #222;
+        border-left-style: solid;
+        border-left-width: 6px;
+    }
+
+    .t04335d02-94a8-4f2d-b012-026b19365f7d.place-right {
+        margin-left: 10px;
+    }
+    .t04335d02-94a8-4f2d-b012-026b19365f7d.place-right::before {
+        border-right: 8px solid transparent;
+    }
+    .t04335d02-94a8-4f2d-b012-026b19365f7d.place-right::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        left: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-right-color: #222;
+        border-right-style: solid;
+        border-right-width: 6px;
+    }
+  ",
+              }
+            }
+          />
+        </div>
+      </div>
+    </div>
+  </td>
+</tr>
+`;
+
+exports[`Storyshots Pages/namespace/Namespace Namespace Comp 1`] = `
+<div
+  className="grid"
+>
+  <div
+    className="Namespace margin--auto column-1-span-12"
+  >
+    <div />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pages/namespace/NamespaceList Namespace List Comp 1`] = `
+<div
+  className="NamespaceListing"
+>
+  <div
+    className="SectionCard Card column-1-span-12 undefined"
+  >
+    <div
+      className="Namespace__actions flex justify--space-between"
+    >
+      <div
+        className="Search column-1-span-5"
+      >
+        <div
+          className="InputText"
+        >
+          <label
+            className="InputText__label"
+          >
+            Search
+          </label>
+          <input
+            className="InputText__input"
+            onKeyUp={[Function]}
+            placeholder="Search Datasets"
+            type="text"
+          />
+        </div>
+      </div>
+      <button
+        className="Button"
+        disabled={false}
+        onClick={[Function]}
+      >
+        Create Dataset
+      </button>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th
+            className="NamespaceList__th--empty"
+          />
+          <th>
+            Name
+          </th>
+          <th>
+            Description
+          </th>
+          <th>
+            Created
+          </th>
+          <th>
+            Directory
+          </th>
+          <th>
+            Actions
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td
+            className="DatasetItem__td--empty"
+          >
+            <button
+              className="IconButton IconButton--transparent"
+              disabled={false}
+              onClick={[Function]}
+            >
+              <svg
+                aria-hidden="true"
+                className="svg-inline--fa fa-chevron-right fa-w-10 "
+                color="#957299"
+                data-icon="chevron-right"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                style={Object {}}
+                viewBox="0 0 320 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"
+                  fill="currentColor"
+                  style={Object {}}
+                />
+              </svg>
+            </button>
+          </td>
+          <td>
+            <a
+              href="/default/hanks-dataset"
+              onClick={[Function]}
+            >
+              hanks-dataset
+            </a>
+          </td>
+          <td>
+            This is hanks dataset
+          </td>
+          <td>
+            5 days ago
+          </td>
+          <td />
+          <td
+            className="DatasetItem__td DatasetItem__td--actions"
+          >
+            <div
+              className="Delete relative"
+            >
+              <button
+                className="IconButton IconButton--primary"
+                disabled={false}
+                onClick={[Function]}
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-trash fa-w-14 "
+                  color="#fefefe"
+                  data-icon="trash"
+                  data-prefix="fas"
+                  focusable="false"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 448 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </button>
+              <div
+                className="Tooltip hidden"
+              >
+                <div
+                  data-event="click focus"
+                  data-tip={null}
+                  role="presentation"
+                />
+                <div
+                  className="__react_component_tooltip t6b98d459-ae39-4644-9418-dff556e9fe76 place-top type-dark"
+                  data-id="tooltip"
+                  id="t6b98d459-ae39-4644-9418-dff556e9fe76"
+                >
+                  <style
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "
+  	.t6b98d459-ae39-4644-9418-dff556e9fe76 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+  	}
+
+  	.t6b98d459-ae39-4644-9418-dff556e9fe76.place-top {
+        margin-top: -10px;
+    }
+    .t6b98d459-ae39-4644-9418-dff556e9fe76.place-top::before {
+        border-top: 8px solid transparent;
+    }
+    .t6b98d459-ae39-4644-9418-dff556e9fe76.place-top::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-top-color: #222;
+        border-top-style: solid;
+        border-top-width: 6px;
+    }
+
+    .t6b98d459-ae39-4644-9418-dff556e9fe76.place-bottom {
+        margin-top: 10px;
+    }
+    .t6b98d459-ae39-4644-9418-dff556e9fe76.place-bottom::before {
+        border-bottom: 8px solid transparent;
+    }
+    .t6b98d459-ae39-4644-9418-dff556e9fe76.place-bottom::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        top: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-bottom-color: #222;
+        border-bottom-style: solid;
+        border-bottom-width: 6px;
+    }
+
+    .t6b98d459-ae39-4644-9418-dff556e9fe76.place-left {
+        margin-left: -10px;
+    }
+    .t6b98d459-ae39-4644-9418-dff556e9fe76.place-left::before {
+        border-left: 8px solid transparent;
+    }
+    .t6b98d459-ae39-4644-9418-dff556e9fe76.place-left::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        right: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-left-color: #222;
+        border-left-style: solid;
+        border-left-width: 6px;
+    }
+
+    .t6b98d459-ae39-4644-9418-dff556e9fe76.place-right {
+        margin-left: 10px;
+    }
+    .t6b98d459-ae39-4644-9418-dff556e9fe76.place-right::before {
+        border-right: 8px solid transparent;
+    }
+    .t6b98d459-ae39-4644-9418-dff556e9fe76.place-right::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        left: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-right-color: #222;
+        border-right-style: solid;
+        border-right-width: 6px;
+    }
+  ",
+                      }
+                    }
+                  />
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td
+            className="DatasetItem__td--empty"
+          >
+            <button
+              className="IconButton IconButton--transparent"
+              disabled={false}
+              onClick={[Function]}
+            >
+              <svg
+                aria-hidden="true"
+                className="svg-inline--fa fa-chevron-right fa-w-10 "
+                color="#957299"
+                data-icon="chevron-right"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                style={Object {}}
+                viewBox="0 0 320 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"
+                  fill="currentColor"
+                  style={Object {}}
+                />
+              </svg>
+            </button>
+          </td>
+          <td>
+            <a
+              href="/default/my-dataset"
+              onClick={[Function]}
+            >
+              my-dataset
+            </a>
+          </td>
+          <td>
+            
+          </td>
+          <td>
+            4 days ago
+          </td>
+          <td />
+          <td
+            className="DatasetItem__td DatasetItem__td--actions"
+          >
+            <div
+              className="Delete relative"
+            >
+              <button
+                className="IconButton IconButton--primary"
+                disabled={false}
+                onClick={[Function]}
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-trash fa-w-14 "
+                  color="#fefefe"
+                  data-icon="trash"
+                  data-prefix="fas"
+                  focusable="false"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 448 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </button>
+              <div
+                className="Tooltip hidden"
+              >
+                <div
+                  data-event="click focus"
+                  data-tip={null}
+                  role="presentation"
+                />
+                <div
+                  className="__react_component_tooltip tfb72ab4e-154e-44de-921d-0b4f1e7f425e place-top type-dark"
+                  data-id="tooltip"
+                  id="tfb72ab4e-154e-44de-921d-0b4f1e7f425e"
+                >
+                  <style
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "
+  	.tfb72ab4e-154e-44de-921d-0b4f1e7f425e {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+  	}
+
+  	.tfb72ab4e-154e-44de-921d-0b4f1e7f425e.place-top {
+        margin-top: -10px;
+    }
+    .tfb72ab4e-154e-44de-921d-0b4f1e7f425e.place-top::before {
+        border-top: 8px solid transparent;
+    }
+    .tfb72ab4e-154e-44de-921d-0b4f1e7f425e.place-top::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-top-color: #222;
+        border-top-style: solid;
+        border-top-width: 6px;
+    }
+
+    .tfb72ab4e-154e-44de-921d-0b4f1e7f425e.place-bottom {
+        margin-top: 10px;
+    }
+    .tfb72ab4e-154e-44de-921d-0b4f1e7f425e.place-bottom::before {
+        border-bottom: 8px solid transparent;
+    }
+    .tfb72ab4e-154e-44de-921d-0b4f1e7f425e.place-bottom::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        top: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-bottom-color: #222;
+        border-bottom-style: solid;
+        border-bottom-width: 6px;
+    }
+
+    .tfb72ab4e-154e-44de-921d-0b4f1e7f425e.place-left {
+        margin-left: -10px;
+    }
+    .tfb72ab4e-154e-44de-921d-0b4f1e7f425e.place-left::before {
+        border-left: 8px solid transparent;
+    }
+    .tfb72ab4e-154e-44de-921d-0b4f1e7f425e.place-left::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        right: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-left-color: #222;
+        border-left-style: solid;
+        border-left-width: 6px;
+    }
+
+    .tfb72ab4e-154e-44de-921d-0b4f1e7f425e.place-right {
+        margin-left: 10px;
+    }
+    .tfb72ab4e-154e-44de-921d-0b4f1e7f425e.place-right::before {
+        border-right: 8px solid transparent;
+    }
+    .tfb72ab4e-154e-44de-921d-0b4f1e7f425e.place-right::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        left: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-right-color: #222;
+        border-right-style: solid;
+        border-right-width: 6px;
+    }
+  ",
+                      }
+                    }
+                  />
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td
+            className="DatasetItem__td--empty"
+          >
+            <button
+              className="IconButton IconButton--transparent"
+              disabled={false}
+              onClick={[Function]}
+            >
+              <svg
+                aria-hidden="true"
+                className="svg-inline--fa fa-chevron-right fa-w-10 "
+                color="#957299"
+                data-icon="chevron-right"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                style={Object {}}
+                viewBox="0 0 320 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"
+                  fill="currentColor"
+                  style={Object {}}
+                />
+              </svg>
+            </button>
+          </td>
+          <td>
+            <a
+              href="/default/my-next-dataset"
+              onClick={[Function]}
+            >
+              my-next-dataset
+            </a>
+          </td>
+          <td>
+            this is my next dataset
+          </td>
+          <td>
+            4 days ago
+          </td>
+          <td />
+          <td
+            className="DatasetItem__td DatasetItem__td--actions"
+          >
+            <div
+              className="Delete relative"
+            >
+              <button
+                className="IconButton IconButton--primary"
+                disabled={false}
+                onClick={[Function]}
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-trash fa-w-14 "
+                  color="#fefefe"
+                  data-icon="trash"
+                  data-prefix="fas"
+                  focusable="false"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 448 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </button>
+              <div
+                className="Tooltip hidden"
+              >
+                <div
+                  data-event="click focus"
+                  data-tip={null}
+                  role="presentation"
+                />
+                <div
+                  className="__react_component_tooltip tcd9602c5-6cea-4959-bd29-4bb633b908af place-top type-dark"
+                  data-id="tooltip"
+                  id="tcd9602c5-6cea-4959-bd29-4bb633b908af"
+                >
+                  <style
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "
+  	.tcd9602c5-6cea-4959-bd29-4bb633b908af {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+  	}
+
+  	.tcd9602c5-6cea-4959-bd29-4bb633b908af.place-top {
+        margin-top: -10px;
+    }
+    .tcd9602c5-6cea-4959-bd29-4bb633b908af.place-top::before {
+        border-top: 8px solid transparent;
+    }
+    .tcd9602c5-6cea-4959-bd29-4bb633b908af.place-top::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-top-color: #222;
+        border-top-style: solid;
+        border-top-width: 6px;
+    }
+
+    .tcd9602c5-6cea-4959-bd29-4bb633b908af.place-bottom {
+        margin-top: 10px;
+    }
+    .tcd9602c5-6cea-4959-bd29-4bb633b908af.place-bottom::before {
+        border-bottom: 8px solid transparent;
+    }
+    .tcd9602c5-6cea-4959-bd29-4bb633b908af.place-bottom::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        top: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-bottom-color: #222;
+        border-bottom-style: solid;
+        border-bottom-width: 6px;
+    }
+
+    .tcd9602c5-6cea-4959-bd29-4bb633b908af.place-left {
+        margin-left: -10px;
+    }
+    .tcd9602c5-6cea-4959-bd29-4bb633b908af.place-left::before {
+        border-left: 8px solid transparent;
+    }
+    .tcd9602c5-6cea-4959-bd29-4bb633b908af.place-left::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        right: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-left-color: #222;
+        border-left-style: solid;
+        border-left-width: 6px;
+    }
+
+    .tcd9602c5-6cea-4959-bd29-4bb633b908af.place-right {
+        margin-left: 10px;
+    }
+    .tcd9602c5-6cea-4959-bd29-4bb633b908af.place-right::before {
+        border-right: 8px solid transparent;
+    }
+    .tcd9602c5-6cea-4959-bd29-4bb633b908af.place-right::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        left: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-right-color: #222;
+        border-right-style: solid;
+        border-right-width: 6px;
+    }
+  ",
+                      }
+                    }
+                  />
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pages/namespace/NamespacesTable Namespaces Table Comp 1`] = `
+<div
+  className="NamespacesTable"
+>
+  <div
+    className="SectionCard Card column-1-span-12 undefined"
+  >
+    <div
+      className="NamespacesTable__actions flex justify--space-between"
+    >
+      <div
+        className="Search column-1-span-5"
+      >
+        <div
+          className="InputText"
+        >
+          <label
+            className="InputText__label"
+          >
+            Search
+          </label>
+          <input
+            className="InputText__input"
+            onKeyUp={[Function]}
+            placeholder="Search Namespaces"
+            type="text"
+          />
+        </div>
+      </div>
+      <button
+        className="Button"
+        disabled={false}
+        onClick={[Function]}
+      >
+        Create Namespace
+      </button>
+    </div>
+    <table
+      className="NamespacesTable__table"
+    >
+      <thead>
+        <tr>
+          <th
+            className="NamespacesTable__th--empty"
+          />
+          <th>
+            Name
+          </th>
+          <th>
+            Description
+          </th>
+          <th>
+            Object Store Type
+          </th>
+          <th>
+            Bucket Name
+          </th>
+          <th>
+            Actions
+          </th>
+        </tr>
+      </thead>
+      <tbody />
+    </table>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pages/namespaces/NamespaceDetails Namespace Details Comp 1`] = `
+<tr>
+  <td
+    className="NamespaceDetails"
+    colSpan={7}
+  >
+    <p>
+      <b>
+        Datasets:
+      </b>
+       There are no datsets in this namespace.
+    </p>
+  </td>
+</tr>
+`;
+
+exports[`Storyshots Pages/namespaces/NamespaceListing Namespace Listing Comp 1`] = `
+<div
+  className="grid"
+>
+  <div
+    className="NamespaceListing"
+  >
+    <h2>
+      localhost
+    </h2>
+    <div />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pages/namespaces/card/CardList Card List Comp 1`] = `
+<div>
+  <div
+    id="CardList"
+  />
+  <div
+    className="CardList"
+  >
+    <div
+      className="Card AddCard column-4-span-3 Card--namespace"
+    >
+      <h4
+        className="Card__title"
+      >
+        Add 
+        namespace
+      </h4>
+      <button
+        className="SecondaryButton"
+        disabled={false}
+        onClick={[Function]}
+      >
+        Create namespace
+      </button>
+    </div>
+    <a
+      className="CardList__link"
+      href="/namespace1"
+      onClick={[Function]}
+    >
+      <div
+        className="Card column-4-span-3 grid-v-3"
+      >
+        <h4
+          className="Card__title"
+        >
+          namespace1
+        </h4>
+        <p
+          className="Card__p--small"
+        >
+          undefined/namespace1
+        </p>
+        <p>
+          this is a namespace
+        </p>
+      </div>
+    </a>
+    <a
+      className="CardList__link"
+      href="/namespace2"
+      onClick={[Function]}
+    >
+      <div
+        className="Card column-4-span-3 grid-v-3"
+      >
+        <h4
+          className="Card__title"
+        >
+          namespace2
+        </h4>
+        <p
+          className="Card__p--small"
+        >
+          undefined/namespace2
+        </p>
+        <p>
+          this is aanother namespace
+        </p>
+      </div>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pages/namespaces/row/NamespaceRow Dataset Item Comp 1`] = `
+<tr>
+  <td
+    className="NamespaceRow__td--empty"
+  >
+    <button
+      className="IconButton IconButton--transparent"
+      disabled={false}
+      onClick={[Function]}
+    >
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-chevron-right fa-w-10 "
+        color="#957299"
+        data-icon="chevron-right"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        style={Object {}}
+        viewBox="0 0 320 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+    </button>
+  </td>
+  <td>
+    <a
+      href="/default-namespace"
+      onClick={[Function]}
+    >
+      default-namespace
+    </a>
+  </td>
+  <td>
+    Default namespace
+  </td>
+  <td>
+    minio
+  </td>
+  <td>
+    data
+  </td>
+  <td
+    className="NamespaceRow_td DatasetItem__td--actions"
+  >
+    <div
+      className="Delete relative"
+    >
+      <button
+        className="IconButton IconButton--primary"
+        disabled={false}
+        onClick={[Function]}
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-trash fa-w-14 "
+          color="#fefefe"
+          data-icon="trash"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style={Object {}}
+          viewBox="0 0 448 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+      </button>
+      <div
+        className="Tooltip hidden"
+      >
+        <div
+          data-event="click focus"
+          data-tip={null}
+          role="presentation"
+        />
+        <div
+          className="__react_component_tooltip tf8a9912d-2082-4a66-bf8a-6d1fdaa3902c place-top type-dark"
+          data-id="tooltip"
+          id="tf8a9912d-2082-4a66-bf8a-6d1fdaa3902c"
+        >
+          <style
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "
+  	.tf8a9912d-2082-4a66-bf8a-6d1fdaa3902c {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+  	}
+
+  	.tf8a9912d-2082-4a66-bf8a-6d1fdaa3902c.place-top {
+        margin-top: -10px;
+    }
+    .tf8a9912d-2082-4a66-bf8a-6d1fdaa3902c.place-top::before {
+        border-top: 8px solid transparent;
+    }
+    .tf8a9912d-2082-4a66-bf8a-6d1fdaa3902c.place-top::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-top-color: #222;
+        border-top-style: solid;
+        border-top-width: 6px;
+    }
+
+    .tf8a9912d-2082-4a66-bf8a-6d1fdaa3902c.place-bottom {
+        margin-top: 10px;
+    }
+    .tf8a9912d-2082-4a66-bf8a-6d1fdaa3902c.place-bottom::before {
+        border-bottom: 8px solid transparent;
+    }
+    .tf8a9912d-2082-4a66-bf8a-6d1fdaa3902c.place-bottom::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        top: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-bottom-color: #222;
+        border-bottom-style: solid;
+        border-bottom-width: 6px;
+    }
+
+    .tf8a9912d-2082-4a66-bf8a-6d1fdaa3902c.place-left {
+        margin-left: -10px;
+    }
+    .tf8a9912d-2082-4a66-bf8a-6d1fdaa3902c.place-left::before {
+        border-left: 8px solid transparent;
+    }
+    .tf8a9912d-2082-4a66-bf8a-6d1fdaa3902c.place-left::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        right: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-left-color: #222;
+        border-left-style: solid;
+        border-left-width: 6px;
+    }
+
+    .tf8a9912d-2082-4a66-bf8a-6d1fdaa3902c.place-right {
+        margin-left: 10px;
+    }
+    .tf8a9912d-2082-4a66-bf8a-6d1fdaa3902c.place-right::before {
+        border-right: 8px solid transparent;
+    }
+    .tf8a9912d-2082-4a66-bf8a-6d1fdaa3902c.place-right::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        left: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-right-color: #222;
+        border-right-style: solid;
+        border-right-width: 6px;
+    }
+  ",
+              }
+            }
+          />
+        </div>
+      </div>
+    </div>
+  </td>
+</tr>
+`;
+
+exports[`Storyshots Pages/tokens/PersonalAccessTokens Personal Access Tokens Comp 1`] = `
+<div>
+  <div
+    id="PersonalAccessTokens"
+  />
+  <div
+    className="grid"
+  >
+    <div
+      className="PersonalAccessTokens"
+    >
+      <h2>
+        Personal Access Tokens
+      </h2>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pages/tokens/section/PatSection Pat Section Comp 1`] = `
+<div>
+  <div
+    id="PatSection"
+  />
+</div>
+`;
+
+exports[`Storyshots Pages/tokens/section/create/CreatePat Create Pat Comp 1`] = `
+<div>
+  <div
+    id="CreatePat"
+  />
+  <section
+    className="CreatePat"
+  >
+    <div
+      className="DivisionText"
+    >
+      <div
+        className="DivisionText__separator"
+      />
+      <h5
+        className="DivisionText__h5"
+      >
+        Generate
+      </h5>
+      <div
+        className="DivisionText__separator"
+      />
+    </div>
+    <div
+      className="CreatePat__form"
+    >
+      <div
+        className="InputText"
+      >
+        <label
+          className="InputText__label"
+        >
+          What is this token for?
+        </label>
+        <input
+          className="InputText__input column-1-span-4"
+          onKeyUp={[Function]}
+          placeholder="A brief token description"
+          type="text"
+        />
+      </div>
+      <button
+        className="Button"
+        disabled={false}
+        onClick={[Function]}
+      >
+        Submit
+      </button>
+    </div>
+  </section>
+</div>
+`;
+
+exports[`Storyshots Pages/tokens/section/create/new/NewPat New Pat Comp 1`] = `
+<div>
+  <div
+    id="NewPat"
+  />
+  <div
+    className="NewPat"
+  >
+    <p>
+      Make sure to copy your personal access token now. This won't be viewable again!
+    </p>
+    <div
+      className="CopyText"
+    >
+      <input
+        className="CopyText__input"
+        readOnly={true}
+        value="r4nD0mStr1ngF0rTh3T0k3n"
+      />
+      <button
+        className="CopyText__btn CopyText__btn--copy"
+        onClick={[Function]}
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-copy fa-w-14 "
+          color="white"
+          data-icon="copy"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style={Object {}}
+          viewBox="0 0 448 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M320 448v40c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V120c0-13.255 10.745-24 24-24h72v296c0 30.879 25.121 56 56 56h168zm0-344V0H152c-13.255 0-24 10.745-24 24v368c0 13.255 10.745 24 24 24h272c13.255 0 24-10.745 24-24V128H344c-13.2 0-24-10.8-24-24zm120.971-31.029L375.029 7.029A24 24 0 0 0 358.059 0H352v96h96v-6.059a24 24 0 0 0-7.029-16.97z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+      </button>
+    </div>
+    <div>
+      <button
+        className="Button"
+        disabled={false}
+        onClick={[Function]}
+      >
+        Dismiss
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pages/tokens/section/list/ListPat List Pat Comp 1`] = `
+<div>
+  <div
+    id="ListPat"
+  />
+  <div>
+    <div
+      className="DivisionText"
+    >
+      <div
+        className="DivisionText__separator"
+      />
+      <h5
+        className="DivisionText__h5"
+      >
+        My Personal Access Tokens
+      </h5>
+      <div
+        className="DivisionText__separator"
+      />
+    </div>
+    <table
+      className="ListPat__table column-1-span-6"
+    >
+      <thead>
+        <tr>
+          <th
+            className="column-1-span-4"
+          >
+            Description
+          </th>
+          <th>
+            Revoke
+          </th>
+        </tr>
+      </thead>
+      <tbody />
+    </table>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pages/tokens/section/list/item/PatItem Pat Item Comp 1`] = `
+<div>
+  <div
+    id="PatItem"
+  />
+  <tr
+    className="PatItem"
+  >
+    <td
+      className="column-1-span-5"
+    >
+      <p>
+        Gigantum Client
+      </p>
+    </td>
+    <td>
+      <button
+        className="IconButton IconButton--primary"
+        disabled={false}
+        onClick={[Function]}
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-trash fa-w-14 "
+          color="#fefefe"
+          data-icon="trash"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style={Object {}}
+          viewBox="0 0 448 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+      </button>
+    </td>
+  </tr>
+</div>
+`;
+
+exports[`Storyshots Shared/modal/create/Error Error Comp 1`] = `
+<div>
+  <div
+    id="Error"
+  />
+  <div
+    className="Error"
+  >
+    <h4>
+      Error Creating 
+      namespace-12
+    </h4>
+    <p>
+       add error icon here
+    </p>
+    <p
+      className="Error__p--error"
+    >
+      This is an error
+    </p>
+    <button
+      className="Button"
+      disabled={false}
+      onClick={[Function]}
+    >
+      Try Again
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Shared/modal/create/Processing Processing Comp 1`] = `
+<div>
+  <div
+    id="Processing"
+  />
+  <div
+    className="Processing"
+  >
+    <h4>
+      Creating new 
+      namespace
+       
+      namespace-12
+    </h4>
+    <div
+      className="Loader--nested"
+      data-testid="loader"
+    />
+  </div>
+</div>
+`;

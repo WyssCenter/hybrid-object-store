@@ -1,0 +1,17 @@
+@import '~Styles/_imports.scss';
+
+.SectionCard {
+  padding: 2em !important;
+
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+
+  margin-bottom: 6em !important;
+
+  &:hover {
+    box-shadow: 0 0px 12px 0 rgba(0,0,0,.10);
+  }
+  &--noPadding {
+    padding: 0 !important;
+  }
+}

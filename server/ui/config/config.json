@@ -1,0 +1,7 @@
+{
+    "server_name": "{{DOMAIN}}",
+    "colors": {
+        "primary": "#957299",
+        "secondary": "#1f1d2e"
+    }
+}

@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  minio:
+    labels:
+      - "traefik.http.routers.minio.entrypoints=websecure"
+      - "traefik.http.routers.minio.tls=true"
+      - "traefik.http.routers.minio.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.minio.tls.domains[0].main=${DOMAIN}"
+      - "traefik.http.routers.minio-redirect.entrypoints=web"
+      - "traefik.http.routers.minio-redirect.rule=Host(`${DOMAIN}`) && (PathPrefix(`/`) || PathPrefix(`/minio`))"
+      - "traefik.http.routers.minio-redirect.middlewares=minio-redirectscheme@docker"
+      - "traefik.http.middlewares.minio-redirectscheme.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.minio-redirectscheme.redirectscheme.permanent=true"
+    

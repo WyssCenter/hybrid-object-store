@@ -1,0 +1,16 @@
+@import '~Styles/_imports.scss';
+
+.GroupsTable {
+  margin: 2em auto;
+
+  max-width: 50em;
+
+  th {
+    border-bottom: 2px solid $romanSilver;
+  }
+  &__td {
+    &--empty {
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+@import '~Styles/_imports.scss';
+
+
+.FileHeader {
+  display: flex;
+  border-bottom: 2px solid #c4c7c9;
+  height: 30px;
+  margin: 0 -30px;
+  padding: 0 30px;
+  &__checkbox {
+    width: 20px;
+    height: 20px;
+    border: solid 1.5px $romanSilver;
+    cursor: pointer;
+    margin-right: 50px;
+    &--selected {
+      background: var(--main-color) url('~Images/icons/checkbox-selected.svg') no-repeat center center;
+      background-size: 20px;
+    }
+    &--partial {
+      background: var(--main-color) url('~Images/icons/checkbox-minus.svg') no-repeat center center;
+      background-size: 20px;
+    }
+    &:hover {
+      box-shadow: 0 0px 12px 0 rgba(0,0,0,.50);
+    }
+    &--placeholder {
+      width: 70px;
+    }
+  }
+
+  &__name {
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    svg {
+      margin: 0 8px;
+      line-height: 16px;
+      position: absolute;
+      top: 5px;
+    }
+    &--file {
+      text-align: left;
+      flex: 1;
+    }
+    &--size {
+      width: 100px;
+    }
+    &--modified {
+      width: 150px;
+
+    }
+    &--actions {
+      width: 200px;
+      cursor: auto;
+    }
+  }
+}

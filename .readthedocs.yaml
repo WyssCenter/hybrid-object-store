@@ -1,0 +1,12 @@
+
+# Required
+version: 2
+
+# Build documentation in the docs/ directory with Sphinx
+sphinx:
+   configuration: resources/docs/admin/source/conf.py
+
+# Optionally declare the Python requirements required to build your docs
+python:
+   install:
+   - requirements: resources/docs/admin/requirements.txt

@@ -1,0 +1,39 @@
+@import '~Styles/_imports.scss';
+
+.Dataset {
+  &__section {
+    margin: 0 auto !important;
+  }
+  .Card {
+    cursor: auto;
+  }
+  &__delete {
+    border: 1px solid var(--secondary-color);
+    background: var(--main-color);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 25px 0;
+    padding: 16px;
+    border-radius: 18px;
+    &--main {
+      font-weight: bold;
+    }
+    button {
+      box-shadow: none !important;
+      width: 400px;
+      text-decoration: underline;
+      &:hover {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.DatasetContainer {
+  &--details {
+    margin-right: 360px;
+  }
+}

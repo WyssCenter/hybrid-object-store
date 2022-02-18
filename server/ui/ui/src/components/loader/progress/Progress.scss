@@ -1,0 +1,45 @@
+@import '~Styles/_imports.scss';
+
+.ProgressLoader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  &__progress {
+    width: 130px;
+    height: 130px;
+    line-height: 130px;
+    font-size: 32px;
+    background: url('~Images/loaders/status-spinner.svg') no-repeat center center;
+    background-size: 130px;
+    &--failed {
+      border-radius: 50%;
+      line-height: 115px;
+      background: url('~Images/icons/exclamation-orange.svg') no-repeat center center;;
+      background-size: 130px;
+    }
+    &--completed {
+      border: 10px solid $green;
+      border-radius: 50%;
+      line-height: 115px;
+      background: transparent;
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+    &--completed {
+      padding-left: 30px;
+      background: url('~Images/icons/status-verified.svg') no-repeat left center;
+      color: $green;
+    }
+    &--failed {
+      padding-left: 30px;;
+      background: url(~Images/icons/exclamation-orange.svg) no-repeat left center;
+      background-size: 20px;
+      color: $orange;
+    }
+  }
+}

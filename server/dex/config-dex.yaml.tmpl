@@ -1,0 +1,68 @@
+issuer: http://dex:5556/dex
+
+storage:
+  type: sqlite3
+  config:
+    file: ":memory:"
+
+web:
+  http: 0.0.0.0:5556
+
+connectors:
+- type: ldap
+  name: OpenLDAP
+  id: ldap
+  config:
+    host: ldap:389
+    insecureNoSSL: true
+
+    # This would normally be a read-only user.
+    bindDN: cn=readonly,{{ldap_base_dn}}
+    bindPW: {{ldap_readonly_password}}
+
+    usernamePrompt: Email Address
+
+    userSearch:
+      baseDN: ou=People,{{ldap_base_dn}}
+      filter: "(objectClass=person)"
+      username: mail
+      # "DN" (case sensitive) is a special attribute name. It indicates that
+      # this value should be taken from the entity's DN not an attribute on
+      # the entity.
+      idAttr: DN
+      emailAttr: mail
+      nameAttr: cn
+
+    groupSearch:
+      baseDN: ou=Groups,{{ldap_base_dn}}
+      filter: "(objectClass=groupOfNames)"
+
+      userMatchers:
+        # A user is a member of a group when their DN matches
+        # the value of a "member" attribute on the group entity.
+      - userAttr: DN
+        groupAttr: member
+
+      # The group name should be the "cn" value.
+      nameAttr: cn
+
+staticClients:
+- id: HossServer
+  secret: temp-app-secret
+  name: 'Hoss Auth Service'
+  redirectURIs:
+  - '{{hostname}}/auth/v1/callback'
+
+# Default values shown below
+oauth2:
+  # use ["code", "token", "id_token"] to enable implicit flow for web-only clients
+  responseTypes: [ "code" ] # also allowed are "token" and "id_token"
+  # By default, Dex will ask for approval to share data with application
+  # (approval for sharing data from connected IdP to Dex is separate process on IdP)
+  skipApprovalScreen: true
+  # If only one authentication method is enabled, the default behavior is to
+  # go directly to it. For connected IdPs, this redirects the browser away
+  # from application to upstream provider such as the Google login page
+  alwaysShowLoginScreen: false
+  # Uncommend the passwordConnector to use a specific connector for password grants
+  passwordConnector: local
