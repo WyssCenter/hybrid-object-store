@@ -2,7 +2,7 @@ import shutil
 from pathlib import Path
 
 CONFIG_FILES = ['.env', 'traefik.yaml']
-CONFIG_DIRS = ['core', 'auth', 'sync', 'opensearch']
+CONFIG_DIRS = ['core', 'auth', 'sync', 'opensearch', 'ui']
 
 
 def backup_files(config_dir: Path, output_dir: Path) -> None:
