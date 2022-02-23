@@ -158,6 +158,9 @@ else
 	@printf "EXTERNAL_HOSTNAME=http://localhost\n" >> $(ENV_FILE)
 	@printf "DOMAIN=localhost\n" >> $(ENV_FILE)
 	@printf "AUTH_SERVICE_ENDPOINT=http://auth:8080/v1\n" >> $(ENV_FILE)
+	@printf "AUTH_CLIENT_SECRET=" >> $(ENV_FILE)
+	@LC_ALL=C tr -dc 'A-Za-z0-9_' </dev/urandom | head -c 48 >> $(ENV_FILE)
+	@printf "\n" >> $(ENV_FILE)
 	@printf "HEALTH_CHECK_HOST=\n" >> $(ENV_FILE)
 	@printf "ADMIN_EMAIL=\n" >> $(ENV_FILE)
 	@printf "NAS_ROOT=${HOSS_CONFIG_DIR}/data/nas\n" >> $(ENV_FILE)
@@ -269,20 +272,22 @@ setup:
 
 config:
 	@echo ""
-	@echo "Setting external hostname to '$(EXTERNAL_HOSTNAME)'"
+	@echo " - Setting external hostname to '$(EXTERNAL_HOSTNAME)'"
 
 	@if [[ $(LETS_ENCRYPT_ENABLED) == "true" ]]; then\
-        echo "Configuring ingress with TLS termination via Let's Encrypt.";\
+        echo " - Configuring ingress with TLS termination via Let's Encrypt.";\
 		sed "s!{{email}}!$(ADMIN_EMAIL)!" ingress/traefik-tls.yaml.tmpl > ${HOSS_CONFIG_DIR}/traefik.yaml; \
 	else \
-        echo "Configuring ingress without TLS termination.";\
+        echo " - Configuring ingress without TLS termination.";\
 		cp ./ingress/traefik.yaml ${HOSS_CONFIG_DIR}/traefik.yaml; \
 	fi
-	@echo ""
 
 	@# The dex/web dir sets the UI customization for dex
 	@cp -R dex/web ${HOSS_CONFIG_DIR}/auth/
 
+ifneq ("$(wildcard ${HOSS_CONFIG_DIR}/auth/config-dex.yaml)","")
+	@echo " - Using existing OIDC secret and Dex configuration. If you wish to regenerate this file, remove ${HOSS_CONFIG_DIR}/auth/config-dex.yaml and run 'make config' again."
+else
 	@# We need to make multiple replacements to the dex config file. Due to incompatibilities between sed on macOS and linux,
 	@# temporary files are used and then removed instead of just doing in place sed operations.
 	@sed "s!{{hostname}}!$(EXTERNAL_HOSTNAME)!" dex/config-dex.yaml.tmpl > ${HOSS_CONFIG_DIR}/auth/config-dex.yaml
@@ -290,27 +295,38 @@ config:
 
 	@$(eval LDAP_DOMAIN=$(shell echo $(LDAP_DOMAIN)) | sed s/\\./,dc=/g)
 	@$(eval LDAP_BASE_DN=$(shell echo dc=$(LDAP_DOMAIN)))
-	@echo "Setting LDAP Base DN to '$(LDAP_BASE_DN)'. Modify 'LDAP_DOMAIN' in your .env file and re-run config if you wish to change this."	
+	@echo " - Setting LDAP Base DN to '$(LDAP_BASE_DN)'. Modify 'LDAP_DOMAIN' in your .env file and re-run config if you wish to change this."	
 	@sed "s!{{ldap_base_dn}}!$(shell echo $(LDAP_BASE_DN))!" ${HOSS_CONFIG_DIR}/auth/config-dex2.yaml > ${HOSS_CONFIG_DIR}/auth/config-dex3.yaml
 	
+	@echo " - Setting OIDC client secret in Auth service and Dex configs"
+	@sed "s!{{auth_client_secret}}!$(shell echo $(AUTH_CLIENT_SECRET))!" ${HOSS_CONFIG_DIR}/auth/config.yaml > ${HOSS_CONFIG_DIR}/auth/config1.yaml
+	@sed "s!{{auth_client_secret}}!$(shell echo $(AUTH_CLIENT_SECRET))!" ${HOSS_CONFIG_DIR}/auth/config-dex3.yaml > ${HOSS_CONFIG_DIR}/auth/config-dex4.yaml
+
 	@# If recapcha is enabled we need to set the correct login html template.
-ifneq ($(RECAPTCHA_SITE_KEY),)
-	@echo "RECAPTCHA enabled."	
-	@sed "s!{{sitekey}}!$(shell echo $(RECAPTCHA_SITE_KEY))!" dex/config-dex-captcha.tmpl >> ${HOSS_CONFIG_DIR}/auth/config-dex3.yaml
-	@cp dex/password-captcha.html ${HOSS_CONFIG_DIR}/auth/web/templates/password.html
-else
-	@sed "s!{{sitekey}}!$(shell echo $(RECAPTCHA_SITE_KEY))!" dex/config-dex-no-captcha.tmpl >> ${HOSS_CONFIG_DIR}/auth/config-dex3.yaml
-	@cp dex/password.html ${HOSS_CONFIG_DIR}/auth/web/templates/password.html
-endif	
-
-	@mv ${HOSS_CONFIG_DIR}/auth/config-dex3.yaml ${HOSS_CONFIG_DIR}/auth/config-dex.yaml
+    ifneq ($(RECAPTCHA_SITE_KEY),)
+		@echo " - Configuring Dex with RECAPTCHA enabled."	
+		@sed "s!{{sitekey}}!$(shell echo $(RECAPTCHA_SITE_KEY))!" dex/config-dex-captcha.tmpl >> ${HOSS_CONFIG_DIR}/auth/config-dex4.yaml
+		@cp dex/password-captcha.html ${HOSS_CONFIG_DIR}/auth/web/templates/password.html
+    else
+		@echo " - Configuring Dex with RECAPTCHA disabled."	
+		@sed "s!{{sitekey}}!$(shell echo $(RECAPTCHA_SITE_KEY))!" dex/config-dex-no-captcha.tmpl >> ${HOSS_CONFIG_DIR}/auth/config-dex4.yaml
+		@cp dex/password.html ${HOSS_CONFIG_DIR}/auth/web/templates/password.html
+    endif	
+		
+	@mv ${HOSS_CONFIG_DIR}/auth/config-dex4.yaml ${HOSS_CONFIG_DIR}/auth/config-dex.yaml
+	@rm ${HOSS_CONFIG_DIR}/auth/config-dex3.yaml	
 	@rm ${HOSS_CONFIG_DIR}/auth/config-dex2.yaml	
+	@rm ${HOSS_CONFIG_DIR}/auth/config.yaml	
+	@mv ${HOSS_CONFIG_DIR}/auth/config1.yaml ${HOSS_CONFIG_DIR}/auth/config.yaml
+endif
 
+	@# Configure the base DN for the ldap server, if enabled.
 	@sed "s!{{ldap_base_dn}}!$(shell echo $(LDAP_BASE_DN))!" ldap/config-ldap.ldif.tmpl > ${HOSS_CONFIG_DIR}/auth/config-ldap.ldif
 	@sed "s!{{ldap_base_dn}}!$(shell echo $(LDAP_BASE_DN))!" ldap/env.yaml.tmpl > ${HOSS_CONFIG_DIR}/auth/env.yaml
 
 	@cp auth/openid-config.json.tmpl ${HOSS_CONFIG_DIR}/auth/openid-config.json
 	
+	@# Create required directories inside the hoss working dir
 	@mkdir -p ${HOSS_CONFIG_DIR}/data/db
 	@mkdir -p ${HOSS_CONFIG_DIR}/data/events
 	@mkdir -p ${HOSS_CONFIG_DIR}/data/nas/data
@@ -326,8 +342,7 @@ endif
 
 	@# Setting up UI config
 ifneq ("$(wildcard ${HOSS_CONFIG_DIR}/ui/config.json)","")
-	@echo
-	@echo "Using existing ui customizations"
+	@echo " - Using existing ui customizations"
 else
 	@mkdir -p ${HOSS_CONFIG_DIR}/ui
 	@sed "s!{{DOMAIN}}!$(DOMAIN)!" ui/config/config.json > ${HOSS_CONFIG_DIR}/ui/config.json

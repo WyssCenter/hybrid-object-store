@@ -48,7 +48,7 @@ connectors:
 
 staticClients:
 - id: HossServer
-  secret: temp-app-secret
+  secret: {{auth_client_secret}}
   name: 'Hoss Auth Service'
   redirectURIs:
   - '{{hostname}}/auth/v1/callback'
