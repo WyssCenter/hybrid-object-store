@@ -13,6 +13,10 @@ services:
         source: ~/.hoss/auth/web
         target: /opt/web
         read_only: true
+      - type: bind
+        source: ~/.hoss/auth/certificates
+        target: /opt/certificates
+        read_only: true
     command: dex serve /opt/config.yaml
     environment:
       RECAPTCHA_SECRET_KEY: ${RECAPTCHA_SECRET_KEY}
@@ -25,3 +29,4 @@ services:
     networks:
       - web
       - internal
+    restart: always
