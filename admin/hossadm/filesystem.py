@@ -39,6 +39,9 @@ def initialize_config_dir(config_dir: Path) -> None:
     # This creates a "default" bucket based on our current default config files
     Path(config_dir, 'data', 'nas', 'data').mkdir(parents=True, exist_ok=True)
 
+    Path(config_dir, 'ui').mkdir(parents=True, exist_ok=True)
+    Path(config_dir, 'auth', 'certificates').mkdir(parents=True, exist_ok=True)
+
 
 def prepare_for_restore(backup_root: Path) -> None:
     backup_db = Path(backup_root, '.db')

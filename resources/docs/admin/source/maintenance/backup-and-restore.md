@@ -49,19 +49,43 @@ the desired version.
 To start a backup, run `hossadm backup` as the user who runs the Hoss (i.e. what user ran `make up`) while the
 server is running.
 
+If you are not developing, and running on localhost, you must include the `--endpoint` option to indicate your server's external endpoint, e.g.:
+
+```
+hossadm backup --endpoint https://hoss.mycompany.com
+```
+
 This will create a backup of the current state of the system. It does NOT backup object store data.
 
 The backup data is compressed into a single archive and placed in the `$BACKUP_ROOT/backups` directory.
 
 ## Restore
 
+```{warning}
+If you are using minIO locally, be **very** careful with the `make reset` command. This could delete all of your data by removing the data
+directory!!!
+```
+
 To prepare for a restore, you should have a "clean" Hoss working directory (i.e. `~/.hoss`) before running this command. If you are restoring
 on the same system that was previously backed up, you'll need to do `make down` and `make reset` to clear most resources. Also you will likely 
-need to manually remove a few directories with `sudo` because of permission changes (e.g. ~/.hoss/data/db, ~/.hoss/backup/.db, ~/.hoss/data/opensearch, ~/.hoss/backup/.opensearch)
+need to manually remove a few directories with `sudo` because of permission changes (e.g. `~/.hoss/data/db`, `~/.hoss/backup/.db`, `~/.hoss/data/opensearch`, `~/.hoss/backup/.opensearch`). If using minIO locally, you should 
 
 If the default `BACKUP_ROOT` location was used, you can remove all content from the working directory except the `backup` directory because you'll need the backup archive in that directory.
 
 To start a restore, run `hossadm restore <PATH TO BACKUP ARCHIVE>` as the user who runs the Hoss (i.e. what user ran `make up`)
 
-During the restore process, the `hossadm` tool will instruct you to start the server. At this point, in a different terminal run `make up DETACH=true` as the user who runs the Hoss.
-`hossadm` will detect the server starting up and continue with the restore process.
+If you are not developing, and running on localhost, you must include the `--endpoint` option to indicate your server's external endpoint, e.g.:
+
+```
+hossadm restore --endpoint https://hoss.mycompany.com ~/hoss-backup-2022-02-22T014536Z.tar.gz
+```
+
+During the restore process, the `hossadm` tool will instruct you to start the server. At this point, in a different terminal run `make up DETACH=true` as the user who runs the Hoss in `server` directory of the Hoss code repository. `hossadm` will detect the server starting up and continue with the restore process.
+
+Finally, if running minIO, it is recommended that you restart the sync and core service to ensure that any timing issues during start up are resolved
+immediately.
+
+```
+make restart SERVICE_NAME=sync
+make restart SERVICE_NAME=core
+```
