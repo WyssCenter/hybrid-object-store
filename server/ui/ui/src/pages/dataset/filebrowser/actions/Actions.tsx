@@ -1,6 +1,6 @@
 // vendor
 import React, { FC, useState } from 'react';
-import { ListObjectsV2Command, GetObjectCommand, DeleteObjectCommand } from "@aws-sdk/client-s3";
+import { ListObjectsV2Command, GetObjectCommand, DeleteObjectCommand, GetBucketAclCommand } from "@aws-sdk/client-s3";
 import ReactTooltip from 'react-tooltip';
 import classNames from 'classnames';
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
@@ -42,6 +42,7 @@ interface Props {
   setNewFolderVisible?: (visible: boolean) => void;
   namespace?: string;
   searchMode: boolean;
+  setErrorModal: any;
 }
 
 
@@ -61,6 +62,7 @@ const Actions:FC<Props> = ({
   namespace,
   setNewFolderVisible,
   searchMode,
+  setErrorModal,
 }: Props) => {
 
   const [deleteMode, setDeleteMode] = useState(false);
@@ -72,8 +74,19 @@ const Actions:FC<Props> = ({
     })
     try {
       s3Client.send(command)
-      .then(() => refetchS3());
-      removeFiles([fileKey]);
+      .then(() => {
+        removeFiles([fileKey]);
+        refetchS3()
+      })
+      .catch((error: any) => {
+        console.log(error)
+        setErrorModal({
+          visible: true,
+          action: 'deleting file',
+          error: error.message,
+        })
+        setDeleteMode(false);
+      })
     } catch (err) {
       console.log(err);
     }
@@ -87,6 +100,7 @@ const Actions:FC<Props> = ({
       if (!source.endsWith('/')) {
         return Promise.reject(new Error('source or dest must ends with fwd slash'));
       }
+      let folderDeleted = false;
         s3Client.send(new ListObjectsV2Command({
           Bucket: bucket,
           Prefix: source,
@@ -101,8 +115,22 @@ const Actions:FC<Props> = ({
               }))
             .then(() => {
               removeFiles([file.Key]);
+              if (!folderDeleted) {
+                folderDeleted = true;
+                removeFolders([source]);
+              }
+            })
+            .catch((error: any) => {
+              setDeleteMode(false);
+              setErrorModal({
+                visible: true,
+                action: 'deleting folder(s)',
+                error: error.message,
+              })
             })
           })
+          } else {
+            removeFolders([source]);
           }
           if (res.CommonPrefixes) {
             res.CommonPrefixes.forEach(async (folder: Folder) => {
@@ -113,7 +141,6 @@ const Actions:FC<Props> = ({
             })
           }
         })
-        removeFolders([source]);
     }
 
     const downloadFile = async() => {

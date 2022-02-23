@@ -23,10 +23,11 @@ interface Props {
   list: Array<Permission>;
   sectionType: string;
   headerText: string;
+  owner: string;
 }
 
 
-const PermissionsSection: FC<Props> = ({ list, sectionType, headerText }: Props) => {
+const PermissionsSection: FC<Props> = ({ list, sectionType, headerText, owner }: Props) => {
 
   // context
   const { user } = useContext(AppContext);
@@ -79,6 +80,7 @@ const PermissionsSection: FC<Props> = ({ list, sectionType, headerText }: Props)
                   key={item.group.group_name}
                   item={item}
                   sectionType={sectionType}
+                  owner={owner}
                 />
               )
             })

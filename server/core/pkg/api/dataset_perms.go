@@ -70,6 +70,12 @@ func UpdateGroupDatasetPerms(c *gin.Context) {
 		return
 	}
 
+	// You can't change the admin group permissions to read-only
+	if groupName == "admin" && accessLevel == "r" {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "The admin group permissions cannot be set to read-only."})
+		return
+	}
+
 	updateDatasetPerms(c, namespace, datasetName, groupName, accessLevel)
 }
 

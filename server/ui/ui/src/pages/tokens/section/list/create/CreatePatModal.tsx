@@ -63,7 +63,7 @@ const CreatePatModal: FC<Props> = ({
     post('pat', body, true).then((response) => {
       return response.json();
     }).then((data) => {
-      if (data.error) {
+      if (data && data.error) {
         setErrorMessage(data.error);
         return;
       }

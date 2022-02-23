@@ -89,7 +89,7 @@
     &__table{
       height: 240px;
       border: 1px solid #979797;
-      overflow: scroll;
+      overflow: auto;
     }
     &__header {
       display: flex;
@@ -108,10 +108,27 @@
       justify-content: space-between;
       height: 24px;
       border-bottom: 1px solid #979797;
+      svg {
+        visibility: hidden;
+        position: absolute;
+        right: 2px;
+        bottom: 5px;
+      }
       span {
+        cursor: pointer;
         line-height: 24px;
         padding-left: 10px;
         width: 50%;
+        padding-right: 5px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        position: relative;
+        &:hover {
+          padding-right: 18px;
+          svg {
+            visibility: initial;
+          }
+        }
       }
     }
   }

@@ -86,6 +86,7 @@ interface Props {
   setSearchFolderExpanded: any;
   effectiveFolderList: any;
   isLocked: boolean;
+  setErrorModal: any;
 }
 
 export const Folder:FC<Props> = ({
@@ -123,6 +124,7 @@ export const Folder:FC<Props> = ({
   setSearchFolderExpanded,
   effectiveFolderList,
   isLocked,
+  setErrorModal,
 }: Props) => {
 
   const splitName = folder.Prefix.split('/');
@@ -245,7 +247,15 @@ export const Folder:FC<Props> = ({
                 removeFiles([item.file.Key]);
                 setIsLocked(false);
               });
-            });
+            })
+            .catch((error: any) => {
+              setIsLocked(false);
+              setErrorModal({
+                visible: true,
+                action: 'moving file(s)',
+                error: error.message,
+              })
+            })
         }
         if (item.folder
           && item.parentFolder !== folder.Prefix
@@ -472,6 +482,7 @@ export const Folder:FC<Props> = ({
               allowRename={(editedFolderName.length > 0)}
               setNewFolderVisible={setNewFolderVisible}
               searchMode={searchMode}
+              setErrorModal={setErrorModal}
             />
           </div>
           {
@@ -590,6 +601,7 @@ export const Folder:FC<Props> = ({
                   searchMode={searchMode}
                   setSearchFolderExpanded={setSearchFolderExpanded}
                   effectiveFolderList={effectiveFolderList}
+                  setErrorModal={setErrorModal}
                 />
               )
               })
@@ -649,6 +661,7 @@ export const Folder:FC<Props> = ({
                   setIsLocked={setIsLocked}
                   namespace={namespace}
                   searchMode={searchMode}
+                  setErrorModal={setErrorModal}
                 />
               )
               })

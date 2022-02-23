@@ -80,7 +80,7 @@ const PasswordModal: FC<Props> = (
       return response.json();
       })
     .then((data) => {
-      if (data.error) {
+      if (data && data.error) {
         setError(data.error)
         setTimeout(() => {
           setError(null)

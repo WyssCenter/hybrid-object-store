@@ -88,6 +88,9 @@
     &--medium {
       @include modal(440px, 735px);
     }
+    &--flex {
+      @include modal(280px, 735px);
+    }
 
     &--small {
       padding: 0;

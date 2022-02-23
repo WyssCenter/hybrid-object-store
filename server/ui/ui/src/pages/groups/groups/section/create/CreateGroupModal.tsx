@@ -57,7 +57,7 @@ const CreateGroup: FC<Props> = ({
     post('group/', body, true).then((response) => {
       return response.json();
     }).then((data) => {
-      if (data.error) {
+      if (data && data.error) {
         setErrorMessage(data.error);
         return;
       }

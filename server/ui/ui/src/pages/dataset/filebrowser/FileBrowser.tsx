@@ -11,6 +11,7 @@ import { get } from 'Environment/createEnvironment';
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 // components
+import Modal from 'Components/modal/Modal';
 import { PrimaryButton } from 'Components/button/index';
 import File from './file/File';
 import Details from './details/Details';
@@ -183,6 +184,11 @@ const FileBrowser:FC<Props> = ({
   const [loadingSearch, setLoadingSearch] = useState(false);
   const [errorFetch, setErrorFetch] = useState(false);
   const [loadingFetch, setLoadingFetch] = useState(true);
+  const [errorModal, setErrorModal] = useState({
+    visible: false,
+    action: '',
+    error: '',
+  })
   const [uploadData, setUploadData] = useState({
     uploading: false,
     totalFiles: null,
@@ -360,6 +366,25 @@ const FileBrowser:FC<Props> = ({
             setIsLocked(false)
           }
         })
+        .catch(error => {
+          if (!errorModal.visible) {
+            setErrorModal({
+              visible: true,
+              action: 'uploading file(s)',
+              error: error.message,
+            })
+          }
+          setUploadData((prevData) =>({
+            ...prevData,
+            uploading: false,
+            totalFiles: null,
+            totalSize: null,
+            finishedFiles: null,
+            downloaded: null,
+            pct: null,
+          }))
+          setIsLocked(false)
+        })
       } catch (err) {
         console.log(err)
       }
@@ -433,6 +458,14 @@ const FileBrowser:FC<Props> = ({
                     }
                   })
                 }
+              })
+            })
+            .catch((error: any) => {
+              setIsLocked(false);
+              setErrorModal({
+                visible: true,
+                action: 'modifying folder(s)',
+                error: error.message,
               })
             })
           })
@@ -558,7 +591,15 @@ const FileBrowser:FC<Props> = ({
                 removeFiles([item.file.Key]);
                 setIsLocked(false);
               });
-            });
+            })
+            .catch((error: any) => {
+              setIsLocked(false);
+              setErrorModal({
+                visible: true,
+                action: 'moving file(s)',
+                error: error.message,
+              })
+            })
         }
         if (item.folder
           && item.parentFolder !== `${dataset}/`
@@ -729,7 +770,7 @@ const FileBrowser:FC<Props> = ({
       .then((res: any) => {
         setFocusedFileData((prevData: any) => ({
           ...res,
-          Metadata: (prevData && prevData.Metadata) ? prevData.Metadata : res.Metadata
+          Metadata: (prevData && prevData.Metadata && prevData.ETag === res.ETag) ? prevData.Metadata : res.Metadata
         }));
       })
       if (!isMinio) {
@@ -881,6 +922,33 @@ const FileBrowser:FC<Props> = ({
         />
         )
       }
+      {
+        errorModal.visible && (
+          <Modal
+            size="flex"
+            header={`Error ${errorModal.action}`}
+            handleClose={() => setErrorModal({
+              visible: false,
+              action: '',
+              error: '',
+            })}
+          >
+            <p className="">{
+              errorModal.error === 'Access Denied.'
+               ? 'Access Denied. This is likely due to a lack of permissions to modify the dataset. Read & Write permissions are required. '
+               : errorModal.error
+            }</p>
+            <PrimaryButton
+                click={() => setErrorModal({
+                visible: false,
+                action: '',
+                error: '',
+              })}
+              text="Close"
+            />
+          </Modal>
+        )
+      }
       <TagsModal
         hideModal={() => setTagModalVisible(false)}
         isVisible={tagModalVisible}
@@ -912,6 +980,7 @@ const FileBrowser:FC<Props> = ({
             removeFiles={removeFiles}
             removeFolders={removeFolders}
             bucket={bucket}
+            setErrorModal={setErrorModal}
           />
         )
       }
@@ -1022,6 +1091,7 @@ const FileBrowser:FC<Props> = ({
             searchMode={!!searchData}
             setSearchFolderExpanded={setSearchFolderExpanded}
             effectiveFolderList={effectiveFolderList}
+            setErrorModal={setErrorModal}
           />
          )
         })
@@ -1059,6 +1129,7 @@ const FileBrowser:FC<Props> = ({
             setIsLocked={setIsLocked}
             namespace={namespace}
             searchMode={!!searchData}
+            setErrorModal={setErrorModal}
           />
          )
         })

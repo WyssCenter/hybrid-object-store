@@ -7,6 +7,7 @@ import React,
   useRef,
   useState,
 } from 'react';
+import ReactTooltip from 'react-tooltip';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom'
 // Environment
@@ -54,13 +55,25 @@ const GroupItem: FC<Props> = ({ membership, authorized }: Props) => {
     del(
       `group/${membership.group.group_name}`,
       del,
-      true).then((response) => {
+      true)
+      .then((response) => {
       if(response.ok) {
         send('REFETCH');
+        return;
       } else {
-        setErrorMessage("Something went wrong, try again. If this continues contact your support.");
+        return response.json();
       }
-    }).catch((error) => {
+    })
+    .then((data: any) => {
+      if (data && data.error) {
+        setIsTooltipVisible(false)
+        setErrorMessage(data.error);
+        setTimeout(() => {
+          setErrorMessage('');
+        }, 5000);
+      }
+    })
+    .catch((error) => {
       setErrorMessage(error.toString());
     })
   }, [send, membership])
@@ -76,7 +89,6 @@ const GroupItem: FC<Props> = ({ membership, authorized }: Props) => {
     setIsTooltipVisible(false);
   }
 
-
   return (
     <>
       <tr className="GroupItem">
@@ -90,12 +102,17 @@ const GroupItem: FC<Props> = ({ membership, authorized }: Props) => {
         <td>{membership.group.description}</td>
         {
           authorized && (
-            <td className="GroupItem__td--actions">
+            <td
+              className="GroupItem__td--actions"
+            >
               <div
                 className="GroupItem__actions"
                 ref={tooltipRef}
+                data-tip="This group is protected and cannot be deleted"
+                data-tip-disable={!(membership.group.group_name === 'admin' || membership.group.group_name === 'public')}
               >
                 <IconButton
+                disabled={membership.group.group_name === 'admin' || membership.group.group_name === 'public'}
                 click={() => { setIsTooltipVisible(true)}}
                 icon={faTrash}
                 color="white"
@@ -104,8 +121,12 @@ const GroupItem: FC<Props> = ({ membership, authorized }: Props) => {
                   confirm={removeGroup}
                   cancel={hideTooltipVisible}
                   isVisible={isTooltipVisible}
-                  text="Are you sure? If you haven't copied and saved this token you will not be able use it."
+                  text="Are you sure? All members of this group will lose access to all datasets that this group is granted permissions to."
                   tooltipRef={tooltipRef}
+                />
+                <ReactTooltip
+                  place="bottom"
+                  effect="solid"
                 />
               </div>
             </td>

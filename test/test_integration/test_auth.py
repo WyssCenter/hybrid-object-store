@@ -68,6 +68,12 @@ class TestAuthService:
         assert public_group.name == "public"
         assert len(public_group.members) == 3, "Public group not correct, did you login with all 3 test accounts?"
 
+        with pytest.raises(hoss.HossException):
+            server.auth.delete_group("admin")
+
+        with pytest.raises(hoss.HossException):
+            server.auth.delete_group("public")
+
     def test_admin_can_remove_user_from_public(self, fixture_test_public_group):
         server = fixture_test_public_group
 

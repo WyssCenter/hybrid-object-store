@@ -44,7 +44,7 @@ const PatSection: FC = () => {
     get('pat/', true).then((response) => {
         return response.json();
       }).then((data) => {
-        if (data.error) {
+        if (data && data.error) {
           send('ERROR', { error: data.error })
           return;
         }

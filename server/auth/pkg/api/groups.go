@@ -88,6 +88,11 @@ func (a *Auth) DeleteGroup(c *gin.Context) {
 
 	groupName := c.Param("groupname")
 
+	if (groupName == "admin") || (groupName == "public") {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "The public and admin groups cannot be deleted."})
+		return
+	}
+
 	if roleValid := a.validateAdminOrPrivilegedMember(userInfo.Role, userInfo.Username, groupName); !roleValid {
 		c.JSON(http.StatusUnauthorized, gin.H{"error": ErrUnauthorized.Error()})
 		return

@@ -60,11 +60,13 @@ const DatasetSection: FC<Props> = ({
               list={users}
               sectionType="user"
               headerText="Users"
+              owner={dataset.owner.username}
             />
             <PermissionsSection
               list={groups}
               sectionType="group"
               headerText="Groups"
+              owner={dataset.owner.username}
             />
           </div>
         </SectionCard>

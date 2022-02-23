@@ -12,6 +12,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import { useMachine } from '@xstate/react';
+import ReactTooltip from 'react-tooltip';
 // context
 import AppContext from 'Src/AppContext';
 // enivornment
@@ -212,10 +213,17 @@ const Namespace: FC<Props> = ({ setSyncValue }:Props) => {
             </p>
             <div
               className="Namespace__Delete--buttons relative"
+              data-tip="Only administrators can delete a namespace."
+              data-tip-disable={user.profile.role === 'admin'}
             >
               <WarningButton
                 click={() => setIsModalVisible(true)}
+                disabled={user.profile.role !== 'admin'}
                 text="Delete Namespace"
+              />
+              <ReactTooltip
+                place="bottom"
+                effect="solid"
               />
             </div>
           </div>

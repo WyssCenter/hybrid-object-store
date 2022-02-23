@@ -82,12 +82,26 @@ const AddSection: FC<Props> = ({ sectionType }:Props) => {
         if (permissions.name === 'Read Only') {
           permName = 'r';
         }
-        put(`namespace/${namespace}/dataset/${datasetName}/${sectionType}/${name}/access/${permName}`).then((response) => {
-          send('REFETCH');
-          setPermissions({name: 'r'});
-          setName('');
-          setErrorMessage('');
-        }).catch((error) => {
+        put(`namespace/${namespace}/dataset/${datasetName}/${sectionType}/${name}/access/${permName}`)
+        .then((response) => {
+          if (response.ok) {
+            send('REFETCH');
+            setPermissions({name: 'r'});
+            setName('');
+            setErrorMessage('');
+            return;
+          }
+          return response.json()
+        })
+        .then((data: any) => {
+          if(data && data.error) {
+            setErrorMessage(data.error);
+            setTimeout(() => {
+              setErrorMessage('');
+            }, 5000);
+          }
+        })
+        .catch((error) => {
           const newErrorMessage = error.toString ? error.toString() : error;
           setErrorMessage(newErrorMessage);
         })
@@ -151,7 +165,7 @@ const AddSection: FC<Props> = ({ sectionType }:Props) => {
   return (
     <>
       <div className="AddSection">
-        <div>
+        <div className="relative">
             <UserInput
               inputRef={inputRef}
               permissionType={sectionType}

@@ -1,10 +1,12 @@
 // vendor
 import React, { FC, useState, useRef } from 'react';
 import Moment from 'moment';
+import ReactTooltip from 'react-tooltip';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { InputText } from 'Components/form/text/index';
 import { faCopy } from '@fortawesome/free-solid-svg-icons';
 import { ReactComponent as CloseIcon } from 'Images/icons/icon-close.svg';
+
 
 // css
 import './Details.scss';
@@ -39,6 +41,8 @@ const Details:FC<Props> = ({
 
   const [eTagCopied, setETagCopied] = useState(false);
   const [URICopied, setURICopied] = useState(false);
+  const [copiedEntry, setCopiedEntry] = useState(null);
+  const [copiedValue, setCopiedValue] = useState(null);
   const [metaSearch, setMetaSearch] = useState('');
   const inputRef = useRef(null);
 
@@ -217,13 +221,47 @@ const Details:FC<Props> = ({
                 </div>
                 <div className="Details__meta__contents">
                   {
-                    Object.keys(filteredMeta).map((entry) => (
+                    Object.keys(filteredMeta).map((entry, index) => (
                     <div className="Details__meta__entry" key={entry}>
-                      <span>
+                      <span
+                        key={copiedEntry === index ? `${entry}--hidden` : entry}
+                        data-tip={copiedEntry === index ? 'Copied to clipboard' : entry.length > 15 ? entry : ''}
+                        role="presentation"
+                        onClick={() =>{
+                          copyToClipboard(entry);
+                          setCopiedEntry(index);
+                          setTimeout(() => {
+                            setCopiedEntry(null)
+                          }, 3000);
+                        }}
+                      >
                         {entry}
+                       <FontAwesomeIcon icon={faCopy} color={primaryHash} />
+
+                        <ReactTooltip
+                          place="bottom"
+                          effect="solid"
+                        />
                       </span>
-                      <span>
+                      <span
+                        key={copiedValue === index ? `${data.Metadata[entry]}--hidden` : data.Metadata[entry]}
+                        role="presentation"
+                        onClick={() =>{
+                          copyToClipboard(data.Metadata[entry])
+                          setCopiedValue(index);
+                          setTimeout(() => {
+                            setCopiedValue(null)
+                          }, 3000);
+                        }}
+                        data-tip={copiedValue === index ? 'Copied to clipboard' : data.Metadata[entry].length > 15 ? data.Metadata[entry] : ''}
+                      >
                         {data.Metadata[entry]}
+                       <FontAwesomeIcon icon={faCopy} color={primaryHash} />
+
+                        <ReactTooltip
+                          place="bottom"
+                          effect="solid"
+                        />
                       </span>
                     </div>
                     ))

@@ -22,7 +22,7 @@ interface DropdownItem {
 interface Props {
   name: string;
   permission: DropdownItem;
-  updatePermissions: (permission: DropdownItem, name: string) => void;
+  updatePermissions: (permission: DropdownItem, name: string, errorCallback: () => void) => void;
 }
 
 
@@ -80,7 +80,12 @@ const PermissionDropdown: FC<Props> = ({
 
   useEffect(() => {
     if (permission.name !== state.selectedItem.name) {
-      updatePermissions(state.selectedItem, name);
+      updatePermissions(state.selectedItem, name, () => {
+        dispatch({
+          type: 'set',
+          payload: { selectedItem: permission }
+        });
+      });
     }
   }, [state.selectedItem, updatePermissions, name, permission]);
 
