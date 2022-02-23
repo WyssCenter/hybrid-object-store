@@ -157,7 +157,9 @@ class TestSyncRemoteToLocal:
         assert f_src.exists() is False
         assert f_tgt.exists() is False
         f_tgt.write_text("a file written in the target dataset", metadata={"key6": "value6", "write": "local"})
-        time.sleep(5)
+        time.sleep(10)
+        f_src = ds_src / 'test2.txt'
+        f_tgt = ds_tgt / 'test2.txt'
 
         for cnt in range(30):
             try:

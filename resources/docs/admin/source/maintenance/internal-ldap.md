@@ -96,8 +96,8 @@ development and testing and should be removed when deploying a server "for real"
 | username               | password | role       
 |------------------------|----------|------------
 | admin@example.com      | foo      | admin      
-| privileged@example.com | bar      | privileged 
-| user@example.com       | password | base user 
+| privileged@example.org | bar      | privileged 
+| user@example.org       | password | base user 
 | test.user@example.com  | foobar   | base user
 
 To remove these users, simply follow the instructions in the "Removing Users" section above.

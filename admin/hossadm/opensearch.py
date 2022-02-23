@@ -22,7 +22,7 @@ def wait_for_server(progress: Progress, task_id: TaskID) -> None:
         None
     """
     search_up = False
-    for _ in range(int(3 * 60 / 5)):
+    for _ in range(int(15 * 60 / 5)):
         if docker.container_is_running('server_opensearch_1'):
             search_up = True
             break
@@ -30,7 +30,7 @@ def wait_for_server(progress: Progress, task_id: TaskID) -> None:
             time.sleep(5)
 
     if not search_up:
-        raise Exception("Server not detected within 3 minutes. Did you run 'make up'?")
+        raise Exception("Server not detected within 15 minutes. Did you run 'make up'?")
     progress.advance(task_id)
     time.sleep(5)
     progress.console.print(":hourglass: Server detected, waiting for services to be ready...")

@@ -9,23 +9,24 @@
 [![Documentation Status](https://readthedocs.org/projects/hybrid-object-store/badge/?version=latest)](https://hybrid-object-store.readthedocs.io/en/latest/?badge=latest)
 
 
-
 ## Running via Docker Compose
 You can run the entire system locally via docker compose. By default it will run on localhost.
 
 The following are the safest steps to get running.
 
-1. run `make reset` (if you've previously run the hos on the current machine)
-2. run `make setup` (if you've never run the hos on the current machine)
-3. run `make env`
+1. Install dependencies
+   1. The system needs Docker, Docker Compose, make, and git. Instructions will vary depending on your host OS.
+2. run `make reset` (if you've previously run the hos on the current machine)
+3. run `make setup` (if you've never run the hos on the current machine)
+4. run `make env`
    1. (Optional) Edit the `EXTERNAL_HOSTNAME` and `DOMAIN` variables in the `~/.hos/.env` file if you wish to run on something other than localhost. If performing TLS termination outside of the server (e.g. an ALB in AWS), make sure `EXTERNAL_HOSTNAME` starts with `https://`.
    2. (Optional) The system can automatically provision and renew certificates via Let's Encrypt. To enable this feature, set `LETS_ENCRYPT_ENABLED=true`, make sure `EXTERNAL_HOSTNAME` starts with `https://` and `ADMIN_EMAIL` is set. The `ADMIN_EMAIL` will be used for communication (e.g. expiration notices) from Let's Encrypt. Your server must be reachable on port 80 for the ACME challenge to succeed. The ingress proxy automatically will redirect all other traffic on port 80 to 443, so you can use this to lock down server access if desired (e.g allow 80 from anywhere and 443 from a specific CIDR block).
    3. (Optional) If running behind a load balancer or proxy that will be run a health check on the server, you may need to set the `HEALTH_CHECK_HOST` env var. If this is set, an additional routing rule will be added to ensure that calls to the core service at the `HEALTH_CHECK_HOST` will route. For example, when running in AWS behind and ALB, the server will be configured to route requests to the external FQDN, but the ALB will make health check calls to the internal IP. In this case, you should set `HEALTH_CHECK_HOST` to the internal IP of the instance.
    4. (Optional) If you are using the LDAP integration and wish to enable reCAPTCHA on the login page, you must set the `RECAPTCHA_SITE_KEY` and `RECAPTCHA_SECRET_KEY` env vars to valid values before running `make config`. You can learn more about how to obtain these values for your domain [here](server/dex/README.md).
-4. run `make config`
+5. run `make config`
    1. (Optional) Customize the look of the Hoss by modifying the primary colors, server name displayed in the top menu bar, and logos. You can do this by editing `~/.hoss/ui/config.json` and replacing `~/.hoss/ui/logo.svg` and `~/.hoss/ui/favicon.png`. If you wish to also change the Dex login page (e.g. you are using LDAP auth), you can also manually edit the icon `~/.hoss/auth/web/static/img/hoss-logo.svg` and login page `~/.hoss/auth/web/templates/password.html`
-5. run `make build`
-6. run `make up` or `make up DETACH=true`
+6. run `make build`
+7. run `make up` or `make up DETACH=true`
 
 In this configuration you should be able to reach minio directly on localhost and will be redirected to the Hoss user interface when you load the server in your browser. The core API should be available on `http://localhost/core/v1/`
 
@@ -36,8 +37,9 @@ When running with default configuration, test user accounts will automatically b
 | username               | password | role       
 |------------------------|----------|------------
 | admin@example.com      | foo      | admin      
-| privileged@example.com | bar      | privileged 
-| user@example.com       | password | base user  
+| privileged@example.org | bar      | privileged 
+| user@example.org       | password | base user  
+| test.user@example.com  | foobar   | base user  
 
 
 ## Monitoring Server Logs

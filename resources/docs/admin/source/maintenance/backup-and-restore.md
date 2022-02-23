@@ -68,21 +68,22 @@ If you are using minIO locally, be **very** careful with the `make reset` comman
 directory!!!
 ```
 
-To complete for a restore, you should have a prepared server and "clean" Hoss working directory (i.e. `~/.hoss`) before running this command. 
+To complete for a restore, you should have a prepared server and "clean" Hoss working directory (i.e. `~/.hoss`) before running this command.
 
-If you are restoring on the same system that was previously backed up, you'll need to do `make down` and `make reset` to clear most resources. Also you will likely need to manually remove a few directories with `sudo` because of permission changes (e.g. `~/.hoss/data/db`, `~/.hoss/backup/.db`, `~/.hoss/data/opensearch`, `~/.hoss/backup/.opensearch`). If using minIO locally, you should be very careful not to remove the `~/.hoss/data/nas` directory, if using the default storage location. If the default `BACKUP_ROOT` location was used, you can remove all other content from the working directory except the `backup` directory because you'll need the backup archive in that directory.
+If you are restoring on the same system that was previously backed up, you'll need to do `make down` and `make reset` to clear most resources. Also you will likely need to manually remove a few directories with `sudo` because of permission changes (e.g. `~/.hoss/data/db`, `~/.hoss/backup/.db`, `~/.hoss/data/opensearch`, `~/.hoss/backup/.opensearch`). **If using minIO locally, you should be very careful not to remove the `~/.hoss/data/nas` directory**, if using the default storage location. `make reset` WILL clear this location! If the default `BACKUP_ROOT` location was used, you can remove all other content from the working directory except the `backup` directory because you'll need the backup archive in that directory.
 
-If you are restoring to a new server (e.g. a disaster recovery event), then you must [prepare the server](../installation/prepare.md#prepare-server) by installing Docker and other related tools. You must also [set up the repository](../installation/install-aws.md#set-up-repository) at the version at which your backup was created.
+If you are restoring to a new server (e.g. a disaster recovery event), then you must:
+* [Prepare the server](../installation/prepare.md#prepare-server) by installing Docker and other related tools
+* [Set up the repository](../installation/install-aws.md#set-up-repository) at the version at which your backup was created
+* run `make setup`
 
-To start a restore, run `hossadm restore <PATH TO BACKUP ARCHIVE>` as the user who runs the Hoss (i.e. what user ran `make up`)
-
-If you are not developing, and running on localhost, you must include the `--endpoint` option to indicate your server's external endpoint, e.g.:
+To start the restore process, ensure the Hoss source repository is at the desired version. Then run `hossadm restore <PATH TO BACKUP ARCHIVE>` as the user who runs the Hoss (i.e. what user ran `make up`). If you are not developing, and running on localhost, you must include the `--endpoint` option to indicate your server's external endpoint, e.g.:
 
 ```
 hossadm restore --endpoint https://hoss.mycompany.com ~/hoss-backup-2022-02-22T014536Z.tar.gz
 ```
 
-During the restore process, the `hossadm` tool will instruct you to start the server. At this point, in a different terminal run `make up DETACH=true` as the user who runs the Hoss in `server` directory of the Hoss code repository. `hossadm` will detect the server starting up and continue with the restore process. Note, if there are any configuration changes you wish to make that are possible to change (e.g. `HEALTH_CHECK_HOST` setting), you should make them at this point, before running `make up`.
+During the restore process, the `hossadm` tool will instruct you to start the server. At this point, in a different terminal run `make up DETACH=true` as the user who runs the Hoss in `server` directory of the Hoss code repository. `hossadm` will detect the server starting up and continue with the restore process. Note, if there are any configuration changes you wish to make that are possible to change (e.g. `HEALTH_CHECK_HOST` setting), you should make them at this point, before running `make up`. Additionally, the `hossadm` tool will wait 15 minutes for the server to start before timing out. This should be enough time for all images to pull and build, even if you have a fresh installation. If for some reason the server is not ready in time, you should stop the server and reset via `make down` and `make reset` before trying again.
 
 Finally, if running minIO, it is recommended that you restart the sync and core service to ensure that any timing issues during start up are resolved
 immediately.
