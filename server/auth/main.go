@@ -96,6 +96,9 @@ func main() {
 		// Endpoints to change user passwords if running internal auth provider
 		v1.GET("password", auth.ChangePasswordSupported)
 		v1.PUT("password", auth.ChangePassword)
+
+		// Endpoint to remove user tokens and permissions
+		v1.DELETE("user/:username", auth.DeleteUser)
 	}
 
 	r.Run() // listen and serve on 0.0.0.0:8080

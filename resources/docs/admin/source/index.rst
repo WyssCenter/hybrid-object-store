@@ -58,4 +58,5 @@ install, configure, update, backup, and maintain a Hoss server installation.
    maintenance/update
    maintenance/monitor-logs
    maintenance/roles
+   maintenance/revoking-access
 

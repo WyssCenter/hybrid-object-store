@@ -226,3 +226,63 @@ func (a *Auth) SATforJWT(c *gin.Context) {
 
 	c.JSON(http.StatusCreated, tokens)
 }
+
+// DeleteUser deletes all personal access tokens, group memberships, and permissions for a user
+// @Summary Delete a user
+// @Schemes
+// @Tags Tokens
+// @Description This endpoint will delete a user's Personal Access Tokens (PATs), group memberships, and permissions.
+// @Description This endpoint is intended for use by admins after a user has been removed from the external user database.
+// @Description The `Authorization` header should contain a valid JWT with the format `Bearer <id_token>`.
+// @Accept json
+// @Produce json
+// @Param	username   path      string  true  "Username"
+// @Success 204
+// @Failure 401 {object} object{error=string}
+// @Failure 500 {object} object{error=string}
+// @Security BearerToken
+// @Router /user/{username} [delete]
+func (a *Auth) DeleteUser(c *gin.Context) {
+
+	username := c.Param("username")
+
+	userInfo, err := getUser(c)
+	if err != nil {
+		c.JSON(http.StatusUnauthorized, gin.H{"error": err.Error()})
+		return
+	}
+	if admin := validateAdmin(userInfo.Role); !admin {
+		c.JSON(http.StatusUnauthorized, gin.H{"error": ErrUnauthorized.Error()})
+		return
+	}
+
+	// delete all PATs
+	pats, err := a.Database.ListPAT(username)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+	for _, pat := range pats {
+		err = a.Database.DeletePAT(pat.Id, username)
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+			return
+		}
+	}
+
+	// delete group memberships
+	groups, err := a.Database.ListUserGroupNames(username)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+	for _, group := range groups {
+		err = a.Database.RemoveGroupMembership(username, group)
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+			return
+		}
+	}
+
+	c.Status(http.StatusNoContent)
+}
