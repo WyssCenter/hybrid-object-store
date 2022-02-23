@@ -24,6 +24,7 @@ interface Props {
   removeFiles: (fileKeys: Array<string>) => void;
   removeFolders?: (folderKeys: Array<string>) => void;
   bucket: string;
+  setErrorModal: any;
 }
 
 
@@ -34,6 +35,7 @@ const StaticButtons:FC<Props> = ({
   removeFiles,
   removeFolders,
   bucket,
+  setErrorModal,
 }: Props) => {
 
   const [deleteMode, setDeleteMode] = useState(false);
@@ -52,7 +54,19 @@ const StaticButtons:FC<Props> = ({
     })
     try {
       s3Client.send(command)
-      removeFiles([key]);
+      .then(() => {
+        removeFiles([key]);
+      })
+      .catch((error: any) => {
+        if(setDeleteMode) {
+          setDeleteMode(false);
+        }
+        setErrorModal({
+          visible: true,
+          action: 'deleting selected',
+          error: error.message,
+        })
+      })
     } catch (err) {
       console.log(err);
     }
@@ -66,6 +80,7 @@ const StaticButtons:FC<Props> = ({
       if (!source.endsWith('/')) {
         return Promise.reject(new Error('source or dest must ends with fwd slash'));
       }
+      let folderDeleted = false;
         s3Client.send(new ListObjectsV2Command({
           Bucket: bucket,
           Prefix: source,
@@ -80,6 +95,20 @@ const StaticButtons:FC<Props> = ({
               }))
             .then(() => {
               removeFiles([file.Key]);
+              if (!folderDeleted) {
+                folderDeleted = true;
+                removeFolders([source]);
+              }
+            })
+            .catch((error: any) => {
+              if(setDeleteMode) {
+                setDeleteMode(false);
+              }
+              setErrorModal({
+                visible: true,
+                action: 'deleting selected',
+                error: error.message,
+              })
             })
           })
           }
@@ -92,7 +121,6 @@ const StaticButtons:FC<Props> = ({
             })
           }
         })
-        removeFolders([source]);
     }
 
   const deleteMultipleFolders = (keys: string[]) => {

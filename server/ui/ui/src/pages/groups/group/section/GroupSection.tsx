@@ -40,7 +40,7 @@ const GroupSection: FC<Props> = ({ group }: Props) => {
           For example, if a group is given read/write access to a dataset, all users in the group will be able to read and write data.
         </p>
         <p>
-          Users with the &quot;admin&quot; role can add and remove users from any group. Users with the &quot;privileged&quot; role can add and remove users from the group only if they are a member of the group.
+          To manage groups, you must have the &quot;admin&quot; or &quot;privileged&quot; role.
         </p>
       </div>
       <div>

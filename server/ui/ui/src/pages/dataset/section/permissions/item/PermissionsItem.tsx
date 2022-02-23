@@ -8,6 +8,7 @@ import React,
 import {
   useParams,
 } from "react-router-dom";
+import ReactTooltip from 'react-tooltip';
 // environment
 import { put } from 'Environment/createEnvironment';
 // context
@@ -34,6 +35,7 @@ interface Item {
 interface Props {
   item: Item;
   sectionType: string;
+  owner: string;
 }
 
 interface ParamTypes {
@@ -45,6 +47,7 @@ interface ParamTypes {
 const PermissionsItem: FC<Props> = ({
   item,
   sectionType,
+  owner,
 }: Props) => {
   // context
   const { user } = useContext(AppContext);
@@ -65,7 +68,7 @@ const PermissionsItem: FC<Props> = ({
   * @calls {environment#put}
   * @calls {state#setErrorMessage}
   */
-  const updatePermissions = (permission: Permission, name: string) => {
+  const updatePermissions = (permission: Permission, name: string, errorCallback: () => void) => {
     let permName = 'r';
     if (permission.name === 'Read & Write') {
       permName = 'rw';
@@ -73,9 +76,23 @@ const PermissionsItem: FC<Props> = ({
     if (permission.name === 'Read Only') {
       permName = 'r';
     }
-    put(`namespace/${namespace}/dataset/${datasetName}/${sectionType}/${name}/access/${permName}`).then((response) => {
-      setErrorMessage(null);
-    }).catch((error) => {
+    put(`namespace/${namespace}/dataset/${datasetName}/${sectionType}/${name}/access/${permName}`)
+    .then((response) => {
+      if(response.ok) {
+        return;
+      }
+      return response.json();
+    })
+    .then((data: any) => {
+      if (data && data.error) {
+        errorCallback();
+        setErrorMessage(data.error);
+        setTimeout(() => {
+          setErrorMessage('');
+        }, 5000);
+      }
+    })
+    .catch((error) => {
       const newErrorMessage = error.toString ? error.toString() : error;
       setErrorMessage(newErrorMessage);
     })
@@ -99,12 +116,23 @@ const PermissionsItem: FC<Props> = ({
             <>
               <td></td>
               <td>
-                <Delete
-                  datasetName={datasetName}
-                  namespace={namespace}
-                  name={name}
-                  sectionType={sectionType}
-                />
+                <div
+                  data-tip="You cannot remove the owner from the dataset."
+                  data-tip-disable={!(owner === name && sectionType === 'user')}
+                >
+                  <Delete
+                    datasetName={datasetName}
+                    namespace={namespace}
+                    name={name}
+                    sectionType={sectionType}
+                    setErrorMessage={setErrorMessage}
+                    isOwner={owner === name && sectionType === 'user'}
+                  />
+                  <ReactTooltip
+                    place="bottom"
+                    effect="solid"
+                  />
+                </div>
               </td>
             </>
           )
@@ -113,7 +141,7 @@ const PermissionsItem: FC<Props> = ({
 
 
       { errorMessage && (
-        <p className="error">{errorMessage}</p>
+        <p className="PermissionsItem__error error">{errorMessage}</p>
       )}
     </>
 

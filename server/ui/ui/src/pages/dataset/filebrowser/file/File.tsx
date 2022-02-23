@@ -33,6 +33,7 @@ interface Props {
   setIsLocked: (locked: boolean) => void;
   namespace: string;
   searchMode: boolean;
+  setErrorModal: any;
 }
 
 
@@ -51,6 +52,7 @@ const File:FC<Props> = ({
   setIsLocked,
   namespace,
   searchMode,
+  setErrorModal,
 }: Props) => {
 
   const [renameMode, setRenameMode] = useState(false);
@@ -115,8 +117,17 @@ const File:FC<Props> = ({
               setIsLocked(false)
               refetchS3();
               removeFiles([file.Key]);
-            });
-          });
+            })
+          })
+          .catch((error: any) => {
+            setIsLocked(false);
+            setRenameMode(false);
+            setErrorModal({
+              visible: true,
+              action: 'renaming file',
+              error: error.message,
+            })
+          })
     }
   }
 
@@ -193,6 +204,7 @@ const File:FC<Props> = ({
           removeFiles={removeFiles}
           allowRename={(editedFileName.length > 0)}
           searchMode={searchMode}
+          setErrorModal={setErrorModal}
         />
       </div>
     </div>

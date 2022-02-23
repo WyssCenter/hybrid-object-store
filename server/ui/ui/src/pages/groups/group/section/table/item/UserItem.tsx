@@ -40,8 +40,7 @@ const UserItem: FC<Props> = ({ userItem }: Props) => {
   const [errorMessage, setErrorMessage] = useState(null);
   // vars
   const usersGroups = user.profile.groups.split(',');
-  const canMemberEdit = (user.profile.role === 'admin') || ((usersGroups.indexOf(groupname) > -1 )
-    && (user.profile.role === 'admin'))
+  const canMemberEdit = (user.profile.role === 'admin') || (user.profile.role === 'privileged')
     ? true
     : false;
 
@@ -54,13 +53,24 @@ const UserItem: FC<Props> = ({ userItem }: Props) => {
   * @calls {state#setErrorMessage}
   */
   const removeUser = useCallback(() => {
-    del(`group/${groupname}/user/${userItem.username}`, true).then((response) => {
+    del(`group/${groupname}/user/${userItem.username}`, {}, true).then((response) => {
       if(response.ok) {
         send('REFETCH');
+        return;
       } else {
-        setErrorMessage("Something went wrong, try again. If this continues contact your support.");
+        return response.json();
       }
-    }).catch((error) => {
+    })
+    .then((data: any) => {
+      if (data && data.error) {
+        setIsTooltipVisible(false)
+        setErrorMessage(data.error);
+        setTimeout(() => {
+          setErrorMessage('');
+        }, 5000);
+      }
+    })
+    .catch((error) => {
       setErrorMessage(error.toString());
     })
   }, [send, groupname, userItem])
@@ -75,7 +85,6 @@ const UserItem: FC<Props> = ({ userItem }: Props) => {
   const hideTooltipVisible = () => {
     setIsTooltipVisible(false);
   }
-
 
   return (
     <>
@@ -105,7 +114,7 @@ const UserItem: FC<Props> = ({ userItem }: Props) => {
                 confirm={removeUser}
                 cancel={hideTooltipVisible}
                 isVisible={isTooltipVisible}
-                text="Are you sure? If you haven't copied and saved this token you will not be able use it."
+                text="Are you sure? The user will lose access to all datasets that this group is granted permissions to."
                 tooltipRef={tooltipRef}
               />
             </div>

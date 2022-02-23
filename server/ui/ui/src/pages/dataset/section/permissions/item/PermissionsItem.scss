@@ -10,6 +10,9 @@
 
   border-bottom: 1px solid $romanSilver;
 
+  &__error {
+    width: 300px;
+  }
   &__name {
     min-width: 20em;
     overflow: hidden;

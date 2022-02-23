@@ -33,6 +33,7 @@ export interface Dataset {
   sync_type: string;
   sync_policy: string;
   sync_enabled: boolean;
+  owner: any;
 }
 
 

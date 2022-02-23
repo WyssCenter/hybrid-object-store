@@ -23,6 +23,8 @@ interface Props {
   name: string;
   namespace: string;
   sectionType: string;
+  setErrorMessage: any;
+  isOwner: boolean;
 }
 
 const AddPermission: FC<Props> = ({
@@ -30,12 +32,13 @@ const AddPermission: FC<Props> = ({
   namespace,
   name,
   sectionType,
+  setErrorMessage,
+  isOwner,
 }:Props) => {
   // ref
   const tooltipRef = useRef(null);
   // state
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
-  const [errorMessage, setErrorMessage] = useState(null);
   // context
   const { send } = useContext(DatasetContext);
 
@@ -55,9 +58,24 @@ const AddPermission: FC<Props> = ({
   * @calls {state#setErrorMessage}
   */
   const deleteItem = () => {
-    del(`namespace/${namespace}/dataset/${datasetName}/${sectionType}/${name}`).then((response) => {
-      send('REFETCH');
-    }).catch((error) => {
+    del(`namespace/${namespace}/dataset/${datasetName}/${sectionType}/${name}`)
+    .then((response) => {
+      if (response.ok) {
+        send('REFETCH');
+        return;
+      }
+      return response.json();
+    })
+    .then((data: any) => {
+      if (data && data.error) {
+        setErrorMessage(data.error);
+        setTimeout(() => {
+          setErrorMessage('');
+        }, 5000);
+        setIsTooltipVisible(false);
+      }
+    })
+    .catch((error) => {
       setErrorMessage(`Error: ${sectionType} may have not been deleted correctly, refresh to confirm`);
     });
   }
@@ -67,7 +85,7 @@ const AddPermission: FC<Props> = ({
       <IconButton
         click={() => { setIsTooltipVisible(true)}}
         color="white"
-        disabled={false}
+        disabled={isOwner}
         icon={faTrash}
       />
       <TooltipConfirm
@@ -77,9 +95,6 @@ const AddPermission: FC<Props> = ({
         text={`Are you sure? This ${sectionType} will lose access to this dataset.`}
         tooltipRef={tooltipRef}
       />
-      { errorMessage &&
-        <p>{errorMessage}</p>
-      }
 
     </div>
   );

@@ -35,8 +35,7 @@ const AddUser: FC = () => {
   const [buttonDisabled, setButtonDisabled] = useState(false);
   // vars
   const usersGroups = user.profile.groups.split(',');
-  const canMemberEdit = (user.profile.role === 'admin') || ((usersGroups.indexOf(groupname) > -1 )
-    && (user.profile.role === 'admin'))
+  const canMemberEdit = (user.profile.role === 'admin') ||  (user.profile.role === 'privileged')
     ? true
     : false;
   const editDisabled = (username === null) || (username === '') || !canMemberEdit;
@@ -56,7 +55,7 @@ const AddUser: FC = () => {
     ).then((response) => {
       return response.json();
     }).then((data) => {
-      if (data.error) {
+      if (data && data.error) {
         setErrorMessage(data.error);
         return;
       }
