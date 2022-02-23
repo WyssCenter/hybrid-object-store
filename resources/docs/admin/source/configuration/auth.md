@@ -6,7 +6,7 @@ Configuring the auth service is done via `~/.hoss/auth/config.yaml`. It's values
 
 - `dev_server`: if `true`, CORS will be enabled for local frontend development and the API will run in development mode
 - `client_id`: This is the OAuth2 client id
-- `client_secret`: This is the OAuth2 secret. In a production environment, you should modify this to a strong, random value. If changed, you must also update your Dex config. 
+- `client_secret`: This is the OAuth2 secret. This value is automatically generated and set to a strong, random value.
 - `open_id_config_file`: this is the path to the OIDC file that will be served as `.well-known` info
 - `issuer`: Is the token issuer. If you are running with the internal LDAP provider, you should leave the default value of `http://dex:5556/dex`. If you are using an external auth provider that will need to make callbacks to Dex, this should instead point to the external route to Dex in the format `<EXTERNAL_HOSTNAME>/dex`, where `<EXTERNAL_HOSTNAME>` is the externally accessible hostname for your Hoss server, including the scheme (e.g. https://hoss.myserver.com/dex).
 - `admin_group`: Group name to expect from the Auth provider for administrators. If integrating with an external Auth provider you may need to adjust this. If using the internal LDAP provider, you do not need to change this.
