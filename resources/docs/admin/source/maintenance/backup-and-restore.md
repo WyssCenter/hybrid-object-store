@@ -36,10 +36,12 @@ it has been created.
 
 ## Installing the `hossadm` tool
 
-If you have yet to install the `hossadm` tool:
+The `hossadm` tool should be used **on the server**. If you have yet to install the `hossadm` tool:
 
 1. Create and activate a new Python3 virtual environment.
-2. From the `admin/` directory if the Hoss code repository run `pip3 install -U .`
+   * For example, run `python3 -m venv ./hossadm-venv` in your home directory
+   * Then run `source ~/hossadm-venv/bin/activate` 
+2. From the `admin/` directory of the Hoss source code repository run `pip3 install -U .`
 
 If the tool has been updated, simply run `pip3 install -U .` again after updating the Hoss code repository to
 the desired version.
@@ -66,11 +68,11 @@ If you are using minIO locally, be **very** careful with the `make reset` comman
 directory!!!
 ```
 
-To prepare for a restore, you should have a "clean" Hoss working directory (i.e. `~/.hoss`) before running this command. If you are restoring
-on the same system that was previously backed up, you'll need to do `make down` and `make reset` to clear most resources. Also you will likely 
-need to manually remove a few directories with `sudo` because of permission changes (e.g. `~/.hoss/data/db`, `~/.hoss/backup/.db`, `~/.hoss/data/opensearch`, `~/.hoss/backup/.opensearch`). If using minIO locally, you should 
+To complete for a restore, you should have a prepared server and "clean" Hoss working directory (i.e. `~/.hoss`) before running this command. 
 
-If the default `BACKUP_ROOT` location was used, you can remove all content from the working directory except the `backup` directory because you'll need the backup archive in that directory.
+If you are restoring on the same system that was previously backed up, you'll need to do `make down` and `make reset` to clear most resources. Also you will likely need to manually remove a few directories with `sudo` because of permission changes (e.g. `~/.hoss/data/db`, `~/.hoss/backup/.db`, `~/.hoss/data/opensearch`, `~/.hoss/backup/.opensearch`). If using minIO locally, you should be very careful not to remove the `~/.hoss/data/nas` directory, if using the default storage location. If the default `BACKUP_ROOT` location was used, you can remove all other content from the working directory except the `backup` directory because you'll need the backup archive in that directory.
+
+If you are restoring to a new server (e.g. a disaster recovery event), then you must [prepare the server](../installation/prepare.md#prepare-server) by installing Docker and other related tools. You must also [set up the repository](../installation/install-aws.md#set-up-repository) at the version at which your backup was created.
 
 To start a restore, run `hossadm restore <PATH TO BACKUP ARCHIVE>` as the user who runs the Hoss (i.e. what user ran `make up`)
 
@@ -80,7 +82,7 @@ If you are not developing, and running on localhost, you must include the `--end
 hossadm restore --endpoint https://hoss.mycompany.com ~/hoss-backup-2022-02-22T014536Z.tar.gz
 ```
 
-During the restore process, the `hossadm` tool will instruct you to start the server. At this point, in a different terminal run `make up DETACH=true` as the user who runs the Hoss in `server` directory of the Hoss code repository. `hossadm` will detect the server starting up and continue with the restore process.
+During the restore process, the `hossadm` tool will instruct you to start the server. At this point, in a different terminal run `make up DETACH=true` as the user who runs the Hoss in `server` directory of the Hoss code repository. `hossadm` will detect the server starting up and continue with the restore process. Note, if there are any configuration changes you wish to make that are possible to change (e.g. `HEALTH_CHECK_HOST` setting), you should make them at this point, before running `make up`.
 
 Finally, if running minIO, it is recommended that you restart the sync and core service to ensure that any timing issues during start up are resolved
 immediately.
