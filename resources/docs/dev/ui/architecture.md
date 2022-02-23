@@ -19,7 +19,7 @@ The project uses [Storybook](https://storybook.js.org/docs/react/get-started/int
 
 In order for test files to be detected, the test files must be placed in a `__tests__` directory. To match our current project structure, you will want to create this directory in the same directory as the tested Component. For example, the test directory for the 'Dataset' component that exists in `/pages/dataset/Dataset.tsx` would be `/pages/dataset/__tests__`
 
-Each testing directory should contain at least two files, a storybook file and a jest test file. Our current naming convention is `component-name.stories.tsx` and `component-name.test.tsx`.  You can find an example of this [here](https://github.com/gigantum/hybrid-object-store/tree/main/server/ui/ui/src/pages/dataset/__tests__).
+Each testing directory should contain at least two files, a storybook file and a jest test file. Our current naming convention is `component-name.stories.tsx` and `component-name.test.tsx`.  You can find an example of this [here](https://github.com/WyssCenter/hybrid-object-store/tree/main/server/ui/ui/src/pages/dataset/__tests__).
 
 
 ### Running Tests

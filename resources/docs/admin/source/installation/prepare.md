@@ -16,7 +16,7 @@ recommended and another possible use for an external file mount. The [on-premise
 instructions provide more details on this configuration.
 
 If using S3 for object storage, you must provision and configure a bucket, SQS queues, and IAM roles, policies, and user. There is
-a [Terraform](https://www.terraform.io/) module available to help manage this - [https://github.com/gigantum/terraform-hoss-aws](https://github.com/gigantum/terraform-hoss-aws).
+a [Terraform](https://www.terraform.io/) module available to help manage this - [https://github.com/WyssCenter/terraform-hoss-aws](https://github.com/WyssCenter/terraform-hoss-aws).
 Alternatively, you can manually configure resources if needed. The [AWS single server](install-aws.md) installation instructions provide more details on
 this configuration.
 

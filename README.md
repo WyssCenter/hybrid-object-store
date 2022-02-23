@@ -5,7 +5,7 @@
 
 ---
 
-![Build and Test](https://github.com/gigantum/hybrid-object-store/actions/workflows/main.yaml/badge.svg)
+![Build and Test](https://github.com/WyssCenter/hybrid-object-store/actions/workflows/main.yaml/badge.svg)
 [![Documentation Status](https://readthedocs.org/projects/hybrid-object-store/badge/?version=latest)](https://hybrid-object-store.readthedocs.io/en/latest/?badge=latest)
 
 

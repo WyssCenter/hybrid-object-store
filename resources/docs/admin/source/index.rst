@@ -16,7 +16,7 @@ to deploy and use, with a minimal infrastructure footprint. A Hoss server:
 * Integrates with external authentication providers
 * Automates data synchronization between buckets and sites
 * Provides metadata search
-* Provides familiar programming interfaces via the `hoss-client library <https://github.com/gigantum/hoss-client>`_
+* Provides familiar programming interfaces via the `hoss-client library <https://github.com/WyssCenter/hoss-client>`_
 * Provides a web-based UI and API + Python library to meet a broad range of skill-levels
 
 The documentation that follows provide details and instructions on how to
