@@ -36,9 +36,9 @@ To update the official image, edit the `image:` line in `server/dex/docker-compo
 
 To update the forked image:
 
-1) Update the [dex fork](https://github.com/WyssCenter/dex) from the upstream
-2) Merge main or the tag you updated into the branch `recaptcha`
-3) Update the `VERSION` env var in the make file to the desired version number
-4) Run `make docker-image`
-5) Run `make docker-push`
+1) Update the [dex fork](https://github.com/WyssCenter/dex) from the upstream. You can typically do this via the GitHub UI.
+2) Merge main or the tag you updated in step 1 into the branch `recaptcha`.
+3) Update the `VERSION` env var in the dex Makefile to the desired version number.
+4) Run `make docker-image`. This will build the image and tag it with the version from step 3.
+5) Run `make docker-push`. This will push the image to Dockerhub for you.
 6) edit the `image:` line in `server/dex/docker-compose-recaptcha.yaml`.
