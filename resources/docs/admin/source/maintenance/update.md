@@ -19,7 +19,7 @@ in use to avoid consistency issues with users manipulating the system while serv
 
 2) **Review release notes and make required changes**
    
-   The [Release Notes](https://github.com/gigantum/hybrid-object-store/releases) will indicate what changes are needed to
+   The [Release Notes](https://github.com/WyssCenter/hybrid-object-store/releases) will indicate what changes are needed to
    local configuration (e.g. a new field was added to a config file, you have to update search indices, etc.).
 
    It is very important to follow the steps required between the version you have installed and the version you plan to install.

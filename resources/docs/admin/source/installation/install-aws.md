@@ -13,7 +13,7 @@ The main thing to understand is the choices made here are to:
 ## Create AWS Resources
 Since we are using S3 for object storage, in addition to the instance there are various AWS resources that must be created.
 
-There is a [Terraform](https://www.terraform.io/) module available to help manage this - [https://github.com/gigantum/terraform-hoss-aws](https://github.com/gigantum/terraform-hoss-aws).
+There is a [Terraform](https://www.terraform.io/) module available to help manage this - [https://github.com/WyssCenter/terraform-hoss-aws](https://github.com/WyssCenter/terraform-hoss-aws).
 This is the recommended way to do things since it is much easier and less prone to error. Simply configure and deploy this module and all the variables
 you need to finish configuration of the system will be output.
 
@@ -246,10 +246,10 @@ location is created and pre-populated via the Makefile.
 To get started, clone the repository:
 
 ```shell
-git clone https://github.com/gigantum/hybrid-object-store.git
+git clone https://github.com/WyssCenter/hybrid-object-store.git
 ```
 
-This will install the latest version of the server. To install a known release, review the [Releases](https://github.com/gigantum/hybrid-object-store/releases) 
+This will install the latest version of the server. To install a known release, review the [Releases](https://github.com/WyssCenter/hybrid-object-store/releases) 
 page and make note of the desired version (e.g. 0.2.5). Then check out that version via `git checkout <version>`.
 
 ## Configure Variables

@@ -21,10 +21,10 @@ location is created and pre-populated via the Makefile.
 To get started, clone the repository:
 
 ```shell
-git clone https://github.com/gigantum/hybrid-object-store.git
+git clone https://github.com/WyssCenter/hybrid-object-store.git
 ```
 
-This will install the latest version of the server. To install a known release, review the [Releases](https://github.com/gigantum/hybrid-object-store/releases) 
+This will install the latest version of the server. To install a known release, review the [Releases](https://github.com/WyssCenter/hybrid-object-store/releases) 
 page and make note of the desired version (e.g. 0.2.5). Then check out that version via `git checkout <version>`.
 
 ## Configure Variables

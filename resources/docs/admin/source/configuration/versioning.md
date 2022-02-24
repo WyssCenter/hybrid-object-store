@@ -14,7 +14,7 @@ the object will be synced.
 ## Enabling Bucket Versioning
 If manually configuring AWS infrastructure, enable bucket versioning in the AWS console.
 
-If using the [https://github.com/gigantum/terraform-hoss-aws](https://github.com/gigantum/terraform-hoss-aws)
+If using the [https://github.com/WyssCenter/terraform-hoss-aws](https://github.com/WyssCenter/terraform-hoss-aws)
 module, set `versioning=true` for the desired buckets. The module ignores the lifecycle rules on the bucket
 so you are free to modify those manually as discussed below.
 

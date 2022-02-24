@@ -46,7 +46,7 @@ setup(
     python_requires='>=3.6',
     include_package_data=True,
 
-    url='https://github.com/gigantum/hybrid-object-store',
+    url='https://github.com/WyssCenter/hybrid-object-store',
     license='MIT',
     classifiers=[
         'Development Status :: 4 - Beta',

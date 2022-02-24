@@ -36,7 +36,7 @@ To update the official image, edit the `image:` line in `server/dex/docker-compo
 
 To update the forked image:
 
-1) Update the [dex fork](https://github.com/gigantum/dex) from the upstream
+1) Update the [dex fork](https://github.com/WyssCenter/dex) from the upstream
 2) Merge main or the tag you updated into the branch `recaptcha`
 3) Update the `VERSION` env var in the make file to the desired version number
 4) Run `make docker-image`
