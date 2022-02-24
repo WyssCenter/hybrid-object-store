@@ -777,10 +777,12 @@ const FileBrowser:FC<Props> = ({
         get(`search/namespace/${namespace}/dataset/${dataset}/metadata?objectKey=${encodeURIComponent(focusedFile.Key)}`)
         .then(res => res.json())
         .then(data => {
-          setFocusedFileData((prevData: any) => ({
-            ...prevData,
-            Metadata: data.metadata,
-          }))
+          if (data && data.metadata) {
+            setFocusedFileData((prevData: any) => ({
+              ...prevData,
+              Metadata: data.metadata,
+            }))
+          }
         })
       }
     } else if (focusedFile && focusedFileData) {
