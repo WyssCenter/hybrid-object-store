@@ -768,20 +768,34 @@ const FileBrowser:FC<Props> = ({
       })
       s3Client.send(command)
       .then((res: any) => {
-        setFocusedFileData((prevData: any) => ({
-          ...res,
-          Metadata: (prevData && prevData.Metadata && prevData.ETag === res.ETag) ? prevData.Metadata : res.Metadata
-        }));
+        setFocusedFileData((prevData: any) => {
+          if (prevData && !prevData.ETag) {
+            return {
+            ...res,
+            Metadata: prevData.Metadata,
+            }
+          }
+          return {
+            ...res,
+          }
+        });
       })
       if (!isMinio) {
         get(`search/namespace/${namespace}/dataset/${dataset}/metadata?objectKey=${encodeURIComponent(focusedFile.Key)}`)
         .then(res => res.json())
         .then(data => {
           if (data && data.metadata) {
-            setFocusedFileData((prevData: any) => ({
-              ...prevData,
-              Metadata: data.metadata,
-            }))
+            setFocusedFileData((prevData: any) => {
+              if (prevData && (prevData.ETag === focusedFile.ETag)) {
+                return {
+                  ...prevData,
+                  Metadata: data.metadata
+                }
+              }
+              return {
+                Metadata: data.metadata,
+              }
+            })
           }
         })
       }

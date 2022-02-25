@@ -16,7 +16,8 @@
   "rules": {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "react/jsx-key": "off"
   },
   "settings": {
     "react": {
@@ -57,7 +58,8 @@
          "ts": "never",
          "tsx": "never"
       }
-    ]
+    ],
+    "react/jsx-key": "warn"
   },
   "overrides": [
     {
