@@ -10,4 +10,7 @@ Once changes are made to this file, simply refresh the page to see the effect. Y
 
 You may also wish to change the logo and favicon. This can be done by replacing the `~/.hoss/ui/logo.svg` and `~/.hoss/ui/favicon.png` files. Currently you must keep the file types the same.
 
-Note, this won't change the Dex login page if you are using the internal auth provider. If you wish to also modify this, you must manually do it in `~/.hoss/auth/web/themes/hoss`.
+Note, this won't change the Dex login page if you are using the internal auth provider. If you wish to also modify this, you must manually update the logo in `~/.hoss/auth/web/static/img/hoss-logo.svg` and modify in  `~/.hoss/auth/web/themes/hoss/styles.css` the following parameters:
+* `background-color` parameter of the `.theme-navbar` section.
+* `background-color` parameter of the `.theme-btn--primary` section.
+* `background-color` parameter of the `.theme-btn--primary` section.
