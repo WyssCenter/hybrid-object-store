@@ -99,7 +99,7 @@ func TeardownMinioTest(t *testing.T, c *config.Configuration) {
 	// List the aliases
 	cmd = exec.Command("mc", "alias", "list")
 	out, err := cmd.CombinedOutput()
-	t.Logf("output from list mc alias: %v", out)
+	t.Logf("output from list mc alias: %v", string(out))
 	if err != nil {
 		t.Fatalf("failed to list mc alias: %v", err)
 	}
@@ -107,7 +107,7 @@ func TeardownMinioTest(t *testing.T, c *config.Configuration) {
 	// Remove the default alias
 	cmd = exec.Command("mc", "alias", "remove", "hoss-default")
 	out, err = cmd.CombinedOutput()
-	t.Logf("output from remove mc alias: %v", out)
+	t.Logf("output from remove mc alias: %v", string(out))
 	if err != nil {
 		t.Fatalf("failed to remove mc alias: %v", err)
 	}
