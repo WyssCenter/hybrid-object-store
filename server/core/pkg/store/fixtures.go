@@ -96,9 +96,19 @@ func TeardownMinioTest(t *testing.T, c *config.Configuration) {
 	cmd = exec.Command("mc", "event", "remove", "hoss-default/data", "arn:minio:sqs::_:amqp")
 	cmd.Run()
 
+	// List the aliases
+	cmd = exec.Command("mc", "alias", "list")
+	out, err := cmd.CombinedOutput()
+	t.Logf("output from list mc alias: %v", out)
+	if err != nil {
+		t.Fatalf("failed to list mc alias: %v", err)
+	}
+
 	// Remove the default alias
-	cmd = exec.Command("mc", "alias", "rm", "hoss-default")
-	if err := cmd.Run(); err != nil {
+	cmd = exec.Command("mc", "alias", "remove", "hoss-default")
+	out, err = cmd.CombinedOutput()
+	t.Logf("output from remove mc alias: %v", out)
+	if err != nil {
 		t.Fatalf("failed to remove mc alias: %v", err)
 	}
 }

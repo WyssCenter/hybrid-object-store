@@ -24,6 +24,8 @@ jobs:
       run: |
         wget -q https://dl.min.io/client/mc/release/linux-amd64/mc -P /home/runner/.local/bin
         chmod +x /home/runner/.local/bin/mc
+    # - run: sudo curl -L https://github.com/docker/compose/releases/download/1.29.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+    # - run: sudo chmod +x /usr/local/bin/docker-compose
     - name: Set up the env file with defaults
       run: cd server && make env
     - name: Setup docker network
@@ -51,7 +53,7 @@ jobs:
     - name: Run core/store tests
       run: cd server/core && go test ./pkg/store
     - name: Run core/worker tests
-      run: cd server/core && go test ./pkg/worker
+      run: cd server/core && go test ./pkg/worker -v
     - name: Run auth tests
       run: |
         cd server/auth
