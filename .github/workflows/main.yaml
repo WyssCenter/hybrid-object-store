@@ -27,8 +27,9 @@ jobs:
       run: cd server && make build
     - name: Pre-pull minio image to it doesn't build
       run: docker pull minio/minio:RELEASE.2021-11-09T03-21-45Z
-    - name: Start up the services for testing
+    - name: Set up config
       run: cd server && make config
+    - name: Start up the services for testing
       run: cd server && make up-testing
     - name: Sleep for 60 seconds for everything to come up
       run: |
