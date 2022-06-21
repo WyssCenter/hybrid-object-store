@@ -11,7 +11,7 @@ on:
 jobs:
 
   buildAndTest:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
     - uses: actions/checkout@v2
@@ -23,6 +23,8 @@ jobs:
       run: |
         wget -q https://dl.min.io/client/mc/release/linux-amd64/mc -P /home/runner/.local/bin
         chmod +x /home/runner/.local/bin/mc
+    - run: sudo curl -L https://github.com/docker/compose/releases/download/1.29.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+    - run: sudo chmod +x /usr/local/bin/docker-compose
     - name: Set up the env file with defaults
       run: cd server && make env
     - name: Setup docker network
@@ -32,25 +34,26 @@ jobs:
     - name: Pre-pull minio image to it doesn't build
       run: docker pull minio/minio:RELEASE.2021-11-09T03-21-45Z
     - name: Start up the services for testing
-      run: cd server && make config && make up-testing
-    - name: Sleep for 30 seconds for everything to come up
+      run: cd server && make config
+      run: cd server && make up-testing
+    - name: Sleep for 60 seconds for everything to come up
       run: |
         docker ps
-        echo "waiting 30 seconds to start"
-        sleep 10
+        echo "waiting 60 seconds to start"
+        sleep 20
         docker ps | grep minio
-        sleep 10
+        sleep 20
         docker ps | grep minio
-        sleep 10
+        sleep 20
         docker ps | grep minio
     - name: Run core/config tests
-      run: cd server/core && go test ./pkg/config
+      run: cd server/core && go test ./pkg/config -v
     - name: Run core/database tests
-      run: cd server/core && go test ./pkg/database
+      run: cd server/core && go test ./pkg/database -v
     - name: Run core/store tests
-      run: cd server/core && go test ./pkg/store
+      run: cd server/core && go test ./pkg/store -v
     - name: Run core/worker tests
-      run: cd server/core && go test ./pkg/worker
+      run: cd server/core && go test ./pkg/worker -v
     - name: Run auth tests
       run: |
         cd server/auth

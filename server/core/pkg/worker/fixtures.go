@@ -24,7 +24,6 @@ func SetupWorkerTest(t *testing.T) (*config.Configuration, store.ObjectStore, *d
 	// Set cleanup
 	t.Cleanup(func() {
 		TeardownWorkerTest(t, testConfig, db)
-		store.TeardownMinioTest(t, testConfig)
 		database.TeardownDatabaseTest(t, db)
 	})
 
