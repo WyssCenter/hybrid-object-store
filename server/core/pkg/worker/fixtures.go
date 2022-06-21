@@ -22,9 +22,14 @@ func SetupWorkerTest(t *testing.T) (*config.Configuration, store.ObjectStore, *d
 	}
 
 	// Set cleanup
+	t.Logf("setting up cleanup")
 	t.Cleanup(func() {
+		t.Logf("inside cleanup")
+		t.Logf("tearing down worker test")
 		TeardownWorkerTest(t, testConfig, db)
-		store.TeardownMinioTest(t, testConfig)
+		// t.Logf("tearing down minio test")
+		// store.TeardownMinioTest(t, testConfig)
+		t.Logf("tearing down database test")
 		database.TeardownDatabaseTest(t, db)
 	})
 
