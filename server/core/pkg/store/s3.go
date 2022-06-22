@@ -160,6 +160,12 @@ func (s *S3Store) DeleteDataset(rootDir string, n *database.Namespace) error {
 			logrus.Fatalf("failed to get page of objects while deleting, %v", err)
 		}
 
+		// check that page has contents
+		if len(page.Contents) == 0 {
+			logrus.Warningf("page has no objects, skipping delete")
+			continue
+		}
+
 		// convert "list objects response" to "delete objects request"
 		deleteRequest := s3.DeleteObjectsInput{
 			Bucket: aws.String(n.BucketName),
